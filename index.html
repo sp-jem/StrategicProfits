@@ -442,6 +442,8 @@
     </div>
   </div>
 
+  <div class="note" id="employeeNote" style="display:none; margin-top:1rem;">Both <strong>Owners</strong> and <strong>Team Members</strong> need to submit their own Client Profile and File Discovery Dossier.</div>
+
   <!-- EMPLOYEE CARDS -->
   <div class="employee-cards" id="employeeCards">
 
@@ -559,6 +561,7 @@
     document.getElementById('empYes').className = 'employee-btn' + (yes ? ' selected-yes' : '');
     document.getElementById('empNo').className = 'employee-btn' + (!yes ? ' selected-no' : '');
     document.getElementById('employeeCards').classList.toggle('visible', yes);
+    document.getElementById('employeeNote').style.display = yes ? 'block' : 'none';
     updateProgress();
   }
 
