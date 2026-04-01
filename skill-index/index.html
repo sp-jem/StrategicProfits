@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZenithPro Skill Index</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #0f1117;
+      color: #e2e8f0;
+      line-height: 1.7;
+      padding: 48px 24px;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    header {
+      margin-bottom: 56px;
+      border-bottom: 1px solid #2d3748;
+      padding-bottom: 32px;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #f7fafc;
+      letter-spacing: -0.5px;
+    }
+
+    header p {
+      color: #718096;
+      margin-top: 8px;
+      font-size: 0.95rem;
+    }
+
+    .lesson {
+      margin-bottom: 64px;
+    }
+
+    .lesson-header {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .lesson-header h2 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #f7fafc;
+    }
+
+    .lesson-date {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #667eea;
+      background: rgba(102, 126, 234, 0.12);
+      padding: 3px 10px;
+      border-radius: 20px;
+    }
+
+    .lesson-summary {
+      font-size: 0.93rem;
+      color: #a0aec0;
+      border-left: 3px solid #2d3748;
+      padding-left: 16px;
+      margin-bottom: 28px;
+      font-style: italic;
+    }
+
+    /* Skills dropdown */
+    details.skills-dropdown {
+      margin-top: 4px;
+    }
+
+    details.skills-dropdown summary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #667eea;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      padding: 6px 0;
+      list-style: none;
+      user-select: none;
+    }
+
+    details.skills-dropdown summary::-webkit-details-marker { display: none; }
+
+    details.skills-dropdown summary .chevron {
+      display: inline-block;
+      transition: transform 0.2s ease;
+      font-style: normal;
+    }
+
+    details.skills-dropdown[open] summary .chevron {
+      transform: rotate(90deg);
+    }
+
+    details.skills-dropdown summary:hover {
+      color: #90cdf4;
+    }
+
+    .skills {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .skill {
+      background: #1a1f2e;
+      border: 1px solid #2d3748;
+      border-radius: 10px;
+      padding: 18px 22px;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .skill:hover {
+      border-color: #667eea;
+      background: #1e2436;
+    }
+
+    .skill h3 {
+      font-size: 0.97rem;
+      font-weight: 600;
+      margin-bottom: 7px;
+    }
+
+    .skill h3 a {
+      color: #90cdf4;
+      text-decoration: none;
+    }
+
+    .skill h3 a:hover {
+      color: #bee3f8;
+      text-decoration: underline;
+    }
+
+    .skill p {
+      font-size: 0.87rem;
+      color: #718096;
+      line-height: 1.65;
+    }
+
+    .needs-review {
+      border-color: #d69e2e;
+    }
+
+    .needs-review h3 a {
+      color: #f6e05e;
+    }
+
+    .no-link {
+      color: #4a5568;
+      font-size: 0.75rem;
+      margin-left: 8px;
+      font-weight: normal;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <h1>ZenithPro Skill Index</h1>
+    <p>All skills and prompts from every session. Click a skill name to open it in Google Drive.</p>
+  </header>
+
+  <!-- LESSON 1 -->
+  <div class="lesson">
+    <div class="lesson-header">
+      <h2>Lesson 1</h2>
+      <span class="lesson-date">Oct 22, 2025</span>
+    </div>
+
+    <p class="lesson-summary">
+      Rich Schefren and the team discussed a shift in demand generation from competing for immediate buyers to creating demand among the 97% of prospects not actively looking to buy. The strategy involves changing customers' beliefs and identities rather than merely pushing product features, with case studies like Listerine and De Beers illustrating how new cultural norms can generate demand. Utilizing AI, the team aims to discover core desire hierarchies and belief structures that drive demand. They plan to use AI-generated avatars for testing messaging and to refine marketing strategies, ensuring messaging aligns with prospects' identities. The ultimate goal is a comprehensive AI-driven system that enhances campaign efficiency and fosters a long-term transformation in marketing practices.
+    </p>
+
+    <details class="skills-dropdown">
+      <summary><span class="chevron">›</span> Click to see 4 skills in this lesson</summary>
+      <div class="skills">
+        <div class="skill">
+          <h3><a href="https://docs.google.com/document/d/1wO6JvcBoDbg93zbhn7qrgbEZ3aB2jwA6c-GzgTZaoj8/edit" target="_blank">The Ultimate Psychographic Excavation System</a></h3>
+          <p>A multi-phase prompt that digs deep into customer psychology -- pulling raw language from Reddit, YouTube, forums, and reviews -- to uncover what your prospects believe, fear, blame, and secretly want. The output goes well beyond demographics: you get their worldview, their relationship with past failures, the words they actually use, and the hidden patterns that drive their buying decisions.</p>
+        </div>
+
+        <div class="skill">
+          <h3><a href="https://docs.google.com/document/d/1q6KMJLMyzL4nCxa8_CZIgs_rKqXIStUuq1CwHfhsQzw/edit" target="_blank">Desire Hierarchy Mapper</a></h3>
+          <p>A prompt that combines Reese's 16 basic human desires, Schwartz's demand-channeling insight, and Rich Schefren's D3 methodology to map the exact belief architecture between your prospect's core desires and your specific product. Rather than guessing what to say, you get a structured map showing which beliefs already exist, which are weak, and which need to be built from scratch -- making your marketing precise instead of intuitive.</p>
+        </div>
+
+        <div class="skill">
+          <h3><a href="https://docs.google.com/document/d/11AxMWFhq46Ta6n-RJiUvx3v_zZUWez9zYXkrWlkKhSk/edit" target="_blank">Ultimate Avatar Excavation System V2.0</a></h3>
+          <p>An upgraded avatar prompt that generates 3-5 complete customer profiles, going beyond surface demographics to excavate unconscious drivers, hidden financial history, psychological market segments, and the internal dialogue your prospect has during a buying decision. The goal: profiles detailed enough to predict behavior, write copy that feels personal, and design products your market feels were made specifically for them.</p>
+        </div>
+
+        <div class="skill">
+          <h3><a href="https://docs.google.com/document/d/1TxzdF4K7NR3QvLHmMe-lqmEiy_jcL5OqrXzeQRbL-3I/edit" target="_blank">Multi-AI Output Consolidator</a></h3>
+          <p>A prompt for combining outputs from multiple AI tools -- Claude, Gemini, Grok, ChatGPT -- into one comprehensive document without losing anything. It catalogs what each model contributed, maps overlapping sections, layers in complementary details, and flags conflicts. Useful any time you've run the same research or analysis across different AIs and need one clean, complete result.</p>
+        </div>
+      </div>
+    </details>
+  </div>
+
+  <!-- LESSON 2 -->
+  <div class="lesson">
+    <div class="lesson-header">
+      <h2>Lesson 2</h2>
+      <span class="lesson-date">Oct 29, 2025</span>
+    </div>
+
+    <p class="lesson-summary">
+      This session clarified the Lesson 1 prompt workflow and introduced Lesson 2's four-prompt Power Sequence: Shadow Mining Protocol, Enhanced USP Generator, Value Proposition Stacker, and Ideal Buying Mindset Architect. Rich walked through his own ZenithPRO examples to show how Desire Hierarchy data feeds into positioning, competitive differentiation, and offer design. The session also unveiled the Role Amplification Engine -- Rich's experimental discovery that specificity in role assignments (e.g., "Eugene Schwartz-level master" rather than "marketer") creates a semantic authority hierarchy that may trigger deeper AI processing -- plus the self-rating technique: ask Claude to score its output 1-10, then request a level-10 version.
+    </p>
+
+    <details class="skills-dropdown">
+      <summary><span class="chevron">›</span> Click to see 6 skills in this lesson</summary>
+      <div class="skills">
+        <div class="skill">
+          <h3><a href="https://drive.google.com/file/d/1uDvj3eqs5zh8F-NBJ2P9RfIzkuKt_M_e/view" target="_blank">Shadow Mining Protocol</a></h3>
+          <p>Takes your completed Desire Hierarchy analysis and runs it through three shadow lenses to expose hidden contradictions: the desires your prospects have but are embarrassed to admit (Denial Dynamics), the values they perform publicly but don't actually hold (Performance Paradox), and the competing drives that create daily internal conflict (Internal War Zone). Each lens generates a messaging angle that speaks to the unspoken psychology, and the prompt synthesizes all three into a single Master Concept -- a positioning statement that simultaneously acknowledges what your prospect says they want and what they're actually driven by.</p>
+        </div>
+
+        <div class="skill">
+          <h3><a href="https://drive.google.com/file/d/1-3fSIQ_-t9lj-QIrI6WiOPnLdM3i03ix/view" target="_blank">Enhanced USP Generator</a></h3>
+          <p>A multi-step prompt that walks your product's features through a full transmutation process: features become benefits at five levels (immediate, secondary, emotional, social, strategic), then the strongest benefits become market promises tested for competitive uniqueness. Generates ten USP candidates across six templates -- covering transformation framing, "get X without Y" contrast, category-of-one positioning, and identity evolution. Built on Eugene Schwartz's sophistication framework, Claude Hopkins' reason-why architecture, and Rosser Reeves' USP principles, and designed to pair with a companion 959-example USP data file.</p>
+        </div>
+
+        <div class="skill">
+          <h3><a href="https://drive.google.com/file/d/1FWvZLLfUdjIrNdnNmaz0m_pxkESRy0am/view" target="_blank">Value Proposition Stacker</a></h3>
+          <p>Builds the kind of offer where saying no feels unreasonable. The prompt targets high emotional state (towards-oriented) buyers rather than pain-motivated ones -- a distinction that produces 20-50x higher lifetime value per customer. It identifies the single core emotion driving your market, then applies Hormozi's Value Equation to stack value components until perceived value dramatically outweighs the investment. Draws on Brunson's offer engineering, Sultanic's emotional state profiling, and Halbert's reason-why principles.</p>
+        </div>
+
+        <div class="skill">
+          <h3><a href="https://drive.google.com/file/d/161VhI76cYI_JlaEZrT6zSxIKhzQtR2fh/view" target="_blank">Ideal Buying Mindset Architect</a></h3>
+          <p>Maps the exact psychological destination your marketing needs to deliver prospects to before buying feels obvious. Working through five belief categories -- Problem (is it real, urgent, solvable?), Solution, Provider, Outcome, and Risk -- plus emotional states, contextual perceptions, and identity alignment, it produces a complete blueprint of what a prospect needs to think and feel for purchase to feel inevitable. The output tells you precisely what beliefs your copy needs to install and in what order.</p>
+        </div>
+
+        <div class="skill">
+          <h3><a href="https://drive.google.com/file/d/1wqs3cW097eqgV0IIIhHfqWUpNQrqqEf1/view" target="_blank">Role Amplification Engine</a></h3>
+          <p>An experimental prompt for upgrading the role assignments inside your other prompts. Instead of telling AI to respond as "a marketer," it engineers a semantic hierarchy -- from specialist to authority to legendary status -- that Rich discovered mid-session may trigger significantly deeper AI processing. Feed it any existing prompt and it returns a version with optimized role framing designed to activate more sophisticated output.</p>
+        </div>
+
+        <div class="skill">
+          <h3><a href="https://drive.google.com/file/d/1m-ATFtH-OW6eDyiAdEew_s4Kp1-u7hQQ/view" target="_blank">Prompt Amplification Engine</a></h3>
+          <p>Reviews and strengthens any prompt you feed it by identifying weak verbs, generic terms, and imprecise language, then replacing them with words that trigger deeper cognitive processing -- swapping "look at" for "excavate," "analyze" for "forensically dissect," and similar upgrades throughout. A one-step way to improve prompt quality before running it on important work.</p>
+        </div>
+      </div>
+    </details>
+  </div>
+
+  <!-- LESSON 3 -->
+  <div class="lesson">
+    <div class="lesson-header">
+      <h2>Lesson 3</h2>
+      <span class="lesson-date">Nov 5, 2025</span>
+    </div>
+
+    <p class="lesson-summary">
+      This session introduced the Core Concept -- the single idea that, if believed, makes buying your product the logical next step. Rich defined it as both a business strategy and marketing theme, and made the case that articulation matters as much as the idea itself: changing just a few words can mean the difference between a $500M campaign and a complete miss, as illustrated by the "End of America" case study from Agora. The session covered how effective core concepts bypass logical thinking and speak directly to the emotion-driven old brain, why every business should have one core concept reinforcing all its marketing, and how to use AI prompts iteratively -- extracting the best elements from each output rather than running prompts in sequence without reflection.
+    </p>
+
+    <details class="skills-dropdown">
+      <summary><span class="chevron">›</span> Click to see 4 skills in this lesson</summary>
+      <div class="skills">
+        <div class="skill">
+          <h3><a href="https://drive.google.com/file/d/1LjuW44fAh_4SZ05BF9StYwX0XfGEgY5E/view" target="_blank">Failure Pattern Forensic Excavation</a></h3>
+          <p>A research prompt that builds a "Failure Archaeology Report" for your target market -- cataloging everything they've tried that should have worked but didn't, the false assumptions embedded in their thinking, the rare cases where someone broke the pattern, the hidden levels where results actually happen, the paradoxes in their situation, and the gap between what they think they're fighting and what's actually holding them back. The output tells you exactly why your prospect has already failed at solving this problem, which is the raw material for building a core concept that feels like mind-reading.</p>
+        </div>
+
+        <div class="skill">
+          <h3><a href="https://drive.google.com/file/d/1CN6I8FgM5srtAhu1wsBF9F63vBKGbCVS/view" target="_blank">Core Concept Generator</a></h3>
+          <p>Takes the outputs from Lessons 1 and 2 (Ideal Buying Mindset, USP, Value Proposition documents) and synthesizes them into five core concept candidates using five distinct approaches: Root Cause Revelation, Expertise Paradox, Identity Shift, Category Redefinition, and the Invisible Obvious. Each candidate is a one-sentence reframe of the market's problem designed to make your solution feel like the inevitable next step rather than another option to evaluate.</p>
+        </div>
+
+        <div class="skill">
+          <h3><a href="https://drive.google.com/file/d/1b7eo95Jf29lWe2gCDmXLujldXc8nplVf/view" target="_blank">Core Concept Articulation Optimizer</a></h3>
+          <p>Takes a single core concept sentence and generates 100+ variations using every rhetorical technique available -- rhythmic patterns, alliteration, rhyme, metaphor, antithesis, contrast, and more. The goal is to find the exact wording that is most memorable, repeatable, and impactful. Built on Mark Ford's insight (validated in the "End of America" campaign) that the difference between a breakout idea and a forgettable one is almost always the articulation, not the concept itself.</p>
+        </div>
+
+        <div class="skill">
+          <h3><a href="https://drive.google.com/file/d/1kupGuOjnys8ppD5O44A_TY3tYFTQpbXD/view" target="_blank">Toffler Naming Engine</a></h3>
+          <p>Generates 20+ naming variations for any concept, idea, or phenomenon using structural formulas from master communicators including Alvin Toffler (compound neologisms like "Future Shock," provocative noun phrases), Malcolm Gladwell (single-word verbs, tipping-point framing), and others. Each variation is rated on memorability, specificity, and pattern-interrupt value. Useful for naming a core concept, product, framework, or any idea that needs a label that sticks.</p>
+        </div>
+      </div>
+    </details>
+  </div>
+
+  <!-- LESSON 4 -->
+  <div class="lesson">
+    <div class="lesson-header">
+      <h2>Lesson 4</h2>
+      <span class="lesson-date">Nov 14, 2025</span>
+    </div>
+
+    <p class="lesson-summary">
+      This session focused on validation and refinement of the core concept. Rich led a multi-stage evaluation process using 12-14 weighted criteria to objectively test whether a core concept is ready to build on, with a threshold score above 80 to proceed. He introduced the Core Concept Validation Engine for analyzing market failures, stressed the logical link between the core concept and USPs, and demonstrated AI prompts that automate evidence gathering. The session also covered targeted single-avatar marketing strategy and adapting the framework for e-commerce businesses.
+    </p>
+
+    <details class="skills-dropdown">
+      <summary><span class="chevron">›</span> Click to see 6 skills in this lesson</summary>
+      <div class="skills">
+        <div class="skill">
+          <h3><a href="https://drive.google.com/file/d/1zcu5JC2QDYBRLlaggqW78qvdgcEJDu6s/view" target="_blank">Core Concept Scorecard</a></h3>
+          <p>A 12-category weighted scoring system for objectively evaluating your core concept before building on it. Categories include articulation simplicity, memorability, USP connection logic (highest weight), category creation power, emotional resonance, past failure explanation, and viral sharability -- each scored 1-5, combined into a score out of 100. The minimum threshold to move forward to belief chain construction is 80. Replaces gut-feel evaluation with a clear pass/fail result and a specific list of what to improve.</p>
+        </div>
+
+        <div class="skill">
+          <h3><a href="https://drive.google.com/file/d/1TdmuUW_VkqcGyq7EXiBiKjM7sXKqm02L/view" target="_blank">Core Concept Research Finder</a></h3>
+          <p>Excavates comprehensive validation for the underlying principle behind your core concept -- academic studies, expert testimony, case studies, historical precedents, and statistical proof that transform a positioning statement from assertion into empirically supported market truth. The output is a proof library you can draw on for belief chain content and to neutralize objections before they surface.</p>
+        </div>
+
+        <div class="skill">
+          <h3><a href="https://drive.google.com/file/d/13M52zaYw8Y2I2QnEI0w-LBKwQd9Bvl3e/view" target="_blank">Core Concept Validation Engine</a></h3>
+          <p>Tests whether your core concept actually addresses every failed solution in your market's history. Using the "Incomplete Not Wrong" framework, it maps how your paradigm shift reframes each past failure as incomplete understanding rather than personal inadequacy -- turning a prospect's shame into openness and their confusion into motivation to act.</p>
+        </div>
+
+        <div class="skill">
+          <h3><a href="https://drive.google.com/file/d/1zs8WYyJp0oQrErQn_YWQUHitxYh-lZSB/view" target="_blank">Framework Forge 3.0</a></h3>
+          <p>Transforms raw ideas, transcripts, or teaching into full-spectrum intellectual property frameworks, combining Dan Sullivan's "if you can't draw it, it's not a framework" philosophy with Matt Church's Pink Sheet methodology. Each framework is built across three layers (context, concept, content), adapted for six delivery modes (speaker, author, trainer, mentor, facilitator, coach), and designed to be teachable and usable independently of you.</p>
+        </div>
+
+        <div class="skill">
+          <h3><a href="https://drive.google.com/file/d/1Yf2srr9gk14OCVX0y4jKYXRGVoVKy-fX/view" target="_blank">Brunson Engine</a></h3>
+          <p>Applies Russell Brunson's 7 simplification laws to transform any complex business concept or methodology into a framework that makes people say "I can actually do this." Laws cover compressing any process to three core steps, naming for memorability, replacing complex math with simple ratios, story over statistics, the napkin test (can it be sketched in under a minute?), and providing scripts rather than abstract principles.</p>
+        </div>
+
+        <div class="skill">
+          <h3><a href="https://drive.google.com/file/d/1h0xlygL05dBFgLTSUXb2uDQXGENei8CM/view" target="_blank">Brunson Simplification Engine</a></h3>
+          <p>The original version of the Brunson Engine above, included alongside the v2.0 update. Same 7-law framework for simplifying complex strategy into actionable systems. Students already working with this version can continue -- the Brunson Engine (v2.0) adds refinements and additional examples but delivers the same core output.</p>
+        </div>
+      </div>
+    </details>
+  </div>
+
+  <!-- LESSON 5 -->
+  <div class="lesson">
+    <div class="lesson-header">
+      <h2>Lesson 5</h2>
+      <span class="lesson-date">Nov 19, 2025</span>
+    </div>
+
+    <p class="lesson-summary">
+      This session converted to an open Q&A format due to Rich's illness recovery. No new prompts were released. The call focused on answering student questions about course progression, the AI-powered framework creation process, and avatar-specific marketing strategies. Students were given a catch-up week before Lesson 6.
+    </p>
+
+    <p style="color: #8b949e; font-style: italic; font-size: 0.9em; margin-top: 0.5em;">No new skills uploaded for this Q&amp;A session.</p>
+  </div>
+
+  <!-- LESSON 6 -->
+  <div class="lesson">
+    <div class="lesson-header">
+      <h2>Lesson 6</h2>
+      <span class="lesson-date">Nov 25, 2025</span>
+    </div>
+
+    <p class="lesson-summary">
+      This session introduced the Chain of Beliefs methodology -- a complete system for mapping and installing the exact sequence of beliefs a prospect needs to move through before buying becomes the obvious next step. Six interconnected prompts, enhanced with frameworks from Andre Chaperone's Sphere of Influence program, take the work from Lessons 1--4 and convert it into a full content production and conversion system.
+    </p>
+
+    <details class="skills-dropdown">
+      <summary><span class="chevron">›</span> Click to see 6 skills in this lesson</summary>
+      <div class="skills">
+        <div class="skill">
+          <h3><a href="https://drive.google.com/file/d/1Hplq1VZQlg_YJnTjgt3cFm0k9UXrm7KF/view" target="_blank">Belief Path Mapper</a></h3>
+          <p>Maps every possible pathway from a prospect's current beliefs to full Core Concept acceptance. Works through 10 phases -- extracting and categorizing all beliefs from the avatar document, deconstructing the Core Concept's prerequisites, running a gap analysis with M.W.A. diagnostic (Motivation/Willingness/Ability), and mapping each belief path with invisible influence design across five layers. Output: a ranked catalog of all paths, content specifications for the top five, and a multi-entry architecture showing how different audience segments arrive at the Core Concept from different starting points.</p>
+        </div>
+
+        <div class="skill">
+          <h3><a href="https://drive.google.com/file/d/1htKEo-LzY-LIr08qgePncYuCe0q9v4Dr/view" target="_blank">Strategic Blueprint Generator</a></h3>
+          <p>Takes a belief path from the Belief Path Mapper and produces a format-agnostic master blueprint for executing the belief installation sequence. Outputs raw content assets with S.U.C. scoring (Strong/Unique/Compelling), installation requirements, delivery guidance, and format adaptation matrices. Designed to be adapted to any format -- webinar, email sequence, challenge, sales page, podcast -- rather than producing finished scripts. Ninety percent of the influence is architected to operate below conscious awareness.</p>
+        </div>
+
+        <div class="skill">
+          <h3><a href="https://drive.google.com/file/d/1pSuRTFfSCpAl7F28ZuGj30BfK4TmSUAl/view" target="_blank">Content Ecosystem Architecture</a></h3>
+          <p>Transforms Belief Path Mapper output into a complete content production system. Groups related beliefs into Epiphany Units, then designs Long-Form Pillars, a clip inventory, derivative content maps, platform distribution strategy, and a production calendar -- all scored against the S.U.C. framework (7+ required on every piece). Includes an invisible influence audit checklist and a testing/amplification protocol to identify which content is shifting beliefs and worth scaling with paid.</p>
+        </div>
+
+        <div class="skill">
+          <h3><a href="https://drive.google.com/file/d/1ohYoVvvS4CkxwHJDI4620wVFxPR4lRwu/view" target="_blank">Belief Gap Analyzer</a></h3>
+          <p>Picks up where the Belief Path Mapper ends -- analyzing the exact gap between Core Concept acceptance and purchase readiness. Designs the invisible architecture for moving prospects from "I believe this concept" to "I'm ready to buy," using 5-layer invisible influence design, micro-commitment ladders, S.U.C. scoring, M.W.A. calibration, and tension design (70% teach / 30% withhold) at every conversion bridge.</p>
+        </div>
+
+        <div class="skill">
+          <h3><a href="https://drive.google.com/file/d/1h2A-hi5AcmlDCGsYJBV5tFBJGkJiFlt4/view" target="_blank">Belief Installation Orchestrator</a></h3>
+          <p>The master synthesis engine for the Chain of Beliefs system. Takes outputs from the Belief Path Mapper, Belief Gap Analyzer, Avatar Document, Content Ecosystem, and Character Empire Generator and synthesizes them into a unified Invisible Influence Blueprint. Where the other prompts optimize individual components, the Orchestrator optimizes the whole journey -- finding gaps between components, creating cross-touchpoint synergies, and designing the meta-architecture that makes belief transformation feel like self-discovery.</p>
+        </div>
+
+        <div class="skill">
+          <h3><a href="https://drive.google.com/file/d/1q0qcAnn98i2yAljX04teaccpS_HCXuvd/view" target="_blank">Character Empire Generator</a></h3>
+          <p>Takes a ZenithMind OS Scorecard and builds a complete Character Empire Blueprint using Dan Kennedy's 8-Framework System. Maps the user's psychological profile (MBTI, Enneagram, DISC, Kolbe, StrengthsFinder) to character archetypes, competency stack, vulnerability disclosure strategy, context world, and legend-building arc -- then designs invisible installation architecture so the character feels like a discovery of who they already are rather than a persona being applied. Outputs a 30-episode content series and a 90-day implementation roadmap.</p>
+        </div>
+      </div>
+    </details>
+  </div>
+
+</div>
+</body>
+</html>
