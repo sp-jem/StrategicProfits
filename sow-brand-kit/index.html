@@ -1,0 +1,1329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Steal Our Winners — Contributor Brand Kit 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --black: #0A0812;
+      --purple: #5F368D;
+      --purple-light: #7B4EAD;
+      --green: #8EC540;
+      --off-white: #FAF9F5;
+      --muted: #9A95A8;
+      --surface: #151020;
+      --border: rgba(255,255,255,0.08);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--black);
+      color: var(--off-white);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ─── PAGE SYSTEM ─── */
+    .page {
+      width: 100%;
+      min-height: 100vh;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .page-inner {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 60px 40px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .page-footer {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 16px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+
+    /* ─── TYPOGRAPHY ─── */
+    h1, h2, h3, h4, h5 { font-weight: 800; line-height: 1.05; }
+
+    .serif { font-family: 'Playfair Display', serif; }
+    .serif-italic { font-family: 'Playfair Display', serif; font-style: italic; }
+
+    .label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 16px;
+      display: inline-block;
+    }
+
+    .label-white {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--off-white);
+      opacity: 0.5;
+      margin-bottom: 16px;
+      display: inline-block;
+    }
+
+    .headline-xl {
+      font-size: 72px;
+      font-weight: 900;
+      line-height: 0.95;
+      letter-spacing: -2px;
+    }
+
+    .headline-lg {
+      font-size: 56px;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -1.5px;
+    }
+
+    .headline-md {
+      font-size: 40px;
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -1px;
+    }
+
+    .headline-sm {
+      font-size: 28px;
+      font-weight: 800;
+      line-height: 1.15;
+    }
+
+    .body-lg {
+      font-size: 18px;
+      line-height: 1.7;
+      color: rgba(250,249,245,0.8);
+    }
+
+    .body-md {
+      font-size: 15px;
+      line-height: 1.7;
+      color: rgba(250,249,245,0.7);
+    }
+
+    .text-green { color: var(--green); }
+    .text-purple { color: var(--purple-light); }
+    .text-muted { color: var(--muted); }
+    .text-white { color: var(--off-white); }
+
+    /* ─── BACKGROUNDS ─── */
+    .bg-black { background: var(--black); }
+    .bg-surface { background: var(--surface); }
+    .bg-purple { background: linear-gradient(135deg, var(--purple) 0%, #4A2A6E 100%); }
+    .bg-green { background: var(--green); color: var(--black); }
+
+    /* ─── UTILITY ─── */
+    .flex { display: flex; }
+    .flex-col { flex-direction: column; }
+    .items-center { align-items: center; }
+    .justify-center { justify-content: center; }
+    .gap-16 { gap: 16px; }
+    .gap-24 { gap: 24px; }
+    .gap-32 { gap: 32px; }
+    .gap-40 { gap: 40px; }
+    .gap-48 { gap: 48px; }
+    .text-center { text-align: center; }
+    .mt-auto { margin-top: auto; }
+
+    /* ─── BADGE ─── */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 20px;
+      border: 1px solid var(--green);
+      border-radius: 100px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--green);
+    }
+
+    .badge-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--green);
+      border-radius: 50%;
+      animation: pulse 2s ease infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    /* ─── CARDS ─── */
+    .card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+    }
+
+    .card-solid {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+    }
+
+    /* ─── GRID ─── */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 24px;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    /* ─── BUTTONS ─── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 16px 36px;
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+
+    .btn-green {
+      background: var(--green);
+      color: var(--black);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--off-white);
+      border: 2px solid var(--off-white);
+    }
+
+    .btn-white {
+      background: var(--off-white);
+      color: var(--black);
+    }
+
+    .btn-purple {
+      background: var(--purple);
+      color: var(--off-white);
+    }
+
+    /* ─── DIVIDER ─── */
+    .divider {
+      width: 60px;
+      height: 3px;
+      background: var(--green);
+      border-radius: 2px;
+    }
+
+    /* ─── STAT BLOCKS ─── */
+    .stat-block {
+      background: var(--green);
+      color: var(--black);
+      padding: 40px 24px;
+      text-align: center;
+      border-radius: 12px;
+    }
+
+    .stat-block .stat-number {
+      font-size: 48px;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -2px;
+    }
+
+    .stat-block .stat-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-top: 8px;
+      opacity: 0.7;
+    }
+
+    /* ─── PILL TAGS ─── */
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--off-white);
+      white-space: nowrap;
+    }
+
+    .pill .pill-count {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--green);
+    }
+
+    /* ─── SOCIAL ICON ─── */
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 20px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      text-decoration: none;
+      color: var(--off-white);
+      font-size: 14px;
+      font-weight: 600;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .social-link:hover {
+      border-color: var(--green);
+      background: rgba(142,197,64,0.05);
+    }
+
+    .social-link svg {
+      width: 20px;
+      height: 20px;
+      fill: var(--off-white);
+      flex-shrink: 0;
+    }
+
+    /* ─── THUMBNAIL ─── */
+    .episode-card {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--surface);
+    }
+
+    .episode-card img {
+      width: 100%;
+      display: block;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+    }
+
+    .episode-card .episode-info {
+      padding: 24px;
+    }
+
+    .must-watch-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      background: var(--green);
+      color: var(--black);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border-radius: 4px;
+      margin-bottom: 12px;
+    }
+
+    /* ─── WARNING BANNER ─── */
+    .warning-banner {
+      background: #B8260F;
+      color: #fff;
+      padding: 16px 24px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    /* ─── CHECKMARK / X ─── */
+    .check-item, .x-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 15px;
+      line-height: 1.6;
+      color: rgba(250,249,245,0.85);
+    }
+
+    .check-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--green);
+      color: var(--black);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 14px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .x-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #B8260F;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 14px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* ─── COLOR SWATCHES ─── */
+    .swatch {
+      width: 100%;
+      height: 80px;
+      border-radius: 8px;
+      display: flex;
+      align-items: flex-end;
+      padding: 10px 14px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    /* ─── FEATURED-IN BAR ─── */
+    .featured-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      padding: 32px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .featured-bar span { opacity: 0.5; }
+
+    /* ─── NUMBERED CARD ─── */
+    .num-card {
+      display: flex;
+      gap: 20px;
+      padding: 28px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+
+    .num-card .num {
+      font-size: 36px;
+      font-weight: 900;
+      color: var(--green);
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .num-card h4 {
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      color: var(--off-white);
+    }
+
+    .num-card p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+
+    /* ─── CONTRIBUTOR NAME GRID ─── */
+    .contributor-item {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .contributor-item:last-child { border-bottom: none; }
+
+    .contributor-item .c-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--off-white);
+    }
+
+    .contributor-item .c-title {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    /* ─── LINKS ─── */
+    a { color: inherit; }
+
+    /* ─── PHOTOS ─── */
+    .photo-frame {
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PAGE 1: COVER
+     ═══════════════════════════════════════════════════════════════ -->
+<section class="page" style="background:#000; overflow:hidden; position:relative;">
+  <!-- Episode Thumbnail Mosaic Background -->
+  <div style="position:absolute; inset:0; z-index:1; display:grid; grid-template-columns:repeat(4, 1fr); grid-template-rows:repeat(3, 1fr); gap:3px; opacity:0.65;">
+    <img src="https://go.stealourwinners.com/wp-content/uploads/2025/01/60-mil-ad-copy-secret.webp" alt="" style="width:100%; height:100%; object-fit:cover;" loading="eager">
+    <img src="https://go.stealourwinners.com/wp-content/uploads/2025/01/build-7-fig-webinars.webp" alt="" style="width:100%; height:100%; object-fit:cover;" loading="eager">
+    <img src="https://go.stealourwinners.com/wp-content/uploads/2025/01/3x-sales-right-now.webp" alt="" style="width:100%; height:100%; object-fit:cover;" loading="eager">
+    <img src="https://go.stealourwinners.com/wp-content/uploads/2025/01/clone-ads-in-seconds-with-ai.webp" alt="" style="width:100%; height:100%; object-fit:cover;" loading="eager">
+    <img src="https://go.stealourwinners.com/wp-content/uploads/2025/01/3-day-paid-challenge-funnel.webp" alt="" style="width:100%; height:100%; object-fit:cover;" loading="eager">
+    <img src="https://go.stealourwinners.com/wp-content/uploads/2025/01/60-mil-ad-copy-secret.webp" alt="" style="width:100%; height:100%; object-fit:cover; object-position:left;" loading="eager">
+    <img src="https://go.stealourwinners.com/wp-content/uploads/2025/01/build-7-fig-webinars.webp" alt="" style="width:100%; height:100%; object-fit:cover; object-position:right;" loading="eager">
+    <img src="https://go.stealourwinners.com/wp-content/uploads/2025/01/3x-sales-right-now.webp" alt="" style="width:100%; height:100%; object-fit:cover; object-position:top;" loading="eager">
+    <img src="https://go.stealourwinners.com/wp-content/uploads/2025/01/clone-ads-in-seconds-with-ai.webp" alt="" style="width:100%; height:100%; object-fit:cover; object-position:bottom;" loading="eager">
+    <img src="https://go.stealourwinners.com/wp-content/uploads/2025/01/3-day-paid-challenge-funnel.webp" alt="" style="width:100%; height:100%; object-fit:cover; object-position:center;" loading="eager">
+    <img src="https://go.stealourwinners.com/wp-content/uploads/2025/01/60-mil-ad-copy-secret.webp" alt="" style="width:100%; height:100%; object-fit:cover; object-position:right top;" loading="eager">
+    <img src="https://go.stealourwinners.com/wp-content/uploads/2025/01/build-7-fig-webinars.webp" alt="" style="width:100%; height:100%; object-fit:cover; object-position:left bottom;" loading="eager">
+  </div>
+  <!-- Dark overlay — thumbnails visible behind Rich, solid black at bottom for title -->
+  <div style="position:absolute; inset:0; z-index:2; background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.4) 35%, rgba(0,0,0,0.75) 55%, #000 68%, #000 100%);"></div>
+  <!-- Rich Cutout — background removed, large over darkened thumbnails -->
+  <div style="position:absolute; top:10%; left:50%; transform:translateX(-50%); z-index:3; width:750px; max-height:58vh; overflow:hidden;">
+    <img src="images/rich-cover-cutout.png" alt="Rich Schefren" style="width:100%; display:block; object-fit:cover; object-position:center top; filter:drop-shadow(0 8px 30px rgba(0,0,0,0.7));">
+  </div>
+  <!-- Bottom section: badge + title + tagline on solid black -->
+  <div style="position:absolute; bottom:30px; left:0; right:0; z-index:4; text-align:center;">
+    <div class="badge" style="display:inline-flex; margin-bottom:20px;">
+      <span class="badge-dot"></span>
+      YOU'VE BEEN INVITED
+    </div>
+    <h1 style="font-size:96px; font-weight:900; line-height:0.85; letter-spacing:-4px; margin:0;">
+      STEAL OUR<br><span class="text-green">WINNERS</span>
+    </h1>
+    <p style="font-size:17px; color:rgba(250,249,245,0.7); max-width:500px; margin:20px auto 0; line-height:1.5;">
+      The platform where the best marketers on the planet share what's actually working right now.
+    </p>
+    <div style="display:flex; align-items:center; justify-content:center; gap:16px; margin-top:14px;">
+      <span style="font-size:10px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:rgba(250,249,245,0.4);">Contributor Brand Kit</span>
+      <span style="width:4px; height:4px; background:var(--green); border-radius:50%;"></span>
+      <span style="font-size:10px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:rgba(250,249,245,0.4);">2026</span>
+    </div>
+  </div>
+  <div class="page-footer" style="z-index:5;">
+    <span>PROPRIETARY + CONFIDENTIAL &nbsp;|&nbsp; FOR CONTRIBUTOR USE ONLY</span>
+    <span>stealourwinners.com</span>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PAGE 2: RICH SCHEFREN BIO
+     ═══════════════════════════════════════════════════════════════ -->
+<section class="page bg-surface">
+  <div class="page-inner" style="gap: 0;">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; flex: 1;">
+      <!-- Photo Column — Rich cutout, LARGE, no background, cropped tight -->
+      <div style="display:flex; align-items:center; justify-content:center;">
+        <img src="images/rich-bio-cutout.png" alt="Rich Schefren" style="width:100%; height:auto; display:block; filter:drop-shadow(0 8px 30px rgba(0,0,0,0.5));">
+      </div>
+      <!-- Text Column -->
+      <div style="display: flex; flex-direction: column; gap: 24px;">
+        <span class="label">The Man Behind The Platform</span>
+        <h2 class="headline-xl">RICH<br>SCHEFREN</h2>
+        <div class="divider"></div>
+        <div class="body-md" style="display: flex; flex-direction: column; gap: 16px;">
+          <p>I've spent 20+ years helping entrepreneurs reach their full potential. Not with motivational speeches. With strategy. The kind that moves numbers.</p>
+          <p>I mentored Russell Brunson, Ryan Deiss, and Frank Kern during their rise. I've advised Google, Yahoo, and Agora Publishing. I created the first automated webinar, the first viral PDF lead magnet, the first e-learning drip platform. 16 million people have downloaded my reports. 729,000+ entrepreneurs have learned from my work.</p>
+          <p>The common thread across everything I do is the same: find the best strategists on the planet, extract what's working, and get it into the hands of people who will use it.</p>
+          <p style="color: var(--green); font-weight: 600;">That's exactly what Steal Our Winners is. And that's exactly why you're here.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>PROPRIETARY + CONFIDENTIAL &nbsp;|&nbsp; FOR CONTRIBUTOR USE ONLY</span>
+    <span>stealourwinners.com</span>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PAGE 3: WHAT LEGENDS SAY
+     ═══════════════════════════════════════════════════════════════ -->
+<section class="page bg-black">
+  <div class="page-inner" style="gap: 48px;">
+    <div style="text-align: center;">
+      <span class="label">Social Proof</span>
+      <h2 class="headline-lg">WHAT LEGENDS SAY</h2>
+    </div>
+    <div class="grid-2" style="gap: 20px;">
+      <!-- Jay Abraham -->
+      <div class="card" style="display: flex; flex-direction: column; gap: 16px;">
+        <svg width="32" height="24" viewBox="0 0 32 24" fill="none"><path d="M0 24V14.4C0 6.4 4.8 1.6 14.4 0l1.6 3.2C10.4 4.8 8 8 7.2 12H14V24H0Zm18 0V14.4C18 6.4 22.8 1.6 32 0l.8 3.2C27.2 4.8 24.8 8 24 12h6.8v12H18Z" fill="#8EC540" opacity="0.3"/></svg>
+        <p class="body-md" style="font-style: italic; color: var(--off-white); flex: 1;">"Rich is one of the rare individuals who actually transforms lives, business fates and financial destinies."</p>
+        <div>
+          <div style="font-weight: 700; font-size: 14px;">Jay Abraham</div>
+          <div style="font-size: 12px; color: var(--muted);">Forbes Top 5 Executive Coach</div>
+        </div>
+      </div>
+      <!-- Brian Tracy -->
+      <div class="card" style="display: flex; flex-direction: column; gap: 16px;">
+        <svg width="32" height="24" viewBox="0 0 32 24" fill="none"><path d="M0 24V14.4C0 6.4 4.8 1.6 14.4 0l1.6 3.2C10.4 4.8 8 8 7.2 12H14V24H0Zm18 0V14.4C18 6.4 22.8 1.6 32 0l.8 3.2C27.2 4.8 24.8 8 24 12h6.8v12H18Z" fill="#8EC540" opacity="0.3"/></svg>
+        <p class="body-md" style="font-style: italic; color: var(--off-white); flex: 1;">"Rich's coaching program has made a bigger difference in the profit margins of high-level internet marketers than anyone else. Period."</p>
+        <div>
+          <div style="font-weight: 700; font-size: 14px;">Brian Tracy</div>
+          <div style="font-size: 12px; color: var(--muted);">Author of 70+ Books</div>
+        </div>
+      </div>
+      <!-- Dan Kennedy -->
+      <div class="card" style="display: flex; flex-direction: column; gap: 16px;">
+        <svg width="32" height="24" viewBox="0 0 32 24" fill="none"><path d="M0 24V14.4C0 6.4 4.8 1.6 14.4 0l1.6 3.2C10.4 4.8 8 8 7.2 12H14V24H0Zm18 0V14.4C18 6.4 22.8 1.6 32 0l.8 3.2C27.2 4.8 24.8 8 24 12h6.8v12H18Z" fill="#8EC540" opacity="0.3"/></svg>
+        <p class="body-md" style="font-style: italic; color: var(--off-white); flex: 1;">"Rich is a bonafide, multimedia entrepreneur, expert in streamlining business operations, managing fast and dramatic growth."</p>
+        <div>
+          <div style="font-weight: 700; font-size: 14px;">Dan Kennedy</div>
+          <div style="font-size: 12px; color: var(--muted);">Direct Response Marketing Legend</div>
+        </div>
+      </div>
+      <!-- Clayton Makepeace -->
+      <div class="card" style="display: flex; flex-direction: column; gap: 16px;">
+        <svg width="32" height="24" viewBox="0 0 32 24" fill="none"><path d="M0 24V14.4C0 6.4 4.8 1.6 14.4 0l1.6 3.2C10.4 4.8 8 8 7.2 12H14V24H0Zm18 0V14.4C18 6.4 22.8 1.6 32 0l.8 3.2C27.2 4.8 24.8 8 24 12h6.8v12H18Z" fill="#8EC540" opacity="0.3"/></svg>
+        <p class="body-md" style="font-style: italic; color: var(--off-white); flex: 1;">"He's the real McCoy. A certifiable genius when it comes to web marketing strategy. He will make you money."</p>
+        <div>
+          <div style="font-weight: 700; font-size: 14px;">Clayton Makepeace</div>
+          <div style="font-size: 12px; color: var(--muted);">Award-Winning Copywriter</div>
+        </div>
+      </div>
+    </div>
+    <!-- Featured In -->
+    <div class="featured-bar">
+      <span>FORBES</span>
+      <span>WALL STREET JOURNAL</span>
+      <span>VOGUE</span>
+      <span>NEWSWEEK</span>
+      <span>ABC</span>
+      <span>NBC</span>
+      <span>CNN</span>
+      <span>FOX</span>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>PROPRIETARY + CONFIDENTIAL &nbsp;|&nbsp; FOR CONTRIBUTOR USE ONLY</span>
+    <span>stealourwinners.com</span>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PAGE 4: WHY YOU'RE HERE
+     ═══════════════════════════════════════════════════════════════ -->
+<section class="page bg-surface">
+  <div class="page-inner" style="justify-content: center; align-items: center; text-align: center; gap: 40px; max-width: 780px; margin: 0 auto;">
+    <span class="label">A Note From Rich</span>
+    <h2 class="headline-lg">WHY YOU'RE HERE</h2>
+    <div class="divider" style="margin: 0 auto;"></div>
+    <div class="body-lg" style="display: flex; flex-direction: column; gap: 20px;">
+      <p>You're reading this because I think you have something my members need to hear. Steal Our Winners is the platform where the best marketers on the planet share the specific strategies making them money right now.</p>
+      <p>This document shows you exactly what we're about, what I look for in a contributor, and how to make your session one of our best.</p>
+      <p style="color: var(--green); font-weight: 600;">Read the whole thing. Watch the two featured episodes. Then book your call.</p>
+    </div>
+  </div>
+  <div class="page-footer" style="max-width: 780px;">
+    <span>PROPRIETARY + CONFIDENTIAL &nbsp;|&nbsp; FOR CONTRIBUTOR USE ONLY</span>
+    <span>stealourwinners.com</span>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PAGE 5: BY THE NUMBERS
+     ═══════════════════════════════════════════════════════════════ -->
+<section class="page bg-black">
+  <div class="page-inner" style="gap: 48px;">
+    <div style="text-align: center;">
+      <span class="label">Platform Overview</span>
+      <h2 class="headline-lg">BY THE NUMBERS</h2>
+    </div>
+    <!-- Stat Blocks -->
+    <div class="grid-4">
+      <div class="stat-block">
+        <div class="stat-number">550+</div>
+        <div class="stat-label">Marketing Tactics</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-number">$15B+</div>
+        <div class="stat-label">Client Revenue</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-number">729K</div>
+        <div class="stat-label">Students Trained</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-number">267+</div>
+        <div class="stat-label">Episodes Recorded</div>
+      </div>
+    </div>
+    <!-- Strategy Categories -->
+    <div>
+      <div class="label-white" style="margin-bottom: 20px;">Strategy Categories</div>
+      <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+        <div class="pill">Funnels & Offers <span class="pill-count">175</span></div>
+        <div class="pill">Traffic Generation <span class="pill-count">99</span></div>
+        <div class="pill">Social Media <span class="pill-count">93</span></div>
+        <div class="pill">Content Marketing <span class="pill-count">82</span></div>
+        <div class="pill">AI & Automation <span class="pill-count">67</span></div>
+        <div class="pill">Email Marketing <span class="pill-count">66</span></div>
+        <div class="pill">Copywriting <span class="pill-count">46</span></div>
+        <div class="pill">Paid Ads</div>
+        <div class="pill">YouTube</div>
+        <div class="pill">High-Ticket Sales</div>
+        <div class="pill">SMS Marketing</div>
+        <div class="pill">Influencer Marketing</div>
+      </div>
+    </div>
+    <!-- Notable Contributors -->
+    <div>
+      <div class="label-white" style="margin-bottom: 20px;">Notable Contributors</div>
+      <div class="grid-4">
+        <div class="contributor-item"><div class="c-name">Russell Brunson</div><div class="c-title">ClickFunnels Founder</div></div>
+        <div class="contributor-item"><div class="c-name">Todd Brown</div><div class="c-title">E5 Method Creator</div></div>
+        <div class="contributor-item"><div class="c-name">Depesh Mandalia</div><div class="c-title">Facebook Ads Pioneer</div></div>
+        <div class="contributor-item"><div class="c-name">Donnie French</div><div class="c-title">$60M Ad Copy Expert</div></div>
+        <div class="contributor-item"><div class="c-name">Walter Burch</div><div class="c-title">YouTube Ad Hook Strategist</div></div>
+        <div class="contributor-item"><div class="c-name">Frank Kern</div><div class="c-title">Mass Control Creator</div></div>
+        <div class="contributor-item"><div class="c-name">Ryan Deiss</div><div class="c-title">DigitalMarketer Founder</div></div>
+        <div class="contributor-item"><div class="c-name">Perry Marshall</div><div class="c-title">80/20 Sales & Marketing</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>PROPRIETARY + CONFIDENTIAL &nbsp;|&nbsp; FOR CONTRIBUTOR USE ONLY</span>
+    <span>stealourwinners.com</span>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PAGE 6: THE STEAL OUR WINNERS DIFFERENCE
+     ═══════════════════════════════════════════════════════════════ -->
+<section class="page bg-surface">
+  <div class="page-inner" style="gap: 48px;">
+    <div style="text-align: center;">
+      <span class="label">What Sets Us Apart</span>
+      <h2 class="headline-lg">THE STEAL OUR WINNERS<br>DIFFERENCE</h2>
+    </div>
+    <div class="grid-2" style="gap: 20px;">
+      <div class="card" style="border-left: 3px solid var(--green);">
+        <h4 style="font-size: 16px; font-weight: 800; color: var(--green); margin-bottom: 12px;">We only feature operators, never theorists.</h4>
+        <p class="body-md">Every tactic comes from someone actively scaling a 7, 8, or 9 figure business.</p>
+      </div>
+      <div class="card" style="border-left: 3px solid var(--green);">
+        <h4 style="font-size: 16px; font-weight: 800; color: var(--green); margin-bottom: 12px;">I personally vet every contributor.</h4>
+        <p class="body-md">Nobody gets on this platform without my approval.</p>
+      </div>
+      <div class="card" style="border-left: 3px solid var(--green);">
+        <h4 style="font-size: 16px; font-weight: 800; color: var(--green); margin-bottom: 12px;">Our members see it before the market does.</h4>
+        <p class="body-md">Before the masterminds. Before the podcasts. Before it becomes common knowledge.</p>
+      </div>
+      <div class="card" style="border-left: 3px solid var(--green);">
+        <h4 style="font-size: 16px; font-weight: 800; color: var(--green); margin-bottom: 12px;">If it doesn't produce ROI, it doesn't exist here.</h4>
+        <p class="body-md">No fluff. No inspiration without implementation.</p>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>PROPRIETARY + CONFIDENTIAL &nbsp;|&nbsp; FOR CONTRIBUTOR USE ONLY</span>
+    <span>stealourwinners.com</span>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PAGE 7: WHO YOU'RE TALKING TO
+     ═══════════════════════════════════════════════════════════════ -->
+<section class="page bg-black">
+  <div class="page-inner" style="gap: 48px;">
+    <div style="text-align: center;">
+      <span class="label">The Audience</span>
+      <h2 class="headline-lg">WHO YOU'RE<br>TALKING TO</h2>
+    </div>
+    <div class="grid-3" style="gap: 20px;">
+      <div class="card-solid" style="display: flex; flex-direction: column; gap: 16px; text-align: center; padding: 48px 32px;">
+        <div style="font-size: 40px; margin-bottom: 8px;">&#x1F3AF;</div>
+        <h4 style="font-size: 18px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;">Business Owners<br>& Founders</h4>
+        <p class="body-md">6-to-8 figure entrepreneurs looking for a competitive edge.</p>
+      </div>
+      <div class="card-solid" style="display: flex; flex-direction: column; gap: 16px; text-align: center; padding: 48px 32px;">
+        <div style="font-size: 40px; margin-bottom: 8px;">&#x1F4CA;</div>
+        <h4 style="font-size: 18px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;">Digital Marketers<br>& CMOs</h4>
+        <p class="body-md">Managing campaigns, funnels, and growth channels.</p>
+      </div>
+      <div class="card-solid" style="display: flex; flex-direction: column; gap: 16px; text-align: center; padding: 48px 32px;">
+        <div style="font-size: 40px; margin-bottom: 8px;">&#x1F4A1;</div>
+        <h4 style="font-size: 18px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;">Coaches, Creators<br>& Service Pros</h4>
+        <p class="body-md">Knowledge workers who monetize expertise.</p>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>PROPRIETARY + CONFIDENTIAL &nbsp;|&nbsp; FOR CONTRIBUTOR USE ONLY</span>
+    <span>stealourwinners.com</span>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PAGE 8: WHAT RICH LOOKS FOR
+     ═══════════════════════════════════════════════════════════════ -->
+<section class="page bg-purple">
+  <div class="page-inner" style="gap: 48px;">
+    <div style="text-align: center;">
+      <span class="label" style="color: var(--off-white); opacity: 0.6;">Contributor Standards</span>
+      <h2 class="headline-lg">WHAT RICH LOOKS FOR<br>IN A CONTRIBUTOR</h2>
+    </div>
+    <div class="grid-3" style="gap: 16px;">
+      <div class="num-card" style="background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.12); flex-direction: column; gap: 12px;">
+        <div class="num" style="color: var(--off-white);">01</div>
+        <h4 style="font-size: 14px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--green);">Proven Results</h4>
+        <p style="font-size: 14px; line-height: 1.6; color: rgba(250,249,245,0.7);">You're sharing what's actively generating revenue right now.</p>
+      </div>
+      <div class="num-card" style="background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.12); flex-direction: column; gap: 12px;">
+        <div class="num" style="color: var(--off-white);">02</div>
+        <h4 style="font-size: 14px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--green);">Deep Expertise</h4>
+        <p style="font-size: 14px; line-height: 1.6; color: rgba(250,249,245,0.7);">You own a domain and can go deep enough to give actionable specifics.</p>
+      </div>
+      <div class="num-card" style="background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.12); flex-direction: column; gap: 12px;">
+        <div class="num" style="color: var(--off-white);">03</div>
+        <h4 style="font-size: 14px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--green);">Cutting-Edge Tactics</h4>
+        <p style="font-size: 14px; line-height: 1.6; color: rgba(250,249,245,0.7);">Your strategy is current, innovative, and ahead of the curve.</p>
+      </div>
+      <div class="num-card" style="background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.12); flex-direction: column; gap: 12px;">
+        <div class="num" style="color: var(--off-white);">04</div>
+        <h4 style="font-size: 14px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--green);">Measurable ROI</h4>
+        <p style="font-size: 14px; line-height: 1.6; color: rgba(250,249,245,0.7);">You can point to numbers: revenue, conversion rates, ROAS.</p>
+      </div>
+      <div class="num-card" style="background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.12); flex-direction: column; gap: 12px;">
+        <div class="num" style="color: var(--off-white);">05</div>
+        <h4 style="font-size: 14px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--green);">Implementation Ready</h4>
+        <p style="font-size: 14px; line-height: 1.6; color: rgba(250,249,245,0.7);">Clear, step-by-step actions a business owner can implement immediately.</p>
+      </div>
+      <div class="num-card" style="background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.12); flex-direction: column; gap: 12px;">
+        <div class="num" style="color: var(--off-white);">06</div>
+        <h4 style="font-size: 14px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--green);">Generous & Authentic</h4>
+        <p style="font-size: 14px; line-height: 1.6; color: rgba(250,249,245,0.7);">You hold nothing back. Full playbook. Exact steps, tools, templates.</p>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer" style="border-top-color: rgba(255,255,255,0.12);">
+    <span>PROPRIETARY + CONFIDENTIAL &nbsp;|&nbsp; FOR CONTRIBUTOR USE ONLY</span>
+    <span>stealourwinners.com</span>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PAGE 9: IS THIS YOU?
+     ═══════════════════════════════════════════════════════════════ -->
+<section class="page bg-black">
+  <div class="page-inner" style="gap: 48px;">
+    <div style="text-align: center;">
+      <span class="label">Self-Assessment</span>
+      <h2 class="headline-lg">IS THIS YOU?</h2>
+    </div>
+    <div class="grid-2" style="gap: 32px;">
+      <!-- Good Fit -->
+      <div class="card-solid" style="padding: 40px; border-top: 3px solid var(--green);">
+        <h4 style="font-size: 16px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--green); margin-bottom: 28px;">You're a great fit if...</h4>
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+          <div class="check-item"><div class="check-icon">&#10003;</div><span>You're currently running or advising businesses at scale (7-figures+)</span></div>
+          <div class="check-item"><div class="check-icon">&#10003;</div><span>You have a specific tactic with documented, recent results</span></div>
+          <div class="check-item"><div class="check-icon">&#10003;</div><span>You can walk someone through implementation step-by-step</span></div>
+          <div class="check-item"><div class="check-icon">&#10003;</div><span>You're known as a specialist in your domain</span></div>
+          <div class="check-item"><div class="check-icon">&#10003;</div><span>You're comfortable presenting and teaching your strategy on camera</span></div>
+        </div>
+      </div>
+      <!-- Not a Fit -->
+      <div class="card-solid" style="padding: 40px; border-top: 3px solid #B8260F;">
+        <h4 style="font-size: 16px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: #E04530; margin-bottom: 28px;">Probably not a fit if...</h4>
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+          <div class="x-item"><div class="x-icon">&#10007;</div><span>Your strategy is based on what worked 2+ years ago</span></div>
+          <div class="x-item"><div class="x-icon">&#10007;</div><span>You can't point to specific, measurable outcomes</span></div>
+          <div class="x-item"><div class="x-icon">&#10007;</div><span>Your content is high-level inspiration without actionable specifics</span></div>
+          <div class="x-item"><div class="x-icon">&#10007;</div><span>You're primarily looking for a promotional platform</span></div>
+          <div class="x-item"><div class="x-icon">&#10007;</div><span>Your tactic only works in a narrow, non-replicable context</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>PROPRIETARY + CONFIDENTIAL &nbsp;|&nbsp; FOR CONTRIBUTOR USE ONLY</span>
+    <span>stealourwinners.com</span>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PAGE 10: HOW YOUR SESSION WORKS
+     ═══════════════════════════════════════════════════════════════ -->
+<section class="page bg-surface">
+  <div class="page-inner" style="gap: 48px;">
+    <div style="text-align: center;">
+      <span class="label">The Process</span>
+      <h2 class="headline-lg">HOW YOUR SESSION WORKS</h2>
+    </div>
+    <!-- Deliverables -->
+    <div class="grid-4" style="gap: 16px;">
+      <div class="card-solid" style="text-align: center; padding: 32px 20px;">
+        <div style="font-size: 28px; margin-bottom: 12px;">&#x1F3AC;</div>
+        <h4 style="font-size: 14px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px;">Expert Interview</h4>
+        <p style="font-size: 13px; color: var(--muted); line-height: 1.5;">30-90 min strategy presentation by you, on video. You drive the session.</p>
+      </div>
+      <div class="card-solid" style="text-align: center; padding: 32px 20px;">
+        <div style="font-size: 28px; margin-bottom: 12px;">&#x1F4CB;</div>
+        <h4 style="font-size: 14px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px;">Action Guide</h4>
+        <p style="font-size: 13px; color: var(--muted); line-height: 1.5;">Step-by-step implementation document built from your session.</p>
+      </div>
+      <div class="card-solid" style="text-align: center; padding: 32px 20px;">
+        <div style="font-size: 28px; margin-bottom: 12px;">&#x1F3A7;</div>
+        <h4 style="font-size: 14px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px;">Audio Edition</h4>
+        <p style="font-size: 13px; color: var(--muted); line-height: 1.5;">Podcast-ready audio for members who learn on the go.</p>
+      </div>
+      <div class="card-solid" style="text-align: center; padding: 32px 20px;">
+        <div style="font-size: 28px; margin-bottom: 12px;">&#x1F4C4;</div>
+        <h4 style="font-size: 14px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px;">PDF Transcript</h4>
+        <p style="font-size: 13px; color: var(--muted); line-height: 1.5;">Full written transcript for reference and review.</p>
+      </div>
+    </div>
+    <!-- What to Expect -->
+    <div>
+      <h3 style="font-size: 18px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 28px; text-align: center;">What To Expect</h3>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+        <div class="card" style="display: flex; gap: 16px; align-items: flex-start;">
+          <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--green); color: var(--black); display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 16px; flex-shrink: 0;">1</div>
+          <div>
+            <h4 style="font-size: 14px; font-weight: 700; margin-bottom: 6px;">Intro Call (Q&A happens here)</h4>
+            <p style="font-size: 13px; color: var(--muted); line-height: 1.5;">Align on topic, key points, make sure we're set up to deliver maximum value.</p>
+          </div>
+        </div>
+        <div class="card" style="display: flex; gap: 16px; align-items: flex-start;">
+          <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--green); color: var(--black); display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 16px; flex-shrink: 0;">2</div>
+          <div>
+            <h4 style="font-size: 14px; font-weight: 700; margin-bottom: 6px;">The Interview Itself</h4>
+            <p style="font-size: 13px; color: var(--muted); line-height: 1.5;">30 to 90 minutes. You present your strategy and walk members through exactly how to implement it. You drive the bus. Rich may jump in to elaborate on a point, but this is your show.</p>
+          </div>
+        </div>
+        <div class="card" style="display: flex; gap: 16px; align-items: flex-start;">
+          <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--green); color: var(--black); display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 16px; flex-shrink: 0;">3</div>
+          <div>
+            <h4 style="font-size: 14px; font-weight: 700; margin-bottom: 6px;">After We Wrap</h4>
+            <p style="font-size: 13px; color: var(--muted); line-height: 1.5;">Team builds action guide, transcript, and audio edition from your session.</p>
+          </div>
+        </div>
+        <div class="card" style="display: flex; gap: 16px; align-items: flex-start;">
+          <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--green); color: var(--black); display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 16px; flex-shrink: 0;">4</div>
+          <div>
+            <h4 style="font-size: 14px; font-weight: 700; margin-bottom: 6px;">When It Goes Live</h4>
+            <p style="font-size: 13px; color: var(--muted); line-height: 1.5;">Turnaround is typically 2 weeks.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>PROPRIETARY + CONFIDENTIAL &nbsp;|&nbsp; FOR CONTRIBUTOR USE ONLY</span>
+    <span>stealourwinners.com</span>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PAGE 11: PREPARE YOUR STRATEGY
+     ═══════════════════════════════════════════════════════════════ -->
+<section class="page bg-black">
+  <div class="page-inner" style="gap: 40px;">
+    <div style="text-align: center;">
+      <span class="label">Session Prep</span>
+      <h2 class="headline-lg">PREPARE YOUR<br>STRATEGY</h2>
+    </div>
+    <div class="warning-banner">&#9888; &nbsp;THIS IS NOT A PITCH &mdash; This is a strategy session. Come ready to teach, not to sell.</div>
+    <div style="max-width: 800px; margin: 0 auto; width: 100;">
+      <p class="body-md" style="text-align: center; margin-bottom: 32px;">Your session should answer these 7 questions:</p>
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        <div class="num-card">
+          <div class="num">1</div>
+          <div>
+            <h4>What is the strategy?</h4>
+            <p>Name it. Define it in one sentence.</p>
+          </div>
+        </div>
+        <div class="num-card">
+          <div class="num">2</div>
+          <div>
+            <h4>Why does it work right now?</h4>
+            <p>What market conditions, platform changes, or timing makes this effective today?</p>
+          </div>
+        </div>
+        <div class="num-card">
+          <div class="num">3</div>
+          <div>
+            <h4>What results have you gotten?</h4>
+            <p>Specific numbers. Revenue, ROAS, conversion rates, growth metrics.</p>
+          </div>
+        </div>
+        <div class="num-card">
+          <div class="num">4</div>
+          <div>
+            <h4>Who is it best suited for?</h4>
+            <p>What type of business, niche, or stage benefits most?</p>
+          </div>
+        </div>
+        <div class="num-card">
+          <div class="num">5</div>
+          <div>
+            <h4>How does someone implement it?</h4>
+            <p>Step-by-step. Tools, templates, sequence, timeline.</p>
+          </div>
+        </div>
+        <div class="num-card">
+          <div class="num">6</div>
+          <div>
+            <h4>What are the common mistakes?</h4>
+            <p>Where do people go wrong? What should they avoid?</p>
+          </div>
+        </div>
+        <div class="num-card">
+          <div class="num">7</div>
+          <div>
+            <h4>What's the first action step?</h4>
+            <p>One thing they can do today to start seeing results.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>PROPRIETARY + CONFIDENTIAL &nbsp;|&nbsp; FOR CONTRIBUTOR USE ONLY</span>
+    <span>stealourwinners.com</span>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PAGE 12: WHAT'S IN IT FOR YOU
+     ═══════════════════════════════════════════════════════════════ -->
+<section class="page bg-surface">
+  <div class="page-inner" style="gap: 48px;">
+    <div style="text-align: center;">
+      <span class="label">Contributor Benefits</span>
+      <h2 class="headline-lg">WHAT'S IN IT FOR YOU</h2>
+    </div>
+    <div class="grid-3" style="gap: 20px;">
+      <div class="card-solid" style="padding: 40px 28px; border-top: 3px solid var(--green);">
+        <h4 style="font-size: 16px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 16px; color: var(--green);">Your Name Next To The Best</h4>
+        <p class="body-md">You join a contributor roster that includes Russell Brunson, Frank Kern, Ryan Deiss, Perry Marshall, and hundreds of other top operators.</p>
+      </div>
+      <div class="card-solid" style="padding: 40px 28px; border-top: 3px solid var(--green);">
+        <h4 style="font-size: 16px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 16px; color: var(--green);">An Audience That Acts</h4>
+        <p class="body-md">Our members are paying for implementation, not entertainment. They watch, they apply, they reach out to the people who helped them.</p>
+      </div>
+      <div class="card-solid" style="padding: 40px 28px; border-top: 3px solid var(--green);">
+        <h4 style="font-size: 16px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 16px; color: var(--green);">Full Production Treatment</h4>
+        <p class="body-md">Your session becomes a multi-format asset: video, audio, action guide, transcript. All professionally produced and archived.</p>
+      </div>
+    </div>
+    <!-- Callouts -->
+    <div class="grid-2" style="gap: 20px;">
+      <div style="background: var(--green); border-radius: 12px; padding: 32px; color: var(--black);">
+        <h4 style="font-size: 14px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px;">Free Platform Access</h4>
+        <p style="font-size: 14px; line-height: 1.6; opacity: 0.8;">Every contributor gets full, complimentary access to the entire Steal Our Winners library. Browse 550+ strategies from the best in the game.</p>
+      </div>
+      <div style="background: var(--purple); border-radius: 12px; padding: 32px; color: var(--off-white);">
+        <h4 style="font-size: 14px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px;">JV Opportunity Exploration</h4>
+        <p style="font-size: 14px; line-height: 1.6; opacity: 0.8;">We explore joint venture opportunities with every contributor. No promises on a mailing, but it's a conversation we're always open to having with the right partner.</p>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>PROPRIETARY + CONFIDENTIAL &nbsp;|&nbsp; FOR CONTRIBUTOR USE ONLY</span>
+    <span>stealourwinners.com</span>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PAGE 13: WATCH THESE FIRST
+     ═══════════════════════════════════════════════════════════════ -->
+<section class="page bg-black">
+  <div class="page-inner" style="gap: 40px;">
+    <div style="text-align: center;">
+      <span class="label">Required Viewing</span>
+      <h2 class="headline-lg">WATCH THESE FIRST</h2>
+      <p class="body-md" style="margin-top: 12px;">Before you book your call, watch these two episodes.</p>
+    </div>
+    <!-- Featured Episodes -->
+    <div class="grid-2" style="gap: 24px;">
+      <div class="episode-card">
+        <div style="position: relative;">
+          <img src="https://go.stealourwinners.com/wp-content/uploads/2025/01/60-mil-ad-copy-secret.webp" alt="Donnie French - $60 Million Ad Copy Secret">
+          <div style="position: absolute; top: 16px; left: 16px;">
+            <div class="must-watch-badge">&#9733; Must Watch</div>
+          </div>
+        </div>
+        <div class="episode-info">
+          <div style="font-size: 12px; color: var(--muted); margin-bottom: 6px;">DONNIE FRENCH</div>
+          <h4 style="font-size: 18px; font-weight: 800; margin-bottom: 16px;">$60 Million Ad Copy Secret</h4>
+          <a href="https://strategicprofits.com/stack/the-60-million-ad-copy-secret-that-outperformed-every-control/" target="_blank" class="btn btn-green" style="width: 100%; padding: 14px;">WATCH NOW &rarr;</a>
+        </div>
+      </div>
+      <div class="episode-card">
+        <div style="position: relative; aspect-ratio: 16/9; overflow: hidden;">
+          <img src="images/Filter-–-Strategic-Profits-04-01-2026_01_01_PM.png" alt="Walter Burch - Taste vs Tease YouTube Ad Hook" style="width: 100%; height: 100%; object-fit: cover;">
+          <div style="position: absolute; top: 16px; left: 16px;">
+            <div class="must-watch-badge">&#9733; Must Watch</div>
+          </div>
+        </div>
+        <div class="episode-info">
+          <div style="font-size: 12px; color: var(--muted); margin-bottom: 6px;">WALTER BURCH</div>
+          <h4 style="font-size: 18px; font-weight: 800; margin-bottom: 16px;">The Taste vs. Tease YouTube Ad Hook</h4>
+          <a href="https://strategicprofits.com/stack/the-taste-vs-tease-youtube-ad-hook-that-boosted-clicks-in-15-seconds/" target="_blank" class="btn btn-green" style="width: 100%; padding: 14px;">WATCH NOW &rarr;</a>
+        </div>
+      </div>
+    </div>
+    <!-- More From Library -->
+    <div>
+      <div class="label-white" style="margin-bottom: 16px;">More From The Library</div>
+      <div class="grid-4" style="gap: 16px;">
+        <div style="border-radius: 8px; overflow: hidden; border: 1px solid var(--border);">
+          <img src="https://go.stealourwinners.com/wp-content/uploads/2025/01/3x-sales-right-now.webp" alt="3X Sales Right Now" style="width: 100%; display: block; aspect-ratio: 16/9; object-fit: cover;">
+        </div>
+        <div style="border-radius: 8px; overflow: hidden; border: 1px solid var(--border);">
+          <img src="https://go.stealourwinners.com/wp-content/uploads/2025/01/3-day-paid-challenge-funnel.webp" alt="3-Day Paid Challenge Funnel" style="width: 100%; display: block; aspect-ratio: 16/9; object-fit: cover;">
+        </div>
+        <div style="border-radius: 8px; overflow: hidden; border: 1px solid var(--border);">
+          <img src="https://go.stealourwinners.com/wp-content/uploads/2025/01/build-7-fig-webinars.webp" alt="Build 7-Figure Webinars" style="width: 100%; display: block; aspect-ratio: 16/9; object-fit: cover;">
+        </div>
+        <div style="border-radius: 8px; overflow: hidden; border: 1px solid var(--border);">
+          <img src="https://go.stealourwinners.com/wp-content/uploads/2025/01/clone-ads-in-seconds-with-ai.webp" alt="Clone Ads in Seconds with AI" style="width: 100%; display: block; aspect-ratio: 16/9; object-fit: cover;">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>PROPRIETARY + CONFIDENTIAL &nbsp;|&nbsp; FOR CONTRIBUTOR USE ONLY</span>
+    <span>stealourwinners.com</span>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PAGE 14: BRAND GUIDELINES
+     ═══════════════════════════════════════════════════════════════ -->
+<section class="page bg-surface">
+  <div class="page-inner" style="gap: 48px;">
+    <div style="text-align: center;">
+      <span class="label">Brand Identity</span>
+      <h2 class="headline-lg">BRAND GUIDELINES</h2>
+    </div>
+    <!-- Color Palette -->
+    <div>
+      <div class="label-white" style="margin-bottom: 16px;">Color Palette</div>
+      <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px;">
+        <div class="swatch" style="background: #0A0812; color: #FAF9F5; border: 1px solid rgba(255,255,255,0.1);">
+          <div><div style="font-size: 11px; font-weight: 700;">Deep Black</div><div style="opacity: 0.6; margin-top: 2px;">#0A0812</div></div>
+        </div>
+        <div class="swatch" style="background: #5F368D; color: #FAF9F5;">
+          <div><div style="font-size: 11px; font-weight: 700;">Purple</div><div style="opacity: 0.6; margin-top: 2px;">#5F368D</div></div>
+        </div>
+        <div class="swatch" style="background: #7B4EAD; color: #FAF9F5;">
+          <div><div style="font-size: 11px; font-weight: 700;">Purple Light</div><div style="opacity: 0.6; margin-top: 2px;">#7B4EAD</div></div>
+        </div>
+        <div class="swatch" style="background: #8EC540; color: #0A0812;">
+          <div><div style="font-size: 11px; font-weight: 700;">Green</div><div style="opacity: 0.6; margin-top: 2px;">#8EC540</div></div>
+        </div>
+        <div class="swatch" style="background: #FAF9F5; color: #0A0812;">
+          <div><div style="font-size: 11px; font-weight: 700;">Off-White</div><div style="opacity: 0.6; margin-top: 2px;">#FAF9F5</div></div>
+        </div>
+        <div class="swatch" style="background: #9A95A8; color: #0A0812;">
+          <div><div style="font-size: 11px; font-weight: 700;">Muted</div><div style="opacity: 0.6; margin-top: 2px;">#9A95A8</div></div>
+        </div>
+      </div>
+    </div>
+    <!-- Typography -->
+    <div class="grid-2" style="gap: 24px;">
+      <div>
+        <div class="label-white" style="margin-bottom: 16px;">Typography</div>
+        <div class="card" style="display: flex; flex-direction: column; gap: 16px;">
+          <div>
+            <div style="font-size: 11px; color: var(--muted); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 4px;">Headlines & Body</div>
+            <div style="font-size: 32px; font-weight: 900;">Inter</div>
+          </div>
+          <div>
+            <div style="font-size: 11px; color: var(--muted); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 4px;">Accent & Quotes</div>
+            <div style="font-family: 'Playfair Display', serif; font-size: 32px; font-style: italic;">Playfair Display</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="label-white" style="margin-bottom: 16px;">Voice & Tone</div>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+          <div class="pill">Direct</div>
+          <div class="pill">Results-Driven</div>
+          <div class="pill">Authoritative</div>
+          <div class="pill">Action-Oriented</div>
+          <div class="pill">No Fluff</div>
+          <div class="pill">Cutting-Edge</div>
+          <div class="pill">Generous</div>
+        </div>
+      </div>
+    </div>
+    <!-- Social -->
+    <div>
+      <div class="label-white" style="margin-bottom: 16px;">Tag Rich & Steal Our Winners</div>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+        <!-- X / Twitter -->
+        <a href="https://x.com/richschefren" target="_blank" class="social-link">
+          <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          @richschefren
+        </a>
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/therealrichschefren/" target="_blank" class="social-link">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          @therealrichschefren
+        </a>
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/richschefren/" target="_blank" class="social-link">
+          <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          Rich Schefren
+        </a>
+        <!-- YouTube -->
+        <a href="https://www.youtube.com/@richschefren" target="_blank" class="social-link">
+          <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          Rich Schefren
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>PROPRIETARY + CONFIDENTIAL &nbsp;|&nbsp; FOR CONTRIBUTOR USE ONLY</span>
+    <span>stealourwinners.com</span>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     PAGE 15: LET'S DO THIS (CTA)
+     ═══════════════════════════════════════════════════════════════ -->
+<section class="page bg-black">
+  <div class="page-inner" style="justify-content: center; align-items: center; text-align: center; gap: 40px;">
+    <span class="label">Next Step</span>
+    <h2 style="font-size: 80px; font-weight: 900; line-height: 0.95; letter-spacing: -3px;">
+      LET'S DO<br><span class="text-green">THIS</span>
+    </h2>
+    <div class="divider" style="margin: 0 auto;"></div>
+    <!-- Buttons -->
+    <div style="display: flex; gap: 16px;">
+      <a href="https://calendly.com/richschefren/sow-introduction" target="_blank" class="btn btn-green" style="padding: 20px 48px; font-size: 15px;">INTRO CALL WITH RICH</a>
+      <a href="https://calendly.com/richschefren/sow" target="_blank" class="btn btn-outline" style="padding: 20px 48px; font-size: 15px;">BOOK YOUR INTERVIEW</a>
+    </div>
+    <!-- Contact Cards -->
+    <div class="grid-2" style="gap: 16px; max-width: 700px; width: 100%; margin-top: 16px;">
+      <div class="card" style="text-align: left; padding: 24px;">
+        <div style="font-size: 12px; color: var(--green); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px;">J/V Manager</div>
+        <a href="mailto:Michelle@strategicprofits.com" style="font-size: 16px; font-weight: 700; text-decoration: none; color: var(--off-white);">Michelle@strategicprofits.com</a>
+        <div style="font-size: 13px; color: var(--muted); margin-top: 4px;">Contributor partnerships and scheduling</div>
+      </div>
+      <div class="card" style="text-align: left; padding: 24px;">
+        <div style="font-size: 12px; color: var(--green); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px;">Executive Assistant</div>
+        <a href="mailto:Jessica@strategicprofits.com" style="font-size: 16px; font-weight: 700; text-decoration: none; color: var(--off-white);">Jessica@strategicprofits.com</a>
+        <div style="font-size: 13px; color: var(--muted); margin-top: 4px;">Executive Assistant to Rich Schefren</div>
+      </div>
+    </div>
+    <!-- Social Links -->
+    <div style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;">
+      <a href="https://x.com/richschefren" target="_blank" class="social-link">
+        <svg viewBox="0 0 24 24" style="width: 18px; height: 18px;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        @richschefren
+      </a>
+      <a href="https://www.instagram.com/therealrichschefren/" target="_blank" class="social-link">
+        <svg viewBox="0 0 24 24" style="width: 18px; height: 18px;"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        @therealrichschefren
+      </a>
+      <a href="https://www.linkedin.com/in/richschefren/" target="_blank" class="social-link">
+        <svg viewBox="0 0 24 24" style="width: 18px; height: 18px;"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        Rich Schefren
+      </a>
+      <a href="https://www.youtube.com/@richschefren" target="_blank" class="social-link">
+        <svg viewBox="0 0 24 24" style="width: 18px; height: 18px;"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        Rich Schefren
+      </a>
+    </div>
+    <!-- Website Links -->
+    <div style="display: flex; gap: 24px; font-size: 13px; font-weight: 600; color: var(--muted);">
+      <a href="https://go.stealourwinners.com" target="_blank" style="text-decoration: none; color: var(--muted); transition: color 0.2s;">go.stealourwinners.com</a>
+      <span style="opacity: 0.3;">|</span>
+      <a href="https://richschefren.com" target="_blank" style="text-decoration: none; color: var(--muted); transition: color 0.2s;">richschefren.com</a>
+      <span style="opacity: 0.3;">|</span>
+      <a href="https://aistrategist.com" target="_blank" style="text-decoration: none; color: var(--muted); transition: color 0.2s;">aistrategist.com</a>
+    </div>
+  </div>
+  <div class="page-footer">
+    <span>PROPRIETARY + CONFIDENTIAL &nbsp;|&nbsp; FOR CONTRIBUTOR USE ONLY</span>
+    <span>stealourwinners.com</span>
+  </div>
+</section>
+
+</body>
+</html>
