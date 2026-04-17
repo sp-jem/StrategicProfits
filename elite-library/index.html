@@ -126,6 +126,13 @@ body{background-color:var(--bg-canvas);color:var(--text-primary);font-family:var
 .pill.plus-pill{background:rgba(106,176,255,0.12);color:#6ab0ff;border:1px solid rgba(106,176,255,0.35)}
 .pill.plus-pill.active{background:#6ab0ff;color:var(--ink-900)}
 .skill-row[data-plus="true"]{border-left:2px solid rgba(106,176,255,0.4)}
+/* Plus Package section styling */
+.plus-package-header{padding:var(--sp-6) 0;border-bottom:1px solid rgba(106,176,255,0.25);margin-bottom:var(--sp-8)}
+.plus-package-kicker{font-size:11px;font-weight:600;letter-spacing:0.16em;color:#6ab0ff;margin-bottom:var(--sp-3)}
+.plus-package-title{font-family:var(--font-display);font-size:32px;font-weight:700;color:var(--text-primary);margin:0 0 var(--sp-3) 0;line-height:1.15}
+.plus-package-lede{font-size:16px;color:var(--text-secondary);line-height:1.5;max-width:68ch;margin:0}
+.plus-section .cat-section-title{color:#6ab0ff;border-bottom-color:rgba(106,176,255,0.25)}
+
 
 .skills-list{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-2) var(--sp-4);margin-top:var(--sp-4)}
 @media(max-width:900px){.skills-list{grid-template-columns:1fr}}
@@ -440,10 +447,6 @@ body{background-color:var(--bg-canvas);color:var(--text-primary);font-family:var
           <span class="cat-link-text">Creation &amp; Visual</span>
           <span class="cat-count" id="count-creation-visual">0</span>
         </button>
-        <button class="cat-link" data-cat="Simulation" onclick="filterByCategory('Simulation', this)">
-          <span class="cat-link-text">Simulation</span>
-          <span class="cat-count" id="count-simulation">0</span>
-        </button>
         <button class="cat-link" data-cat="Additional Skills" onclick="filterByCategory('Additional Skills', this)">
           <span class="cat-link-text">Additional Skills</span>
           <span class="cat-count" id="count-additional-skills">0</span>
@@ -477,7 +480,6 @@ body{background-color:var(--bg-canvas);color:var(--text-primary);font-family:var
             <span class="pill" data-cat="System Mastery">System Mastery</span>
             <span class="pill" data-cat="Learning">Learning</span>
             <span class="pill" data-cat="Creation &amp; Visual">Creation &amp; Visual</span>
-            <span class="pill" data-cat="Simulation">Simulation</span>
             <span class="pill" data-cat="Additional Skills">Additional Skills</span>
             <span class="pill plus-pill" data-plus-pill="true" onclick="filterByPlusFromPill(this)">Plus Package</span>
           </div>
@@ -487,7 +489,7 @@ body{background-color:var(--bg-canvas);color:var(--text-primary);font-family:var
           <div class="cat-section" data-category="Copywriting Systems" id="cat-copywriting-systems">
             <div class="cat-section-title">
               Copywriting Systems
-              <span class="cat-section-count">85 skills</span>
+              <span class="cat-section-count">75 skills</span>
             </div>
             <p class="cat-intro">Use these when you need to write sales copy — letters, VSLs, emails, bullets, headlines, closes — and want a proven system instead of starting from a blank page. Each methodology sells differently (empathy-driven, raw direct response, story-based, meaning-making), so you can pick the style that fits your product, your market, and your voice. Not sure which to pick? The Copywriting Arena runs multiple systems head-to-head on the same brief and names a winner.</p>
             <div class="skills-list">
@@ -577,7 +579,7 @@ body{background-color:var(--bg-canvas);color:var(--text-primary);font-family:var
                   <span class="skill-desc">6-factor conversion model, induction states, and Benefit Mania — the psychology underneath every VSL.</span>
                 </div>
               <div class="skill-row" data-name="bj vsl" data-desc="complete vsl formulas from 1-minute to full-length 5-step, orchestrating all section skills automatically." data-folder="bj-vsl" data-category="Copywriting Systems">
-                  <span class="skill-name">BJ Vsl</span>
+                  <span class="skill-name">BJ VSL</span>
                   <span class="skill-folder">/bj-vsl</span>
                   <span class="skill-desc">Complete VSL formulas from 1-minute to full-length 5-Step, orchestrating all section skills automatically.</span>
                 </div>
@@ -866,31 +868,15 @@ body{background-color:var(--bg-canvas);color:var(--text-primary);font-family:var
                   <span class="skill-folder">/sales-page-architect</span>
                   <span class="skill-desc">Long-form sales page builder calibrated to price point — structure, proof architecture, and close.</span>
                 </div>
-              <div class="skill-row" data-name="short-form copy mastery" data-desc="ad copy, email subjects, and micro-persuasion for business coaching and ai implementation niches." data-folder="short-form-copy" data-category="Copywriting Systems" data-plus="true">
-                  <span class="skill-name">Short-Form Copy Mastery</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/short-form-copy</span>
-                  <span class="skill-desc">Ad copy, email subjects, and micro-persuasion for business coaching and AI implementation niches.</span>
-                </div>
-              <div class="skill-row" data-name="skill.md: style cloning framework" data-desc="extracts and replicates a writing style from sample content for consistent voice cloning." data-folder="style-cloner" data-category="Copywriting Systems" data-plus="true">
-                  <span class="skill-name">SKILL.md: Style Cloning Framework</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/style-cloner</span>
-                  <span class="skill-desc">Extracts and replicates a writing style from sample content for consistent voice cloning.</span>
-                </div>
             </div>
           </div>
           <div class="cat-section" data-category="Webinar Systems" id="cat-webinar-systems">
             <div class="cat-section-title">
               Webinar Systems
-              <span class="cat-section-count">54 skills</span>
+              <span class="cat-section-count">53 skills</span>
             </div>
             <p class="cat-intro">Use these when you need to write or improve a webinar or live-event pitch — registration, open, teaching, transition, close, and follow-up. Six full methodologies cover everything from micro-commitment stacks to 4-act teleseminars to direct-response group sells, so you can pick by audience size, price point, and what you're comfortable delivering. Not sure which? The Webinar Arena runs all six on the same brief and names a winner.</p>
-            <div class="skills-list">
-              <div class="skill-row" data-name="signature talk architect" data-desc="builds the complete 20-60 minute signature talk architecture — from belief shift sequencing to offer positioning." data-folder="signature-talk-architect" data-category="Webinar Systems" data-plus="true">
-                  <span class="skill-name">Signature Talk Architect</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/signature-talk-architect</span>
-                  <span class="skill-desc">Builds the complete 20-60 minute signature talk architecture — from belief shift sequencing to offer positioning.</span>
-                </div>
-              <div class="skill-row" data-name="sim webinar chat" data-desc="generates a simulated live audience chat log with 12 buyer archetypes reacting in real-time to a webinar script." data-folder="sim-webinar-chat" data-category="Webinar Systems">
+            <div class="skills-list">              <div class="skill-row" data-name="sim webinar chat" data-desc="generates a simulated live audience chat log with 12 buyer archetypes reacting in real-time to a webinar script." data-folder="sim-webinar-chat" data-category="Webinar Systems">
                   <span class="skill-name">Sim Webinar Chat</span>
                   <span class="skill-folder">/sim-webinar-chat</span>
                   <span class="skill-desc">Generates a simulated live audience chat log with 12 buyer archetypes reacting in real-time to a webinar script.</span>
@@ -1748,7 +1734,7 @@ body{background-color:var(--bg-canvas);color:var(--text-primary);font-family:var
                   <span class="skill-desc">Converts creative testing from gut-feel experiments into rigorous variable-controlled test designs.</span>
                 </div>
               <div class="skill-row" data-name="ai creative strategist" data-desc="research-powered creative strategy — competitor research, visual direction previews, and comprehensive briefs." data-folder="ai-creative-strategist" data-category="Marketing &amp; Ads">
-                  <span class="skill-name">Ai Creative Strategist</span>
+                  <span class="skill-name">AI Creative Strategist</span>
                   <span class="skill-folder">/ai-creative-strategist</span>
                   <span class="skill-desc">Research-powered creative strategy — competitor research, visual direction previews, and comprehensive briefs.</span>
                 </div>
@@ -1936,12 +1922,12 @@ body{background-color:var(--bg-canvas);color:var(--text-primary);font-family:var
           <div class="cat-section" data-category="IP Extraction" id="cat-ip-extraction">
             <div class="cat-section-title">
               IP Extraction
-              <span class="cat-section-count">16 skills</span>
+              <span class="cat-section-count">10 skills</span>
             </div>
             <p class="cat-intro">Use these when you have expertise trapped in your head — or on calls, in transcripts, in frameworks you've built — and need to surface it, name it, and package it into something you can teach, sell, or protect. Covers distinction extraction, framework construction, mechanism design, microscript writing, and story capture. Pick by what you're trying to extract — a single insight, a full framework, or a mechanism that explains <em>why</em> your solution works.</p>
             <div class="skills-list">
               <div class="skill-row" data-name="coaching ip extractor" data-desc="builds an ip library from coaching session extract flags and periodic session batch reviews." data-folder="coaching-ip-extractor" data-category="IP Extraction">
-                  <span class="skill-name">Coaching Ip Extractor</span>
+                  <span class="skill-name">Coaching IP Extractor</span>
                   <span class="skill-folder">/coaching-ip-extractor</span>
                   <span class="skill-desc">Builds an IP library from coaching session EXTRACT flags and periodic session batch reviews.</span>
                 </div>
@@ -1949,16 +1935,6 @@ body{background-color:var(--bg-canvas);color:var(--text-primary);font-family:var
                   <span class="skill-name">Coaching Session Debrief</span>
                   <span class="skill-folder">/coaching-session-debrief</span>
                   <span class="skill-desc">Converts raw coaching session content into structured permanent output immediately after every session.</span>
-                </div>
-              <div class="skill-row" data-name="coaching session multiplier" data-desc="transforms raw session inputs into six structured outputs for the client and the content pipeline." data-folder="coaching-session-multiplier" data-category="IP Extraction" data-plus="true">
-                  <span class="skill-name">Coaching Session Multiplier</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/coaching-session-multiplier</span>
-                  <span class="skill-desc">Transforms raw session inputs into six structured outputs for the client and the content pipeline.</span>
-                </div>
-              <div class="skill-row" data-name="distinction finder" data-desc="mines source content for teachable distinctions and outputs structured extractions." data-folder="distinction-finder" data-category="IP Extraction" data-plus="true">
-                  <span class="skill-name">Distinction Finder</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/distinction-finder</span>
-                  <span class="skill-desc">Mines source content for teachable distinctions and outputs structured extractions.</span>
                 </div>
               <div class="skill-row" data-name="expert knowledge extractor" data-desc="systematically extracts years of domain expertise into structured, ai-readable format." data-folder="expert-knowledge-extractor" data-category="IP Extraction">
                   <span class="skill-name">Expert Knowledge Extractor</span>
@@ -1985,16 +1961,6 @@ body{background-color:var(--bg-canvas);color:var(--text-primary);font-family:var
                   <span class="skill-folder">/framework-forge-productization</span>
                   <span class="skill-desc">Creates the Sullivan Productization Package — visual assets, worksheets, and slides to make frameworks teachable.</span>
                 </div>
-              <div class="skill-row" data-name="ip encoding engine" data-desc="encodes proprietary frameworks into agent-readable, executable skill files for ai deployment." data-folder="ip-encoding-engine" data-category="IP Extraction" data-plus="true">
-                  <span class="skill-name">Ip Encoding Engine</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/ip-encoding-engine</span>
-                  <span class="skill-desc">Encodes proprietary frameworks into agent-readable, executable skill files for AI deployment.</span>
-                </div>
-              <div class="skill-row" data-name="knowledge structurer" data-desc="converts scattered expertise into an indexed, ai-readable knowledge base for agent systems." data-folder="knowledge-structurer" data-category="IP Extraction" data-plus="true">
-                  <span class="skill-name">Knowledge Structurer</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/knowledge-structurer</span>
-                  <span class="skill-desc">Converts scattered expertise into an indexed, AI-readable knowledge base for agent systems.</span>
-                </div>
               <div class="skill-row" data-name="mechanism creator skill" data-desc="generates marketing mechanisms that score 90+ on the 13-dimension v3 scorecard." data-folder="mechanism-creator" data-category="IP Extraction">
                   <span class="skill-name">Mechanism Creator Skill</span>
                   <span class="skill-folder">/mechanism-creator</span>
@@ -2010,22 +1976,12 @@ body{background-color:var(--bg-canvas);color:var(--text-primary);font-family:var
                   <span class="skill-folder">/mechanism-ideator-package</span>
                   <span class="skill-desc">Produces named mechanisms with academic backing, case studies, statistics, and visual metaphors.</span>
                 </div>
-              <div class="skill-row" data-name="microscript forge" data-desc="generates 10 ranked microscript candidates using linguistic science — sound patterns, alliteration, and prosody." data-folder="microscript-forge" data-category="IP Extraction" data-plus="true">
-                  <span class="skill-name">Microscript Forge</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/microscript-forge</span>
-                  <span class="skill-desc">Generates 10 ranked microscript candidates using linguistic science — sound patterns, alliteration, and prosody.</span>
-                </div>
-              <div class="skill-row" data-name="story capture" data-desc="extracts and banks narrative stories from transcripts and coaching calls into a permanent story library." data-folder="story-capture" data-category="IP Extraction" data-plus="true">
-                  <span class="skill-name">Story Capture</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/story-capture</span>
-                  <span class="skill-desc">Extracts and banks narrative stories from transcripts and coaching calls into a permanent story library.</span>
-                </div>
             </div>
           </div>
           <div class="cat-section" data-category="Thought Leadership" id="cat-thought-leadership">
             <div class="cat-section-title">
               Thought Leadership
-              <span class="cat-section-count">9 skills</span>
+              <span class="cat-section-count">7 skills</span>
             </div>
             <p class="cat-intro">Use these when you're positioning yourself as an authority in your space and need a complete practice — not just content. Covers unique genius discovery, positioning matrix, 52 points of distinction, cluster campaigns, delivery mode selection (speaker/author/trainer/consultant), and sales conversation design. Start with unique genius if you're early; jump to positioning matrix if you already know your territory.</p>
             <div class="skills-list">
@@ -2038,11 +1994,6 @@ body{background-color:var(--bg-canvas);color:var(--text-primary);font-family:var
                   <span class="skill-name">Thoughtpreneur</span>
                   <span class="skill-folder">/thoughtpreneur</span>
                   <span class="skill-desc">Complete thought leadership practice system — genius discovery through positioning through $500K-$1.5M practice.</span>
-                </div>
-              <div class="skill-row" data-name="thoughtpreneur 52 points" data-desc="52 points of distinction generator — builds an intellectual property portfolio systematically." data-folder="thoughtpreneur-52-points" data-category="Thought Leadership" data-plus="true">
-                  <span class="skill-name">Thoughtpreneur 52 Points</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/thoughtpreneur-52-points</span>
-                  <span class="skill-desc">52 Points of Distinction generator — builds an intellectual property portfolio systematically.</span>
                 </div>
               <div class="skill-row" data-name="thoughtpreneur cluster" data-desc="90-day cluster campaign planner for quarterly execution and themed work sprints." data-folder="thoughtpreneur-cluster" data-category="Thought Leadership">
                   <span class="skill-name">Thoughtpreneur Cluster</span>
@@ -2063,11 +2014,6 @@ body{background-color:var(--bg-canvas);color:var(--text-primary);font-family:var
                   <span class="skill-name">Thoughtpreneur Mode</span>
                   <span class="skill-folder">/thoughtpreneur-mode</span>
                   <span class="skill-desc">Delivery mode selection — Speaker/Author/Trainer/Mentor/Facilitator/Coach — based on strengths and market.</span>
-                </div>
-              <div class="skill-row" data-name="thoughtpreneur positioning" data-desc="9-box positioning matrix builder with the a-b-c shortcut and problem articulation." data-folder="thoughtpreneur-positioning" data-category="Thought Leadership" data-plus="true">
-                  <span class="skill-name">Thoughtpreneur Positioning</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/thoughtpreneur-positioning</span>
-                  <span class="skill-desc">9-Box Positioning Matrix builder with the A-B-C shortcut and problem articulation.</span>
                 </div>
               <div class="skill-row" data-name="thoughtpreneur practice" data-desc="black belt ladder and daily rate calculator for building a practice generating $500k-$1.5m." data-folder="thoughtpreneur-practice" data-category="Thought Leadership">
                   <span class="skill-name">Thoughtpreneur Practice</span>
@@ -2128,7 +2074,7 @@ body{background-color:var(--bg-canvas);color:var(--text-primary);font-family:var
           <div class="cat-section" data-category="Content" id="cat-content">
             <div class="cat-section-title">
               Content
-              <span class="cat-section-count">13 skills</span>
+              <span class="cat-section-count">12 skills</span>
             </div>
             <p class="cat-intro">Use these when you need to create, repurpose, or multiply content across platforms. Turn one recording, post, or interview into dozens of derivative pieces — social posts, emails, articles, short-form scripts. Pick by starting material (long-form recording, existing post, raw ideas) or by destination (social, email, blog, video).</p>
             <div class="skills-list">
@@ -2187,13 +2133,8 @@ body{background-color:var(--bg-canvas);color:var(--text-primary);font-family:var
                   <span class="skill-folder">/documentary-to-marketing-pipeline</span>
                   <span class="skill-desc">Extracts maximum marketing leverage from documentary content — repurposes scenes into campaign assets.</span>
                 </div>
-              <div class="skill-row" data-name="pillar content architect" data-desc="writes manifesto-style pillar content — the definitive worldview statement that establishes authority." data-folder="pillar-content-architect" data-category="Content" data-plus="true">
-                  <span class="skill-name">Pillar Content Architect</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/pillar-content-architect</span>
-                  <span class="skill-desc">Writes manifesto-style pillar content — the definitive worldview statement that establishes authority.</span>
-                </div>
               <div class="skill-row" data-name="seo content system" data-desc="produces seo content that follows documented frameworks — not generic best practices." data-folder="seo-content-system" data-category="Content">
-                  <span class="skill-name">Seo Content System</span>
+                  <span class="skill-name">SEO Content System</span>
                   <span class="skill-folder">/seo-content-system</span>
                   <span class="skill-desc">Produces SEO content that follows documented frameworks — not generic best practices.</span>
                 </div>
@@ -2202,39 +2143,13 @@ body{background-color:var(--bg-canvas);color:var(--text-primary);font-family:var
           <div class="cat-section" data-category="Social &amp; Visibility" id="cat-social-visibility">
             <div class="cat-section-title">
               Social &amp; Visibility
-              <span class="cat-section-count">7 skills</span>
+              <span class="cat-section-count">2 skills</span>
             </div>
             <p class="cat-intro">Use these when you need to show up on social platforms or in AI-powered search — LinkedIn posts, AI SEO (getting cited by ChatGPT, Claude, and Perplexity), social growth, and visibility auditing. Four LinkedIn skills handle everything from individual posts to full engine ops. Pick by platform or by the specific visibility problem you're trying to solve.</p>
-            <div class="skills-list">
-              <div class="skill-row" data-name="&quot;ai-seo&quot;" data-desc="optimizes content to get cited by ai search engines — chatgpt, perplexity, google ai overviews, and gemini." data-folder="ai-seo" data-category="Social &amp; Visibility" data-plus="true">
-                  <span class="skill-name">&quot;ai-seo&quot;</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/ai-seo</span>
-                  <span class="skill-desc">Optimizes content to get cited by AI search engines — ChatGPT, Perplexity, Google AI Overviews, and Gemini.</span>
-                </div>
-              <div class="skill-row" data-name="ctd-ai-visibility-live" data-desc="url-only ai visibility audit — robots.txt, content extractability score, and specific fixes for live demos." data-folder="ai-visibility-audit" data-category="Social &amp; Visibility">
+            <div class="skills-list">              <div class="skill-row" data-name="ctd-ai-visibility-live" data-desc="url-only ai visibility audit — robots.txt, content extractability score, and specific fixes for live demos." data-folder="ai-visibility-audit" data-category="Social &amp; Visibility">
                   <span class="skill-name">ctd-ai-visibility-live</span>
                   <span class="skill-folder">/ai-visibility-audit</span>
                   <span class="skill-desc">URL-only AI visibility audit — robots.txt, content extractability score, and specific fixes for live demos.</span>
-                </div>
-              <div class="skill-row" data-name="linkedin lead magnet" data-desc="researches a topic, writes a lead magnet, publishes it live via api, and drafts 3 linkedin posts." data-folder="linkedin-lead-magnet" data-category="Social &amp; Visibility" data-plus="true">
-                  <span class="skill-name">Linkedin Lead Magnet</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/linkedin-lead-magnet</span>
-                  <span class="skill-desc">Researches a topic, writes a lead magnet, publishes it live via API, and drafts 3 LinkedIn posts.</span>
-                </div>
-              <div class="skill-row" data-name="linkedin post" data-desc="single linkedin posts in your authentic voice — 3 scroll-stopping variations from any topic." data-folder="linkedin-post" data-category="Social &amp; Visibility" data-plus="true">
-                  <span class="skill-name">Linkedin Post</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/linkedin-post</span>
-                  <span class="skill-desc">Single LinkedIn posts in your authentic voice — 3 scroll-stopping variations from any topic.</span>
-                </div>
-              <div class="skill-row" data-name="linkedin trending topics" data-desc="surfaces the 10 highest-traction topics across reddit, youtube, x, and the web calibrated to your pillars." data-folder="linkedin-trending-topics" data-category="Social &amp; Visibility" data-plus="true">
-                  <span class="skill-name">Linkedin Trending Topics</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/linkedin-trending-topics</span>
-                  <span class="skill-desc">Surfaces the 10 highest-traction topics across Reddit, YouTube, X, and the web calibrated to your pillars.</span>
-                </div>
-              <div class="skill-row" data-name="linkedin voice setup" data-desc="one-time setup that auto-populates your linkedin voice file from proof-stack-builder output." data-folder="linkedin-voice-setup" data-category="Social &amp; Visibility" data-plus="true">
-                  <span class="skill-name">Linkedin Voice Setup</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/linkedin-voice-setup</span>
-                  <span class="skill-desc">One-time setup that auto-populates your LinkedIn voice file from proof-stack-builder output.</span>
                 </div>
               <div class="skill-row" data-name="social media growth" data-desc="blog posts, social content, seo optimization, and content calendars for marketing-driven growth." data-folder="social-media-growth" data-category="Social &amp; Visibility">
                   <span class="skill-name">Social Media Growth</span>
@@ -2246,7 +2161,7 @@ body{background-color:var(--bg-canvas);color:var(--text-primary);font-family:var
           <div class="cat-section" data-category="Business Intelligence" id="cat-business-intelligence">
             <div class="cat-section-title">
               Business Intelligence
-              <span class="cat-section-count">34 skills</span>
+              <span class="cat-section-count">32 skills</span>
             </div>
             <p class="cat-intro">Use these when you need to diagnose where your business is actually losing money, where your competitors are winning, or what signals are about to break your growth. Covers revenue diagnosis and projection, competitive intelligence (dossiers, mole, clean room), signal detection, coaching IP extraction, and failure pattern forensics. Run these before making any major strategic call.</p>
             <div class="skills-list">
@@ -2256,7 +2171,7 @@ body{background-color:var(--bg-canvas);color:var(--text-primary);font-family:var
                   <span class="skill-desc">Evaluates all pairwise connections between business activities and produces an Activity System Coherence Score.</span>
                 </div>
               <div class="skill-row" data-name="bi agent builder" data-desc="builds a bi agent that synthesizes multiple data sources into daily actionable recommendations." data-folder="bi-agent-builder" data-category="Business Intelligence">
-                  <span class="skill-name">Bi Agent Builder</span>
+                  <span class="skill-name">BI Agent Builder</span>
                   <span class="skill-folder">/bi-agent-builder</span>
                   <span class="skill-desc">Builds a BI agent that synthesizes multiple data sources into daily actionable recommendations.</span>
                 </div>
@@ -2334,16 +2249,6 @@ body{background-color:var(--bg-canvas);color:var(--text-primary);font-family:var
                   <span class="skill-name">Context Priority Manager</span>
                   <span class="skill-folder">/context-priority-manager</span>
                   <span class="skill-desc">Weekly time allocation plan across business contexts — which gets how much, in what order, and why.</span>
-                </div>
-              <div class="skill-row" data-name="counterintuitive advisor" data-desc="models second and third-order effects of business decisions to reveal why the obvious move often loses." data-folder="counterintuitive-advisor" data-category="Business Intelligence" data-plus="true">
-                  <span class="skill-name">Counterintuitive Advisor</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/counterintuitive-advisor</span>
-                  <span class="skill-desc">Models second and third-order effects of business decisions to reveal why the obvious move often loses.</span>
-                </div>
-              <div class="skill-row" data-name="decision forcing system" data-desc="outputs a single ranked recommendation from a list of options with stated criteria and context." data-folder="decision-forcing-system" data-category="Business Intelligence" data-plus="true">
-                  <span class="skill-name">Decision Forcing System</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/decision-forcing-system</span>
-                  <span class="skill-desc">Outputs a single ranked recommendation from a list of options with stated criteria and context.</span>
                 </div>
               <div class="skill-row" data-name="decision forensics" data-desc="tracks and scores business decisions over time to identify decision-making patterns and improve accuracy." data-folder="decision-forensics" data-category="Business Intelligence">
                   <span class="skill-name">Decision Forensics</span>
@@ -2444,26 +2349,10 @@ body{background-color:var(--bg-canvas);color:var(--text-primary);font-family:var
           <div class="cat-section" data-category="System Mastery" id="cat-system-mastery">
             <div class="cat-section-title">
               System Mastery
-              <span class="cat-section-count">36 skills</span>
+              <span class="cat-section-count">14 skills</span>
             </div>
             <p class="cat-intro">Use these when you need to understand, navigate, or extend your own installed system — what skills you have, what's missing, what to run next, and how to build new ones. Start with My Toolkit to see everything you've got, My Roadmap to decide what to build next, and Command Center for your daily operating dashboard.</p>
-            <div class="skills-list">
-              <div class="skill-row" data-name="agent creator" data-desc="guide for building agents with autonomous judgment, multi-step workflows, and quality enforcement." data-folder="agent-creator" data-category="System Mastery" data-plus="true">
-                  <span class="skill-name">Agent Creator</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/agent-creator</span>
-                  <span class="skill-desc">Guide for building agents with autonomous judgment, multi-step workflows, and quality enforcement.</span>
-                </div>
-              <div class="skill-row" data-name="ai time estimator" data-desc="forces accurate ai time estimates by breaking work into actual operations." data-folder="ai-time-estimator" data-category="System Mastery" data-plus="true">
-                  <span class="skill-name">Ai Time Estimator</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/ai-time-estimator</span>
-                  <span class="skill-desc">Forces accurate AI time estimates by breaking work into actual operations.</span>
-                </div>
-              <div class="skill-row" data-name="command center" data-desc="personalized briefing system connecting business services with urgency scoring and deep-link actions." data-folder="command-center" data-category="System Mastery" data-plus="true">
-                  <span class="skill-name">Command Center</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/command-center</span>
-                  <span class="skill-desc">Personalized briefing system connecting business services with urgency scoring and deep-link actions.</span>
-                </div>
-              <div class="skill-row" data-name="daily focus optimizer" data-desc="produces one decision — not a to-do list — for any constrained work session of 1 hour or less." data-folder="daily-focus-optimizer" data-category="System Mastery">
+            <div class="skills-list">              <div class="skill-row" data-name="daily focus optimizer" data-desc="produces one decision — not a to-do list — for any constrained work session of 1 hour or less." data-folder="daily-focus-optimizer" data-category="System Mastery">
                   <span class="skill-name">Daily Focus Optimizer</span>
                   <span class="skill-folder">/daily-focus-optimizer</span>
                   <span class="skill-desc">Produces one decision — not a to-do list — for any constrained work session of 1 hour or less.</span>
@@ -2478,73 +2367,18 @@ body{background-color:var(--bg-canvas);color:var(--text-primary);font-family:var
                   <span class="skill-folder">/data-enrichment</span>
                   <span class="skill-desc">Enriches contacts from name and email into full intelligence profiles using web research.</span>
                 </div>
-              <div class="skill-row" data-name="doc coauthoring" data-desc="structured co-authoring workflow for documentation, proposals, technical specs, and decision docs." data-folder="doc-coauthoring" data-category="System Mastery" data-plus="true">
-                  <span class="skill-name">Doc Coauthoring</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/doc-coauthoring</span>
-                  <span class="skill-desc">Structured co-authoring workflow for documentation, proposals, technical specs, and decision docs.</span>
-                </div>
               <div class="skill-row" data-name="docx" data-desc="document creation, editing, and analysis with tracked changes, comments, and formatting preservation." data-folder="docx" data-category="System Mastery">
-                  <span class="skill-name">Docx</span>
+                  <span class="skill-name">DOCX</span>
                   <span class="skill-folder">/docx</span>
                   <span class="skill-desc">Document creation, editing, and analysis with tracked changes, comments, and formatting preservation.</span>
-                </div>
-              <div class="skill-row" data-name="&quot;executive-mentor&quot;" data-desc="adversarial thinking partner — stress-tests plans, prepares for brutal board meetings, forces honest post-mortems." data-folder="executive-mentor" data-category="System Mastery" data-plus="true">
-                  <span class="skill-name">&quot;executive-mentor&quot;</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/executive-mentor</span>
-                  <span class="skill-desc">Adversarial thinking partner — stress-tests plans, prepares for brutal board meetings, forces honest post-mortems.</span>
-                </div>
-              <div class="skill-row" data-name="file organizer" data-desc="intelligently organizes files and folders by context — finds duplicates, suggests structures, automates cleanup." data-folder="file-organizer" data-category="System Mastery" data-plus="true">
-                  <span class="skill-name">File Organizer</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/file-organizer</span>
-                  <span class="skill-desc">Intelligently organizes files and folders by context — finds duplicates, suggests structures, automates cleanup.</span>
-                </div>
-              <div class="skill-row" data-name="hook starter" data-desc="installs mechanical enforcement hooks that make claude follow your rules 100% of the time." data-folder="hook-starter" data-category="System Mastery" data-plus="true">
-                  <span class="skill-name">Hook Starter</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/hook-starter</span>
-                  <span class="skill-desc">Installs mechanical enforcement hooks that make Claude follow your rules 100% of the time.</span>
-                </div>
-              <div class="skill-row" data-name="install dev stack" data-desc="full one-shot macos claude code dev stack installer — homebrew, formulae, casks, and ghost os." data-folder="install-dev-stack" data-category="System Mastery" data-plus="true">
-                  <span class="skill-name">Install Dev Stack</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/install-dev-stack</span>
-                  <span class="skill-desc">Full one-shot macOS Claude Code dev stack installer — Homebrew, formulae, casks, and Ghost OS.</span>
                 </div>
               <div class="skill-row" data-name="j curve breakthrough tracker" data-desc="weekly content production diagnosis — finds breakdown root causes and produces a redesign recommendation." data-folder="j-curve-breakthrough-tracker" data-category="System Mastery">
                   <span class="skill-name">J Curve Breakthrough Tracker</span>
                   <span class="skill-folder">/j-curve-breakthrough-tracker</span>
                   <span class="skill-desc">Weekly content production diagnosis — finds breakdown root causes and produces a redesign recommendation.</span>
                 </div>
-              <div class="skill-row" data-name="contract-review" data-desc="reviews contracts against a negotiation playbook — flags deviations and generates redline suggestions." data-folder="legal-contract-review" data-category="System Mastery" data-plus="true">
-                  <span class="skill-name">contract-review</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/legal-contract-review</span>
-                  <span class="skill-desc">Reviews contracts against a negotiation playbook — flags deviations and generates redline suggestions.</span>
-                </div>
-              <div class="skill-row" data-name="my blueprint" data-desc="visual map of your complete ai system — what feeds what, where the gaps are, presented as diagrams." data-folder="my-blueprint" data-category="System Mastery" data-plus="true">
-                  <span class="skill-name">My Blueprint</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/my-blueprint</span>
-                  <span class="skill-desc">Visual map of your complete AI system — what feeds what, where the gaps are, presented as diagrams.</span>
-                </div>
-              <div class="skill-row" data-name="my housekeeper" data-desc="scans an obsidian vault for dead files, duplicates, broken links, and organizational entropy." data-folder="my-housekeeper" data-category="System Mastery" data-plus="true">
-                  <span class="skill-name">My Housekeeper</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/my-housekeeper</span>
-                  <span class="skill-desc">Scans an Obsidian vault for dead files, duplicates, broken links, and organizational entropy.</span>
-                </div>
-              <div class="skill-row" data-name="my possibilities" data-desc="answers what new capabilities you can build by combining existing skills — top 30 combinations ranked by power." data-folder="my-possibilities" data-category="System Mastery" data-plus="true">
-                  <span class="skill-name">My Possibilities</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/my-possibilities</span>
-                  <span class="skill-desc">Answers what new capabilities you can build by combining existing skills — top 30 combinations ranked by power.</span>
-                </div>
-              <div class="skill-row" data-name="my roadmap" data-desc="reads context files and goals, then produces a structured daily action plan with time estimates and commands." data-folder="my-roadmap" data-category="System Mastery" data-plus="true">
-                  <span class="skill-name">My Roadmap</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/my-roadmap</span>
-                  <span class="skill-desc">Reads context files and goals, then produces a structured daily action plan with time estimates and commands.</span>
-                </div>
-              <div class="skill-row" data-name="my toolkit" data-desc="complete capability inventory — foundation status, what's connected to what, and next highest-leverage action." data-folder="my-toolkit" data-category="System Mastery" data-plus="true">
-                  <span class="skill-name">My Toolkit</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/my-toolkit</span>
-                  <span class="skill-desc">Complete capability inventory — Foundation Status, what's connected to what, and next highest-leverage action.</span>
-                </div>
               <div class="skill-row" data-name="pdf" data-desc="pdf toolkit — extract text and tables, create new pdfs, merge, split, and handle forms." data-folder="pdf" data-category="System Mastery">
-                  <span class="skill-name">Pdf</span>
+                  <span class="skill-name">PDF</span>
                   <span class="skill-folder">/pdf</span>
                   <span class="skill-desc">PDF toolkit — extract text and tables, create new PDFs, merge, split, and handle forms.</span>
                 </div>
@@ -2554,7 +2388,7 @@ body{background-color:var(--bg-canvas);color:var(--text-primary);font-family:var
                   <span class="skill-desc">Sequenced platform rebuild plan with priorities, effort estimates, and dependency mapping.</span>
                 </div>
               <div class="skill-row" data-name="pptx" data-desc="creates, reads, edits, and analyzes .pptx files — slides, pitch decks, and presentations." data-folder="pptx" data-category="System Mastery">
-                  <span class="skill-name">Pptx</span>
+                  <span class="skill-name">PPTX</span>
                   <span class="skill-folder">/pptx</span>
                   <span class="skill-desc">Creates, reads, edits, and analyzes .pptx files — slides, pitch decks, and presentations.</span>
                 </div>
@@ -2562,26 +2396,6 @@ body{background-color:var(--bg-canvas);color:var(--text-primary);font-family:var
                   <span class="skill-name">Skill: pptx-with-script</span>
                   <span class="skill-folder">/pptx-with-script</span>
                   <span class="skill-desc">Converts a .pptx into a PDF where each page shows the slide image with speaker notes below.</span>
-                </div>
-              <div class="skill-row" data-name="pptx zen upgrade" data-desc="applies presentation zen methodology to slide design — reynolds philosophy, typography, and ai image formulas." data-folder="pptx-zen-upgrade" data-category="System Mastery" data-plus="true">
-                  <span class="skill-name">Pptx Zen Upgrade</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/pptx-zen-upgrade</span>
-                  <span class="skill-desc">Applies Presentation Zen methodology to slide design — Reynolds philosophy, typography, and AI image formulas.</span>
-                </div>
-              <div class="skill-row" data-name="process inbox" data-desc="scans a folder of unprocessed files, identifies each item, suggests destination, and moves on approval." data-folder="process-inbox" data-category="System Mastery" data-plus="true">
-                  <span class="skill-name">Process Inbox</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/process-inbox</span>
-                  <span class="skill-desc">Scans a folder of unprocessed files, identifies each item, suggests destination, and moves on approval.</span>
-                </div>
-              <div class="skill-row" data-name="product improver" data-desc="evaluates any work product against 7 value dimensions and produces a prioritized improvement report." data-folder="product-improver" data-category="System Mastery" data-plus="true">
-                  <span class="skill-name">Product Improver</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/product-improver</span>
-                  <span class="skill-desc">Evaluates any work product against 7 value dimensions and produces a prioritized improvement report.</span>
-                </div>
-              <div class="skill-row" data-name="quality gate" data-desc="scores content on 5 dimensions, auto-fixes small issues, and flags big ones before anything is published." data-folder="quality-gate" data-category="System Mastery" data-plus="true">
-                  <span class="skill-name">Quality Gate</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/quality-gate</span>
-                  <span class="skill-desc">Scores content on 5 dimensions, auto-fixes small issues, and flags big ones before anything is published.</span>
                 </div>
               <div class="skill-row" data-name="quick wins demonstrator" data-desc="use when the business owner needs to identify the highest-leverage ai use cases for his specific business before committing to a full implementation approach." data-folder="quick-wins-demonstrator" data-category="System Mastery">
                   <span class="skill-name">Quick Wins Demonstrator</span>
@@ -2594,29 +2408,9 @@ body{background-color:var(--bg-canvas);color:var(--text-primary);font-family:var
                   <span class="skill-desc">Synthesizes multi-source research results into a unified, deduplicated report.</span>
                 </div>
               <div class="skill-row" data-name="roi impact calculator" data-desc="quantifies business value of ai-assisting a specific task before deciding whether to implement." data-folder="roi-impact-calculator" data-category="System Mastery">
-                  <span class="skill-name">Roi Impact Calculator</span>
+                  <span class="skill-name">ROI Impact Calculator</span>
                   <span class="skill-folder">/roi-impact-calculator</span>
                   <span class="skill-desc">Quantifies business value of AI-assisting a specific task before deciding whether to implement.</span>
-                </div>
-              <div class="skill-row" data-name="route captures" data-desc="routes raw captures (voice memos, notes, screenshots) to the right vault location with metadata." data-folder="route-captures" data-category="System Mastery" data-plus="true">
-                  <span class="skill-name">Route Captures</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/route-captures</span>
-                  <span class="skill-desc">Routes raw captures (voice memos, notes, screenshots) to the right vault location with metadata.</span>
-                </div>
-              <div class="skill-row" data-name="skill creator" data-desc="builds a new skill from any repeated workflow so you never re-explain it to claude again." data-folder="skill-creator" data-category="System Mastery" data-plus="true">
-                  <span class="skill-name">Skill Creator</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/skill-creator</span>
-                  <span class="skill-desc">Builds a new skill from any repeated workflow so you never re-explain it to Claude again.</span>
-                </div>
-              <div class="skill-row" data-name="skill pressure test" data-desc="tests whether a skill works under pressure and validates it before deployment or after suspected failure." data-folder="skill-pressure-test" data-category="System Mastery" data-plus="true">
-                  <span class="skill-name">Skill Pressure Test</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/skill-pressure-test</span>
-                  <span class="skill-desc">Tests whether a skill works under pressure and validates it before deployment or after suspected failure.</span>
-                </div>
-              <div class="skill-row" data-name="time block optimizer" data-desc="weekly sprint planner that allocates time blocks across business, client, content, and personal projects." data-folder="time-block-optimizer" data-category="System Mastery" data-plus="true">
-                  <span class="skill-name">Time Block Optimizer</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/time-block-optimizer</span>
-                  <span class="skill-desc">Weekly sprint planner that allocates time blocks across business, client, content, and personal projects.</span>
                 </div>
               <div class="skill-row" data-name="workflow connector" data-desc="wires end-to-end business processes across disconnected systems — eliminates manual handoffs." data-folder="workflow-connector" data-category="System Mastery">
                   <span class="skill-name">Workflow Connector</span>
@@ -2633,118 +2427,31 @@ body{background-color:var(--bg-canvas);color:var(--text-primary);font-family:var
           <div class="cat-section" data-category="Learning" id="cat-learning">
             <div class="cat-section-title">
               Learning
-              <span class="cat-section-count">10 skills</span>
+              <span class="cat-section-count">2 skills</span>
             </div>
             <p class="cat-intro">Use these when you need to absorb external material fast — accelerated learning, intelligent reading, expert content processing, course downloading, video transcription. Pick by source (video, book, course, transcript) or by goal (understanding, summary, IP extraction).</p>
-            <div class="skills-list">
-              <div class="skill-row" data-name="accelerated learning through purpose-driven context" data-desc="compresses skill acquisition using crystal-clear purpose, checkpoint progression, and ambiguity elimination." data-folder="accelerated-learning" data-category="Learning" data-plus="true">
-                  <span class="skill-name">Accelerated Learning Through Purpose-Driven Context</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/accelerated-learning</span>
-                  <span class="skill-desc">Compresses skill acquisition using crystal-clear purpose, checkpoint progression, and ambiguity elimination.</span>
-                </div>
-              <div class="skill-row" data-name="expert application mapper" data-desc="maps expert frameworks to a specific program, producing application documents after summarization." data-folder="expert-application-mapper" data-category="Learning" data-plus="true">
-                  <span class="skill-name">Expert Application Mapper</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/expert-application-mapper</span>
-                  <span class="skill-desc">Maps expert frameworks to a specific program, producing application documents after summarization.</span>
-                </div>
-              <div class="skill-row" data-name="expert content processor" data-desc="converts a folder of raw expert content (audio, video, pdfs, decks) into organized markdown library." data-folder="expert-content-processor" data-category="Learning" data-plus="true">
-                  <span class="skill-name">Expert Content Processor</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/expert-content-processor</span>
-                  <span class="skill-desc">Converts a folder of raw expert content (audio, video, PDFs, decks) into organized markdown library.</span>
-                </div>
-              <div class="skill-row" data-name="expert summarizer" data-desc="creates per-program summaries and a master expert summary from organized content library." data-folder="expert-summarizer" data-category="Learning" data-plus="true">
-                  <span class="skill-name">Expert Summarizer</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/expert-summarizer</span>
-                  <span class="skill-desc">Creates per-program summaries and a master expert summary from organized content library.</span>
-                </div>
-              <div class="skill-row" data-name="intelligent reading framework" data-desc="progressive reading methodology for extracting maximum comprehension and critical insight from texts." data-folder="intelligent-reading" data-category="Learning" data-plus="true">
-                  <span class="skill-name">Intelligent Reading Framework</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/intelligent-reading</span>
-                  <span class="skill-desc">Progressive reading methodology for extracting maximum comprehension and critical insight from texts.</span>
-                </div>
-              <div class="skill-row" data-name="interview to document" data-desc="converts a discovery interview transcript into a complete 7 keys to messaging document." data-folder="interview-to-document" data-category="Learning">
+            <div class="skills-list">              <div class="skill-row" data-name="interview to document" data-desc="converts a discovery interview transcript into a complete 7 keys to messaging document." data-folder="interview-to-document" data-category="Learning">
                   <span class="skill-name">Interview To Document</span>
                   <span class="skill-folder">/interview-to-document</span>
                   <span class="skill-desc">Converts a discovery interview transcript into a complete 7 Keys to Messaging document.</span>
-                </div>
-              <div class="skill-row" data-name="meeting insights analyzer" data-desc="analyzes meeting transcripts to surface conflict avoidance, filler words, and actionable communication patterns." data-folder="meeting-insights-analyzer" data-category="Learning" data-plus="true">
-                  <span class="skill-name">Meeting Insights Analyzer</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/meeting-insights-analyzer</span>
-                  <span class="skill-desc">Analyzes meeting transcripts to surface conflict avoidance, filler words, and actionable communication patterns.</span>
-                </div>
-              <div class="skill-row" data-name="skool downloader" data-desc="downloads entire skool.com classrooms into structured markdown — all courses, sections, and lessons." data-folder="skool-downloader" data-category="Learning" data-plus="true">
-                  <span class="skill-name">Skool Downloader</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/skool-downloader</span>
-                  <span class="skill-desc">Downloads entire Skool.com classrooms into structured Markdown — all courses, sections, and lessons.</span>
                 </div>
               <div class="skill-row" data-name="sp-video-downloader" data-desc="downloads videos from youtube and other platforms in various formats and quality options." data-folder="video-downloader" data-category="Learning">
                   <span class="skill-name">sp-video-downloader</span>
                   <span class="skill-folder">/video-downloader</span>
                   <span class="skill-desc">Downloads videos from YouTube and other platforms in various formats and quality options.</span>
                 </div>
-              <div class="skill-row" data-name="video transcription" data-desc="transcribes local video files to markdown using mlx whisper — batch processes entire course folders." data-folder="video-transcription" data-category="Learning" data-plus="true">
-                  <span class="skill-name">Video Transcription</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/video-transcription</span>
-                  <span class="skill-desc">Transcribes local video files to Markdown using MLX Whisper — batch processes entire course folders.</span>
-                </div>
             </div>
           </div>
           <div class="cat-section" data-category="Creation &amp; Visual" id="cat-creation-visual">
             <div class="cat-section-title">
               Creation &amp; Visual
-              <span class="cat-section-count">11 skills</span>
+              <span class="cat-section-count">2 skills</span>
             </div>
             <p class="cat-intro">Use these when you need images, slides, landing pages, dashboards, or talking-head videos generated fast. Covers AI image generation, social graphics, presentations, web pages, and short videos. Pick by output format.</p>
-            <div class="skills-list">
-              <div class="skill-row" data-name="ai social graphics" data-desc="platform-optimized social graphics and thumbnails — instagram, youtube, linkedin, and twitter." data-folder="ai-social-graphics" data-category="Creation &amp; Visual" data-plus="true">
-                  <span class="skill-name">Ai Social Graphics</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/ai-social-graphics</span>
-                  <span class="skill-desc">Platform-optimized social graphics and thumbnails — Instagram, YouTube, LinkedIn, and Twitter.</span>
-                </div>
-              <div class="skill-row" data-name="ai talking head" data-desc="ai talking head and lip-sync video generation for presenter videos and ugc-style content." data-folder="ai-talking-head" data-category="Creation &amp; Visual" data-plus="true">
-                  <span class="skill-name">Ai Talking Head</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/ai-talking-head</span>
-                  <span class="skill-desc">AI talking head and lip-sync video generation for presenter videos and UGC-style content.</span>
-                </div>
-              <div class="skill-row" data-name="brand html converter" data-desc="converts markdown copy into branded html landing pages using a client's brand guide." data-folder="brand-html-converter" data-category="Creation &amp; Visual" data-plus="true">
-                  <span class="skill-name">Brand Html Converter</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/brand-html-converter</span>
-                  <span class="skill-desc">Converts markdown copy into branded HTML landing pages using a client's brand guide.</span>
-                </div>
-              <div class="skill-row" data-name="brand image generator" data-desc="generates on-brand image prompts with strict visual standards — realistic, conservative, brand-appropriate." data-folder="brand-image-generator" data-category="Creation &amp; Visual">
+            <div class="skills-list">              <div class="skill-row" data-name="brand image generator" data-desc="generates on-brand image prompts with strict visual standards — realistic, conservative, brand-appropriate." data-folder="brand-image-generator" data-category="Creation &amp; Visual">
                   <span class="skill-name">Brand Image Generator</span>
                   <span class="skill-folder">/brand-image-generator</span>
                   <span class="skill-desc">Generates on-brand image prompts with strict visual standards — realistic, conservative, brand-appropriate.</span>
-                </div>
-              <div class="skill-row" data-name="canvas design" data-desc="creates visual art in .png and .pdf using design philosophy — posters, art, and static pieces." data-folder="canvas-design" data-category="Creation &amp; Visual" data-plus="true">
-                  <span class="skill-name">Canvas Design</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/canvas-design</span>
-                  <span class="skill-desc">Creates visual art in .png and .pdf using design philosophy — posters, art, and static pieces.</span>
-                </div>
-              <div class="skill-row" data-name="dark terminal landing" data-desc="premium dark-mode landing pages with terminal/hacker aesthetic and scroll-triggered animations." data-folder="dark-terminal-landing" data-category="Creation &amp; Visual" data-plus="true">
-                  <span class="skill-name">Dark Terminal Landing</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/dark-terminal-landing</span>
-                  <span class="skill-desc">Premium dark-mode landing pages with terminal/hacker aesthetic and scroll-triggered animations.</span>
-                </div>
-              <div class="skill-row" data-name="interactive-dashboard-builder" data-desc="builds self-contained interactive html dashboards with chart.js, filters, and professional styling." data-folder="data-interactive-dashboard-builder" data-category="Creation &amp; Visual" data-plus="true">
-                  <span class="skill-name">interactive-dashboard-builder</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/data-interactive-dashboard-builder</span>
-                  <span class="skill-desc">Builds self-contained interactive HTML dashboards with Chart.js, filters, and professional styling.</span>
-                </div>
-              <div class="skill-row" data-name="image enhancer" data-desc="enhances resolution, sharpness, and clarity in screenshots and images for professional use." data-folder="image-enhancer" data-category="Creation &amp; Visual" data-plus="true">
-                  <span class="skill-name">Image Enhancer</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/image-enhancer</span>
-                  <span class="skill-desc">Enhances resolution, sharpness, and clarity in screenshots and images for professional use.</span>
-                </div>
-              <div class="skill-row" data-name="image generation" data-desc="generates professional ai images using gemini — automatically invoked when building websites or visual assets." data-folder="image-generation" data-category="Creation &amp; Visual" data-plus="true">
-                  <span class="skill-name">Image Generation</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/image-generation</span>
-                  <span class="skill-desc">Generates professional AI images using Gemini — automatically invoked when building websites or visual assets.</span>
-                </div>
-              <div class="skill-row" data-name="theme factory" data-desc="applies 10 pre-set design themes (colors, fonts) to slides, docs, reports, and html landing pages." data-folder="theme-factory" data-category="Creation &amp; Visual" data-plus="true">
-                  <span class="skill-name">Theme Factory</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/theme-factory</span>
-                  <span class="skill-desc">Applies 10 pre-set design themes (colors, fonts) to slides, docs, reports, and HTML landing pages.</span>
                 </div>
               <div class="skill-row" data-name="[your_product] landing page builder" data-desc="builds zenithpro-branded landing pages from configurable placeholders for any product or service." data-folder="zenithpro-landing-page-builder" data-category="Creation &amp; Visual">
                   <span class="skill-name">[YOUR_PRODUCT] Landing Page Builder</span>
@@ -2753,29 +2460,10 @@ body{background-color:var(--bg-canvas);color:var(--text-primary);font-family:var
                 </div>
             </div>
           </div>
-          <div class="cat-section" data-category="Simulation" id="cat-simulation">
-            <div class="cat-section-title">
-              Simulation
-              <span class="cat-section-count">2 skills</span>
-            </div>
-            <p class="cat-intro">Use these when your copy, webinar, or offer needs a pressure test before it goes live. Test content against twelve simulated buyer archetypes, run a blind audience test, or simulate a full webinar chat. Run these after you've drafted — but before you publish.</p>
-            <div class="skills-list">
-              <div class="skill-row" data-name="sim audience" data-desc="runs content through 12 documented buyer archetypes for panel reaction and conversion feedback." data-folder="sim-audience" data-category="Simulation" data-plus="true">
-                  <span class="skill-name">Sim Audience</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/sim-audience</span>
-                  <span class="skill-desc">Runs content through 12 documented buyer archetypes for panel reaction and conversion feedback.</span>
-                </div>
-              <div class="skill-row" data-name="sim audience blind" data-desc="blind sequential audience simulation — each persona reacts section-by-section without knowing what comes next." data-folder="sim-audience-blind" data-category="Simulation" data-plus="true">
-                  <span class="skill-name">Sim Audience Blind</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/sim-audience-blind</span>
-                  <span class="skill-desc">Blind sequential audience simulation — each persona reacts section-by-section without knowing what comes next.</span>
-                </div>
-            </div>
-          </div>
           <div class="cat-section" data-category="Additional Skills" id="cat-additional-skills">
             <div class="cat-section-title">
               Additional Skills
-              <span class="cat-section-count">20 skills</span>
+              <span class="cat-section-count">10 skills</span>
             </div>
             <p class="cat-intro">Use these for specialized or cross-category tools that don't sit neatly in any single category above. Browse by name; search by what you're trying to do.</p>
             <div class="skills-list">
@@ -2784,25 +2472,10 @@ body{background-color:var(--bg-canvas);color:var(--text-primary);font-family:var
                   <span class="skill-folder">/belief-gap-analyzer</span>
                   <span class="skill-desc">Maps load-bearing beliefs blocking purchase in the exact sequence they must be shifted.</span>
                 </div>
-              <div class="skill-row" data-name="core concept generator" data-desc="generates the paradigm-shifting reframe that makes not buying irrational — run failure-forensics first." data-folder="core-concept-generator" data-category="Additional Skills" data-plus="true">
-                  <span class="skill-name">Core Concept Generator</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/core-concept-generator</span>
-                  <span class="skill-desc">Generates the paradigm-shifting reframe that makes NOT buying irrational — run failure-forensics first.</span>
-                </div>
-              <div class="skill-row" data-name="credential forge" data-desc="packages credentials into authority assets — credential kit, bio, social proof, and positioning materials." data-folder="credential-forge" data-category="Additional Skills" data-plus="true">
-                  <span class="skill-name">Credential Forge</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/credential-forge</span>
-                  <span class="skill-desc">Packages credentials into authority assets — credential kit, bio, social proof, and positioning materials.</span>
-                </div>
               <div class="skill-row" data-name="failure pattern forensics" data-desc="traces the top 5 structural failure patterns for intelligent people failing at major transitions." data-folder="failure-pattern-forensics" data-category="Additional Skills">
                   <span class="skill-name">Failure Pattern Forensics</span>
                   <span class="skill-folder">/failure-pattern-forensics</span>
                   <span class="skill-desc">Traces the top 5 structural failure patterns for intelligent people failing at major transitions.</span>
-                </div>
-              <div class="skill-row" data-name="first impression fix" data-desc="gap analysis between how you present yourself and what your credentials actually support." data-folder="first-impression-fix" data-category="Additional Skills" data-plus="true">
-                  <span class="skill-name">First Impression Fix</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/first-impression-fix</span>
-                  <span class="skill-desc">Gap analysis between how you present yourself and what your credentials actually support.</span>
                 </div>
               <div class="skill-row" data-name="mimetic market intelligence" data-desc="maps what competitors mediate (desires, not features) and finds open positioning space using mimetic theory." data-folder="mimetic-market-intelligence" data-category="Additional Skills">
                   <span class="skill-name">Mimetic Market Intelligence</span>
@@ -2813,16 +2486,6 @@ body{background-color:var(--bg-canvas);color:var(--text-primary);font-family:var
                   <span class="skill-name">Motivation Spectrum Analyzer</span>
                   <span class="skill-folder">/motivation-spectrum-analyzer</span>
                   <span class="skill-desc">Determines whether a market is toward-motivated, away-motivated, or hybrid before any demand pipeline.</span>
-                </div>
-              <div class="skill-row" data-name="network playbook" data-desc="maps your influence network and builds a relationship development plan for strategic connections." data-folder="network-playbook" data-category="Additional Skills" data-plus="true">
-                  <span class="skill-name">Network Playbook</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/network-playbook</span>
-                  <span class="skill-desc">Maps your influence network and builds a relationship development plan for strategic connections.</span>
-                </div>
-              <div class="skill-row" data-name="personal brand dna extractor" data-desc="builds 8 ai-optimized brand files (voice, credentials, stories, avatar) that every writing skill reads at runtime." data-folder="personal-brand-dna-extractor" data-category="Additional Skills" data-plus="true">
-                  <span class="skill-name">Personal Brand Dna Extractor</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/personal-brand-dna-extractor</span>
-                  <span class="skill-desc">Builds 8 AI-optimized brand files (voice, credentials, stories, avatar) that every writing skill reads at runtime.</span>
                 </div>
               <div class="skill-row" data-name="prospect primer" data-desc="builds an ai-assisted assessment or diagnostic for pre-qualifying prospects before sales calls." data-folder="prospect-primer" data-category="Additional Skills">
                   <span class="skill-name">Prospect Primer</span>
@@ -2838,31 +2501,6 @@ body{background-color:var(--bg-canvas);color:var(--text-primary);font-family:var
                   <span class="skill-name">Psychographic Excavation</span>
                   <span class="skill-folder">/psychographic-excavation</span>
                   <span class="skill-desc">Forensic psychological reconstruction producing 3-5 buyer profiles with primary wound, belief, and exact language.</span>
-                </div>
-              <div class="skill-row" data-name="reality check" data-desc="flips your perception map — what your field actually believes about you vs. what you think they believe." data-folder="reality-check" data-category="Additional Skills" data-plus="true">
-                  <span class="skill-name">Reality Check</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/reality-check</span>
-                  <span class="skill-desc">Flips your perception map — what your field actually believes about you vs. what you think they believe.</span>
-                </div>
-              <div class="skill-row" data-name="scouting report" data-desc="full pre-meeting intelligence brief — what you need to know before any call, pitch, or presentation." data-folder="scouting-report" data-category="Additional Skills" data-plus="true">
-                  <span class="skill-name">Scouting Report</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/scouting-report</span>
-                  <span class="skill-desc">Full pre-meeting intelligence brief — what you need to know before any call, pitch, or presentation.</span>
-                </div>
-              <div class="skill-row" data-name="signature scribe" data-desc="ghostwrites keynotes, speeches, and long-form content in the speaker's authenticated voice." data-folder="signature-scribe" data-category="Additional Skills" data-plus="true">
-                  <span class="skill-name">Signature Scribe</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/signature-scribe</span>
-                  <span class="skill-desc">Ghostwrites keynotes, speeches, and long-form content in the speaker's authenticated voice.</span>
-                </div>
-              <div class="skill-row" data-name="story sharpener" data-desc="sharpens origin stories, elevator pitches, and keynote openings into memorable, deployable narratives." data-folder="story-sharpener" data-category="Additional Skills" data-plus="true">
-                  <span class="skill-name">Story Sharpener</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/story-sharpener</span>
-                  <span class="skill-desc">Sharpens origin stories, elevator pitches, and keynote openings into memorable, deployable narratives.</span>
-                </div>
-              <div class="skill-row" data-name="unique genius discovery" data-desc="three-method genius discovery — 3 e's framework, movie of life, turning point advantage — to find the irreplaceable." data-folder="unique-genius-discovery" data-category="Additional Skills" data-plus="true">
-                  <span class="skill-name">Unique Genius Discovery</span><span class="plus-chip">PLUS</span>
-                  <span class="skill-folder">/unique-genius-discovery</span>
-                  <span class="skill-desc">Three-method genius discovery — 3 E's Framework, Movie of Life, Turning Point Advantage — to find the irreplaceable.</span>
                 </div>
               <div class="skill-row" data-name="usp generator" data-desc="generates ranked usp candidates with competitive differentiation analysis from product features." data-folder="usp-generator" data-category="Additional Skills">
                   <span class="skill-name">Usp Generator</span>
@@ -2882,6 +2520,417 @@ body{background-color:var(--bg-canvas);color:var(--text-primary);font-family:var
             </div>
           </div>
         </div>
+          <div id="plus-package-wrapper" style="display:none">
+            <div class="plus-package-header">
+              <div class="plus-package-kicker">ZENITHMIND PLUS PACKAGE</div>
+              <h2 class="plus-package-title">Included with your Elite membership.</h2>
+              <p class="plus-package-lede">70 additional skills for professional positioning, authority content, expertise packaging, and running your personal system.</p>
+            </div>
+          <div class="cat-section plus-section" data-category="Plus: Position & Perception" id="plus-cat-position-perception">
+            <div class="cat-section-title plus-section-title">
+              Position & Perception
+              <span class="cat-section-count">9 skills</span>
+            </div>
+            <p class="cat-intro">Use these when you need to sharpen how you come across — your unique positioning, the first impression prospects form, and the credentials that should be leading.</p>
+            <div class="skills-list">
+              <div class="skill-row" data-name="personal brand dna extractor" data-desc="builds 8 ai-optimized brand files (voice, credentials, stories, avatar) that every writing skill reads at runtime." data-folder="personal-brand-dna-extractor" data-category="Plus: Position & Perception" data-plus="true">
+                  <span class="skill-name">Personal Brand DNA Extractor</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/personal-brand-dna-extractor</span>
+                  <span class="skill-desc">Builds 8 AI-optimized brand files (voice, credentials, stories, avatar) that every writing skill reads at runtime.</span>
+                </div>
+              <div class="skill-row" data-name="first impression fix" data-desc="gap analysis between how you present yourself and what your credentials actually support." data-folder="first-impression-fix" data-category="Plus: Position & Perception" data-plus="true">
+                  <span class="skill-name">First Impression Fix</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/first-impression-fix</span>
+                  <span class="skill-desc">Gap analysis between how you present yourself and what your credentials actually support.</span>
+                </div>
+              <div class="skill-row" data-name="reality check" data-desc="flips your perception map — what your field actually believes about you vs. what you think they believe." data-folder="reality-check" data-category="Plus: Position & Perception" data-plus="true">
+                  <span class="skill-name">Reality Check</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/reality-check</span>
+                  <span class="skill-desc">Flips your perception map — what your field actually believes about you vs. what you think they believe.</span>
+                </div>
+              <div class="skill-row" data-name="thoughtpreneur positioning" data-desc="9-box positioning matrix builder with the a-b-c shortcut and problem articulation." data-folder="thoughtpreneur-positioning" data-category="Plus: Position & Perception" data-plus="true">
+                  <span class="skill-name">Thoughtpreneur Positioning</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/thoughtpreneur-positioning</span>
+                  <span class="skill-desc">9-Box Positioning Matrix builder with the A-B-C shortcut and problem articulation.</span>
+                </div>
+              <div class="skill-row" data-name="thoughtpreneur 52 points" data-desc="52 points of distinction generator — builds an intellectual property portfolio systematically." data-folder="thoughtpreneur-52-points" data-category="Plus: Position & Perception" data-plus="true">
+                  <span class="skill-name">Thoughtpreneur 52 Points</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/thoughtpreneur-52-points</span>
+                  <span class="skill-desc">52 Points of Distinction generator — builds an intellectual property portfolio systematically.</span>
+                </div>
+              <div class="skill-row" data-name="unique genius discovery" data-desc="three-method genius discovery — 3 e's framework, movie of life, turning point advantage — to find the irreplaceable." data-folder="unique-genius-discovery" data-category="Plus: Position & Perception" data-plus="true">
+                  <span class="skill-name">Unique Genius Discovery</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/unique-genius-discovery</span>
+                  <span class="skill-desc">Three-method genius discovery — 3 E's Framework, Movie of Life, Turning Point Advantage — to find the irreplaceable.</span>
+                </div>
+              <div class="skill-row" data-name="credential forge" data-desc="packages credentials into authority assets — credential kit, bio, social proof, and positioning materials." data-folder="credential-forge" data-category="Plus: Position & Perception" data-plus="true">
+                  <span class="skill-name">Credential Forge</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/credential-forge</span>
+                  <span class="skill-desc">Packages credentials into authority assets — credential kit, bio, social proof, and positioning materials.</span>
+                </div>
+              <div class="skill-row" data-name="scouting report" data-desc="full pre-meeting intelligence brief — what you need to know before any call, pitch, or presentation." data-folder="scouting-report" data-category="Plus: Position & Perception" data-plus="true">
+                  <span class="skill-name">Scouting Report</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/scouting-report</span>
+                  <span class="skill-desc">Full pre-meeting intelligence brief — what you need to know before any call, pitch, or presentation.</span>
+                </div>
+              <div class="skill-row" data-name="skill.md: style cloning framework" data-desc="extracts and replicates a writing style from sample content for consistent voice cloning." data-folder="style-cloner" data-category="Plus: Position & Perception" data-plus="true">
+                  <span class="skill-name">SKILL.md: Style Cloning Framework</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/style-cloner</span>
+                  <span class="skill-desc">Extracts and replicates a writing style from sample content for consistent voice cloning.</span>
+                </div>
+            </div>
+          </div>
+          <div class="cat-section plus-section" data-category="Plus: Authority Content" id="plus-cat-authority-content">
+            <div class="cat-section-title plus-section-title">
+              Authority Content
+              <span class="cat-section-count">12 skills</span>
+            </div>
+            <p class="cat-intro">Use these when you need to publish as an authority — LinkedIn posts, signature talks, pillar content, origin stories, and the voice that sounds like you across every channel.</p>
+            <div class="skills-list">
+              <div class="skill-row" data-name="linkedin post" data-desc="single linkedin posts in your authentic voice — 3 scroll-stopping variations from any topic." data-folder="linkedin-post" data-category="Plus: Authority Content" data-plus="true">
+                  <span class="skill-name">Linkedin Post</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/linkedin-post</span>
+                  <span class="skill-desc">Single LinkedIn posts in your authentic voice — 3 scroll-stopping variations from any topic.</span>
+                </div>
+              <div class="skill-row" data-name="linkedin lead magnet" data-desc="researches a topic, writes a lead magnet, publishes it live via api, and drafts 3 linkedin posts." data-folder="linkedin-lead-magnet" data-category="Plus: Authority Content" data-plus="true">
+                  <span class="skill-name">Linkedin Lead Magnet</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/linkedin-lead-magnet</span>
+                  <span class="skill-desc">Researches a topic, writes a lead magnet, publishes it live via API, and drafts 3 LinkedIn posts.</span>
+                </div>
+              <div class="skill-row" data-name="linkedin trending topics" data-desc="surfaces the 10 highest-traction topics across reddit, youtube, x, and the web calibrated to your pillars." data-folder="linkedin-trending-topics" data-category="Plus: Authority Content" data-plus="true">
+                  <span class="skill-name">Linkedin Trending Topics</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/linkedin-trending-topics</span>
+                  <span class="skill-desc">Surfaces the 10 highest-traction topics across Reddit, YouTube, X, and the web calibrated to your pillars.</span>
+                </div>
+              <div class="skill-row" data-name="linkedin voice setup" data-desc="one-time setup that auto-populates your linkedin voice file from proof-stack-builder output." data-folder="linkedin-voice-setup" data-category="Plus: Authority Content" data-plus="true">
+                  <span class="skill-name">Linkedin Voice Setup</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/linkedin-voice-setup</span>
+                  <span class="skill-desc">One-time setup that auto-populates your LinkedIn voice file from proof-stack-builder output.</span>
+                </div>
+              <div class="skill-row" data-name="pillar content architect" data-desc="writes manifesto-style pillar content — the definitive worldview statement that establishes authority." data-folder="pillar-content-architect" data-category="Plus: Authority Content" data-plus="true">
+                  <span class="skill-name">Pillar Content Architect</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/pillar-content-architect</span>
+                  <span class="skill-desc">Writes manifesto-style pillar content — the definitive worldview statement that establishes authority.</span>
+                </div>
+              <div class="skill-row" data-name="signature talk architect" data-desc="builds the complete 20-60 minute signature talk architecture — from belief shift sequencing to offer positioning." data-folder="signature-talk-architect" data-category="Plus: Authority Content" data-plus="true">
+                  <span class="skill-name">Signature Talk Architect</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/signature-talk-architect</span>
+                  <span class="skill-desc">Builds the complete 20-60 minute signature talk architecture — from belief shift sequencing to offer positioning.</span>
+                </div>
+              <div class="skill-row" data-name="signature scribe" data-desc="ghostwrites keynotes, speeches, and long-form content in the speaker's authenticated voice." data-folder="signature-scribe" data-category="Plus: Authority Content" data-plus="true">
+                  <span class="skill-name">Signature Scribe</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/signature-scribe</span>
+                  <span class="skill-desc">Ghostwrites keynotes, speeches, and long-form content in the speaker's authenticated voice.</span>
+                </div>
+              <div class="skill-row" data-name="short-form copy mastery" data-desc="ad copy, email subjects, and micro-persuasion for business coaching and ai implementation niches." data-folder="short-form-copy" data-category="Plus: Authority Content" data-plus="true">
+                  <span class="skill-name">Short-Form Copy Mastery</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/short-form-copy</span>
+                  <span class="skill-desc">Ad copy, email subjects, and micro-persuasion for business coaching and AI implementation niches.</span>
+                </div>
+              <div class="skill-row" data-name="story capture" data-desc="extracts and banks narrative stories from transcripts and coaching calls into a permanent story library." data-folder="story-capture" data-category="Plus: Authority Content" data-plus="true">
+                  <span class="skill-name">Story Capture</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/story-capture</span>
+                  <span class="skill-desc">Extracts and banks narrative stories from transcripts and coaching calls into a permanent story library.</span>
+                </div>
+              <div class="skill-row" data-name="story sharpener" data-desc="sharpens origin stories, elevator pitches, and keynote openings into memorable, deployable narratives." data-folder="story-sharpener" data-category="Plus: Authority Content" data-plus="true">
+                  <span class="skill-name">Story Sharpener</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/story-sharpener</span>
+                  <span class="skill-desc">Sharpens origin stories, elevator pitches, and keynote openings into memorable, deployable narratives.</span>
+                </div>
+              <div class="skill-row" data-name="network playbook" data-desc="maps your influence network and builds a relationship development plan for strategic connections." data-folder="network-playbook" data-category="Plus: Authority Content" data-plus="true">
+                  <span class="skill-name">Network Playbook</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/network-playbook</span>
+                  <span class="skill-desc">Maps your influence network and builds a relationship development plan for strategic connections.</span>
+                </div>
+              <div class="skill-row" data-name="&quot;ai-seo&quot;" data-desc="optimizes content to get cited by ai search engines — chatgpt, perplexity, google ai overviews, and gemini." data-folder="ai-seo" data-category="Plus: Authority Content" data-plus="true">
+                  <span class="skill-name">&quot;ai-seo&quot;</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/ai-seo</span>
+                  <span class="skill-desc">Optimizes content to get cited by AI search engines — ChatGPT, Perplexity, Google AI Overviews, and Gemini.</span>
+                </div>
+            </div>
+          </div>
+          <div class="cat-section plus-section" data-category="Plus: Package Your Expertise" id="plus-cat-package-your-expertise">
+            <div class="cat-section-title plus-section-title">
+              Package Your Expertise
+              <span class="cat-section-count">11 skills</span>
+            </div>
+            <p class="cat-intro">Use these when you want to turn what you know into a system — distinctions, frameworks, skills, agents, and reusable IP extracted from your existing material.</p>
+            <div class="skills-list">
+              <div class="skill-row" data-name="ip encoding engine" data-desc="encodes proprietary frameworks into agent-readable, executable skill files for ai deployment." data-folder="ip-encoding-engine" data-category="Plus: Package Your Expertise" data-plus="true">
+                  <span class="skill-name">IP Encoding Engine</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/ip-encoding-engine</span>
+                  <span class="skill-desc">Encodes proprietary frameworks into agent-readable, executable skill files for AI deployment.</span>
+                </div>
+              <div class="skill-row" data-name="knowledge structurer" data-desc="converts scattered expertise into an indexed, ai-readable knowledge base for agent systems." data-folder="knowledge-structurer" data-category="Plus: Package Your Expertise" data-plus="true">
+                  <span class="skill-name">Knowledge Structurer</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/knowledge-structurer</span>
+                  <span class="skill-desc">Converts scattered expertise into an indexed, AI-readable knowledge base for agent systems.</span>
+                </div>
+              <div class="skill-row" data-name="distinction finder" data-desc="mines source content for teachable distinctions and outputs structured extractions." data-folder="distinction-finder" data-category="Plus: Package Your Expertise" data-plus="true">
+                  <span class="skill-name">Distinction Finder</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/distinction-finder</span>
+                  <span class="skill-desc">Mines source content for teachable distinctions and outputs structured extractions.</span>
+                </div>
+              <div class="skill-row" data-name="microscript forge" data-desc="generates 10 ranked microscript candidates using linguistic science — sound patterns, alliteration, and prosody." data-folder="microscript-forge" data-category="Plus: Package Your Expertise" data-plus="true">
+                  <span class="skill-name">Microscript Forge</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/microscript-forge</span>
+                  <span class="skill-desc">Generates 10 ranked microscript candidates using linguistic science — sound patterns, alliteration, and prosody.</span>
+                </div>
+              <div class="skill-row" data-name="expert content processor" data-desc="converts a folder of raw expert content (audio, video, pdfs, decks) into organized markdown library." data-folder="expert-content-processor" data-category="Plus: Package Your Expertise" data-plus="true">
+                  <span class="skill-name">Expert Content Processor</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/expert-content-processor</span>
+                  <span class="skill-desc">Converts a folder of raw expert content (audio, video, PDFs, decks) into organized markdown library.</span>
+                </div>
+              <div class="skill-row" data-name="expert summarizer" data-desc="creates per-program summaries and a master expert summary from organized content library." data-folder="expert-summarizer" data-category="Plus: Package Your Expertise" data-plus="true">
+                  <span class="skill-name">Expert Summarizer</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/expert-summarizer</span>
+                  <span class="skill-desc">Creates per-program summaries and a master expert summary from organized content library.</span>
+                </div>
+              <div class="skill-row" data-name="expert application mapper" data-desc="maps expert frameworks to a specific program, producing application documents after summarization." data-folder="expert-application-mapper" data-category="Plus: Package Your Expertise" data-plus="true">
+                  <span class="skill-name">Expert Application Mapper</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/expert-application-mapper</span>
+                  <span class="skill-desc">Maps expert frameworks to a specific program, producing application documents after summarization.</span>
+                </div>
+              <div class="skill-row" data-name="coaching session multiplier" data-desc="transforms raw session inputs into six structured outputs for the client and the content pipeline." data-folder="coaching-session-multiplier" data-category="Plus: Package Your Expertise" data-plus="true">
+                  <span class="skill-name">Coaching Session Multiplier</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/coaching-session-multiplier</span>
+                  <span class="skill-desc">Transforms raw session inputs into six structured outputs for the client and the content pipeline.</span>
+                </div>
+              <div class="skill-row" data-name="skill creator" data-desc="builds a new skill from any repeated workflow so you never re-explain it to claude again." data-folder="skill-creator" data-category="Plus: Package Your Expertise" data-plus="true">
+                  <span class="skill-name">Skill Creator</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/skill-creator</span>
+                  <span class="skill-desc">Builds a new skill from any repeated workflow so you never re-explain it to Claude again.</span>
+                </div>
+              <div class="skill-row" data-name="agent creator" data-desc="guide for building agents with autonomous judgment, multi-step workflows, and quality enforcement." data-folder="agent-creator" data-category="Plus: Package Your Expertise" data-plus="true">
+                  <span class="skill-name">Agent Creator</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/agent-creator</span>
+                  <span class="skill-desc">Guide for building agents with autonomous judgment, multi-step workflows, and quality enforcement.</span>
+                </div>
+              <div class="skill-row" data-name="skill pressure test" data-desc="tests whether a skill works under pressure and validates it before deployment or after suspected failure." data-folder="skill-pressure-test" data-category="Plus: Package Your Expertise" data-plus="true">
+                  <span class="skill-name">Skill Pressure Test</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/skill-pressure-test</span>
+                  <span class="skill-desc">Tests whether a skill works under pressure and validates it before deployment or after suspected failure.</span>
+                </div>
+            </div>
+          </div>
+          <div class="cat-section plus-section" data-category="Plus: Strategic Thinking" id="plus-cat-strategic-thinking">
+            <div class="cat-section-title plus-section-title">
+              Strategic Thinking
+              <span class="cat-section-count">10 skills</span>
+            </div>
+            <p class="cat-intro">Use these when you need a second brain to stress-test a decision, reveal second-order effects, or pressure-test a plan before it ships.</p>
+            <div class="skills-list">
+              <div class="skill-row" data-name="decision forcing system" data-desc="outputs a single ranked recommendation from a list of options with stated criteria and context." data-folder="decision-forcing-system" data-category="Plus: Strategic Thinking" data-plus="true">
+                  <span class="skill-name">Decision Forcing System</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/decision-forcing-system</span>
+                  <span class="skill-desc">Outputs a single ranked recommendation from a list of options with stated criteria and context.</span>
+                </div>
+              <div class="skill-row" data-name="counterintuitive advisor" data-desc="models second and third-order effects of business decisions to reveal why the obvious move often loses." data-folder="counterintuitive-advisor" data-category="Plus: Strategic Thinking" data-plus="true">
+                  <span class="skill-name">Counterintuitive Advisor</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/counterintuitive-advisor</span>
+                  <span class="skill-desc">Models second and third-order effects of business decisions to reveal why the obvious move often loses.</span>
+                </div>
+              <div class="skill-row" data-name="&quot;executive-mentor&quot;" data-desc="adversarial thinking partner — stress-tests plans, prepares for brutal board meetings, forces honest post-mortems." data-folder="executive-mentor" data-category="Plus: Strategic Thinking" data-plus="true">
+                  <span class="skill-name">&quot;executive-mentor&quot;</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/executive-mentor</span>
+                  <span class="skill-desc">Adversarial thinking partner — stress-tests plans, prepares for brutal board meetings, forces honest post-mortems.</span>
+                </div>
+              <div class="skill-row" data-name="core concept generator" data-desc="generates the paradigm-shifting reframe that makes not buying irrational — run failure-forensics first." data-folder="core-concept-generator" data-category="Plus: Strategic Thinking" data-plus="true">
+                  <span class="skill-name">Core Concept Generator</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/core-concept-generator</span>
+                  <span class="skill-desc">Generates the paradigm-shifting reframe that makes NOT buying irrational — run failure-forensics first.</span>
+                </div>
+              <div class="skill-row" data-name="contract-review" data-desc="reviews contracts against a negotiation playbook — flags deviations and generates redline suggestions." data-folder="legal-contract-review" data-category="Plus: Strategic Thinking" data-plus="true">
+                  <span class="skill-name">contract-review</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/legal-contract-review</span>
+                  <span class="skill-desc">Reviews contracts against a negotiation playbook — flags deviations and generates redline suggestions.</span>
+                </div>
+              <div class="skill-row" data-name="product improver" data-desc="evaluates any work product against 7 value dimensions and produces a prioritized improvement report." data-folder="product-improver" data-category="Plus: Strategic Thinking" data-plus="true">
+                  <span class="skill-name">Product Improver</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/product-improver</span>
+                  <span class="skill-desc">Evaluates any work product against 7 value dimensions and produces a prioritized improvement report.</span>
+                </div>
+              <div class="skill-row" data-name="quality gate" data-desc="scores content on 5 dimensions, auto-fixes small issues, and flags big ones before anything is published." data-folder="quality-gate" data-category="Plus: Strategic Thinking" data-plus="true">
+                  <span class="skill-name">Quality Gate</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/quality-gate</span>
+                  <span class="skill-desc">Scores content on 5 dimensions, auto-fixes small issues, and flags big ones before anything is published.</span>
+                </div>
+              <div class="skill-row" data-name="meeting insights analyzer" data-desc="analyzes meeting transcripts to surface conflict avoidance, filler words, and actionable communication patterns." data-folder="meeting-insights-analyzer" data-category="Plus: Strategic Thinking" data-plus="true">
+                  <span class="skill-name">Meeting Insights Analyzer</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/meeting-insights-analyzer</span>
+                  <span class="skill-desc">Analyzes meeting transcripts to surface conflict avoidance, filler words, and actionable communication patterns.</span>
+                </div>
+              <div class="skill-row" data-name="sim audience" data-desc="runs content through 12 documented buyer archetypes for panel reaction and conversion feedback." data-folder="sim-audience" data-category="Plus: Strategic Thinking" data-plus="true">
+                  <span class="skill-name">Sim Audience</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/sim-audience</span>
+                  <span class="skill-desc">Runs content through 12 documented buyer archetypes for panel reaction and conversion feedback.</span>
+                </div>
+              <div class="skill-row" data-name="sim audience blind" data-desc="blind sequential audience simulation — each persona reacts section-by-section without knowing what comes next." data-folder="sim-audience-blind" data-category="Plus: Strategic Thinking" data-plus="true">
+                  <span class="skill-name">Sim Audience Blind</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/sim-audience-blind</span>
+                  <span class="skill-desc">Blind sequential audience simulation — each persona reacts section-by-section without knowing what comes next.</span>
+                </div>
+            </div>
+          </div>
+          <div class="cat-section plus-section" data-category="Plus: Personal System" id="plus-cat-personal-system">
+            <div class="cat-section-title plus-section-title">
+              Personal System
+              <span class="cat-section-count">14 skills</span>
+            </div>
+            <p class="cat-intro">Use these to run your own operation — dashboards, inbox triage, time blocks, vault housekeeping, and the tools that keep the machine running under you.</p>
+            <div class="skills-list">
+              <div class="skill-row" data-name="command center" data-desc="personalized briefing system connecting business services with urgency scoring and deep-link actions." data-folder="command-center" data-category="Plus: Personal System" data-plus="true">
+                  <span class="skill-name">Command Center</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/command-center</span>
+                  <span class="skill-desc">Personalized briefing system connecting business services with urgency scoring and deep-link actions.</span>
+                </div>
+              <div class="skill-row" data-name="my blueprint" data-desc="visual map of your complete ai system — what feeds what, where the gaps are, presented as diagrams." data-folder="my-blueprint" data-category="Plus: Personal System" data-plus="true">
+                  <span class="skill-name">My Blueprint</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/my-blueprint</span>
+                  <span class="skill-desc">Visual map of your complete AI system — what feeds what, where the gaps are, presented as diagrams.</span>
+                </div>
+              <div class="skill-row" data-name="my housekeeper" data-desc="scans an obsidian vault for dead files, duplicates, broken links, and organizational entropy." data-folder="my-housekeeper" data-category="Plus: Personal System" data-plus="true">
+                  <span class="skill-name">My Housekeeper</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/my-housekeeper</span>
+                  <span class="skill-desc">Scans an Obsidian vault for dead files, duplicates, broken links, and organizational entropy.</span>
+                </div>
+              <div class="skill-row" data-name="my possibilities" data-desc="answers what new capabilities you can build by combining existing skills — top 30 combinations ranked by power." data-folder="my-possibilities" data-category="Plus: Personal System" data-plus="true">
+                  <span class="skill-name">My Possibilities</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/my-possibilities</span>
+                  <span class="skill-desc">Answers what new capabilities you can build by combining existing skills — top 30 combinations ranked by power.</span>
+                </div>
+              <div class="skill-row" data-name="my roadmap" data-desc="reads context files and goals, then produces a structured daily action plan with time estimates and commands." data-folder="my-roadmap" data-category="Plus: Personal System" data-plus="true">
+                  <span class="skill-name">My Roadmap</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/my-roadmap</span>
+                  <span class="skill-desc">Reads context files and goals, then produces a structured daily action plan with time estimates and commands.</span>
+                </div>
+              <div class="skill-row" data-name="my toolkit" data-desc="complete capability inventory — foundation status, what's connected to what, and next highest-leverage action." data-folder="my-toolkit" data-category="Plus: Personal System" data-plus="true">
+                  <span class="skill-name">My Toolkit</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/my-toolkit</span>
+                  <span class="skill-desc">Complete capability inventory — Foundation Status, what's connected to what, and next highest-leverage action.</span>
+                </div>
+              <div class="skill-row" data-name="ai time estimator" data-desc="forces accurate ai time estimates by breaking work into actual operations." data-folder="ai-time-estimator" data-category="Plus: Personal System" data-plus="true">
+                  <span class="skill-name">AI Time Estimator</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/ai-time-estimator</span>
+                  <span class="skill-desc">Forces accurate AI time estimates by breaking work into actual operations.</span>
+                </div>
+              <div class="skill-row" data-name="time block optimizer" data-desc="weekly sprint planner that allocates time blocks across business, client, content, and personal projects." data-folder="time-block-optimizer" data-category="Plus: Personal System" data-plus="true">
+                  <span class="skill-name">Time Block Optimizer</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/time-block-optimizer</span>
+                  <span class="skill-desc">Weekly sprint planner that allocates time blocks across business, client, content, and personal projects.</span>
+                </div>
+              <div class="skill-row" data-name="file organizer" data-desc="intelligently organizes files and folders by context — finds duplicates, suggests structures, automates cleanup." data-folder="file-organizer" data-category="Plus: Personal System" data-plus="true">
+                  <span class="skill-name">File Organizer</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/file-organizer</span>
+                  <span class="skill-desc">Intelligently organizes files and folders by context — finds duplicates, suggests structures, automates cleanup.</span>
+                </div>
+              <div class="skill-row" data-name="process inbox" data-desc="scans a folder of unprocessed files, identifies each item, suggests destination, and moves on approval." data-folder="process-inbox" data-category="Plus: Personal System" data-plus="true">
+                  <span class="skill-name">Process Inbox</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/process-inbox</span>
+                  <span class="skill-desc">Scans a folder of unprocessed files, identifies each item, suggests destination, and moves on approval.</span>
+                </div>
+              <div class="skill-row" data-name="route captures" data-desc="routes raw captures (voice memos, notes, screenshots) to the right vault location with metadata." data-folder="route-captures" data-category="Plus: Personal System" data-plus="true">
+                  <span class="skill-name">Route Captures</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/route-captures</span>
+                  <span class="skill-desc">Routes raw captures (voice memos, notes, screenshots) to the right vault location with metadata.</span>
+                </div>
+              <div class="skill-row" data-name="doc coauthoring" data-desc="structured co-authoring workflow for documentation, proposals, technical specs, and decision docs." data-folder="doc-coauthoring" data-category="Plus: Personal System" data-plus="true">
+                  <span class="skill-name">Doc Coauthoring</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/doc-coauthoring</span>
+                  <span class="skill-desc">Structured co-authoring workflow for documentation, proposals, technical specs, and decision docs.</span>
+                </div>
+              <div class="skill-row" data-name="hook starter" data-desc="installs mechanical enforcement hooks that make claude follow your rules 100% of the time." data-folder="hook-starter" data-category="Plus: Personal System" data-plus="true">
+                  <span class="skill-name">Hook Starter</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/hook-starter</span>
+                  <span class="skill-desc">Installs mechanical enforcement hooks that make Claude follow your rules 100% of the time.</span>
+                </div>
+              <div class="skill-row" data-name="install dev stack" data-desc="full one-shot macos claude code dev stack installer — homebrew, formulae, casks, and ghost os." data-folder="install-dev-stack" data-category="Plus: Personal System" data-plus="true">
+                  <span class="skill-name">Install Dev Stack</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/install-dev-stack</span>
+                  <span class="skill-desc">Full one-shot macOS Claude Code dev stack installer — Homebrew, formulae, casks, and Ghost OS.</span>
+                </div>
+            </div>
+          </div>
+          <div class="cat-section plus-section" data-category="Plus: Create & Learn" id="plus-cat-create-learn">
+            <div class="cat-section-title plus-section-title">
+              Create & Learn
+              <span class="cat-section-count">14 skills</span>
+            </div>
+            <p class="cat-intro">Use these when you need to produce visuals, slides, landing pages, or learn from external material fast — images, dashboards, talking-head videos, accelerated reading.</p>
+            <div class="skills-list">
+              <div class="skill-row" data-name="ai social graphics" data-desc="platform-optimized social graphics and thumbnails — instagram, youtube, linkedin, and twitter." data-folder="ai-social-graphics" data-category="Plus: Create & Learn" data-plus="true">
+                  <span class="skill-name">AI Social Graphics</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/ai-social-graphics</span>
+                  <span class="skill-desc">Platform-optimized social graphics and thumbnails — Instagram, YouTube, LinkedIn, and Twitter.</span>
+                </div>
+              <div class="skill-row" data-name="ai talking head" data-desc="ai talking head and lip-sync video generation for presenter videos and ugc-style content." data-folder="ai-talking-head" data-category="Plus: Create & Learn" data-plus="true">
+                  <span class="skill-name">AI Talking Head</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/ai-talking-head</span>
+                  <span class="skill-desc">AI talking head and lip-sync video generation for presenter videos and UGC-style content.</span>
+                </div>
+              <div class="skill-row" data-name="canvas design" data-desc="creates visual art in .png and .pdf using design philosophy — posters, art, and static pieces." data-folder="canvas-design" data-category="Plus: Create & Learn" data-plus="true">
+                  <span class="skill-name">Canvas Design</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/canvas-design</span>
+                  <span class="skill-desc">Creates visual art in .png and .pdf using design philosophy — posters, art, and static pieces.</span>
+                </div>
+              <div class="skill-row" data-name="dark terminal landing" data-desc="premium dark-mode landing pages with terminal/hacker aesthetic and scroll-triggered animations." data-folder="dark-terminal-landing" data-category="Plus: Create & Learn" data-plus="true">
+                  <span class="skill-name">Dark Terminal Landing</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/dark-terminal-landing</span>
+                  <span class="skill-desc">Premium dark-mode landing pages with terminal/hacker aesthetic and scroll-triggered animations.</span>
+                </div>
+              <div class="skill-row" data-name="interactive-dashboard-builder" data-desc="builds self-contained interactive html dashboards with chart.js, filters, and professional styling." data-folder="data-interactive-dashboard-builder" data-category="Plus: Create & Learn" data-plus="true">
+                  <span class="skill-name">interactive-dashboard-builder</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/data-interactive-dashboard-builder</span>
+                  <span class="skill-desc">Builds self-contained interactive HTML dashboards with Chart.js, filters, and professional styling.</span>
+                </div>
+              <div class="skill-row" data-name="image enhancer" data-desc="enhances resolution, sharpness, and clarity in screenshots and images for professional use." data-folder="image-enhancer" data-category="Plus: Create & Learn" data-plus="true">
+                  <span class="skill-name">Image Enhancer</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/image-enhancer</span>
+                  <span class="skill-desc">Enhances resolution, sharpness, and clarity in screenshots and images for professional use.</span>
+                </div>
+              <div class="skill-row" data-name="image generation" data-desc="generates professional ai images using gemini — automatically invoked when building websites or visual assets." data-folder="image-generation" data-category="Plus: Create & Learn" data-plus="true">
+                  <span class="skill-name">Image Generation</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/image-generation</span>
+                  <span class="skill-desc">Generates professional AI images using Gemini — automatically invoked when building websites or visual assets.</span>
+                </div>
+              <div class="skill-row" data-name="theme factory" data-desc="applies 10 pre-set design themes (colors, fonts) to slides, docs, reports, and html landing pages." data-folder="theme-factory" data-category="Plus: Create & Learn" data-plus="true">
+                  <span class="skill-name">Theme Factory</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/theme-factory</span>
+                  <span class="skill-desc">Applies 10 pre-set design themes (colors, fonts) to slides, docs, reports, and HTML landing pages.</span>
+                </div>
+              <div class="skill-row" data-name="pptx zen upgrade" data-desc="applies presentation zen methodology to slide design — reynolds philosophy, typography, and ai image formulas." data-folder="pptx-zen-upgrade" data-category="Plus: Create & Learn" data-plus="true">
+                  <span class="skill-name">PPTX Zen Upgrade</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/pptx-zen-upgrade</span>
+                  <span class="skill-desc">Applies Presentation Zen methodology to slide design — Reynolds philosophy, typography, and AI image formulas.</span>
+                </div>
+              <div class="skill-row" data-name="brand html converter" data-desc="converts markdown copy into branded html landing pages using a client's brand guide." data-folder="brand-html-converter" data-category="Plus: Create & Learn" data-plus="true">
+                  <span class="skill-name">Brand HTML Converter</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/brand-html-converter</span>
+                  <span class="skill-desc">Converts markdown copy into branded HTML landing pages using a client's brand guide.</span>
+                </div>
+              <div class="skill-row" data-name="accelerated learning through purpose-driven context" data-desc="compresses skill acquisition using crystal-clear purpose, checkpoint progression, and ambiguity elimination." data-folder="accelerated-learning" data-category="Plus: Create & Learn" data-plus="true">
+                  <span class="skill-name">Accelerated Learning Through Purpose-Driven Context</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/accelerated-learning</span>
+                  <span class="skill-desc">Compresses skill acquisition using crystal-clear purpose, checkpoint progression, and ambiguity elimination.</span>
+                </div>
+              <div class="skill-row" data-name="intelligent reading framework" data-desc="progressive reading methodology for extracting maximum comprehension and critical insight from texts." data-folder="intelligent-reading" data-category="Plus: Create & Learn" data-plus="true">
+                  <span class="skill-name">Intelligent Reading Framework</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/intelligent-reading</span>
+                  <span class="skill-desc">Progressive reading methodology for extracting maximum comprehension and critical insight from texts.</span>
+                </div>
+              <div class="skill-row" data-name="skool downloader" data-desc="downloads entire skool.com classrooms into structured markdown — all courses, sections, and lessons." data-folder="skool-downloader" data-category="Plus: Create & Learn" data-plus="true">
+                  <span class="skill-name">Skool Downloader</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/skool-downloader</span>
+                  <span class="skill-desc">Downloads entire Skool.com classrooms into structured Markdown — all courses, sections, and lessons.</span>
+                </div>
+              <div class="skill-row" data-name="video transcription" data-desc="transcribes local video files to markdown using mlx whisper — batch processes entire course folders." data-folder="video-transcription" data-category="Plus: Create & Learn" data-plus="true">
+                  <span class="skill-name">Video Transcription</span><span class="plus-chip">PLUS</span>
+                  <span class="skill-folder">/video-transcription</span>
+                  <span class="skill-desc">Transcribes local video files to Markdown using MLX Whisper — batch processes entire course folders.</span>
+                </div>
+            </div>
+          </div>
+          </div>
         <div class="empty-state" id="empty-state">No skills match your search. Try a different keyword.</div>
       </div>
     </div>
@@ -2911,29 +2960,25 @@ function filterByPlusFromPill(pillEl) {
   if (sideBtn) filterByPlus(sideBtn);
 }
 function filterByPlus(btn) {
-  // Deactivate all sidebar buttons, activate this one
   document.querySelectorAll('.cat-link').forEach(function(b){ b.classList.remove('active'); });
   btn.classList.add('active');
-  // Deactivate all pills, activate plus pill
   document.querySelectorAll('.pill').forEach(function(p){ p.classList.remove('active'); });
   var plusPill = document.querySelector('.pill.plus-pill');
   if (plusPill) plusPill.classList.add('active');
-  // Show only rows with data-plus="true", hide others; keep cat-sections visible only if they have visible rows
-  rows.forEach(function(r){
-    if (r.dataset.plus === 'true') r.classList.remove('hidden');
-    else r.classList.add('hidden');
-  });
-  // Hide empty cat-sections
-  document.querySelectorAll('.cat-section').forEach(function(sec){
-    var visible = sec.querySelectorAll('.skill-row:not(.hidden)').length;
-    sec.style.display = visible ? '' : 'none';
-  });
+  // Hide all Elite cat-sections (those NOT inside plus-package-wrapper)
+  document.querySelectorAll('#skills-container > .cat-section').forEach(function(sec){ sec.style.display = 'none'; });
+  // Show plus wrapper
+  var wrapper = document.getElementById('plus-package-wrapper');
+  if (wrapper) wrapper.style.display = '';
+  // Show all skill-rows within plus wrapper
+  rows.forEach(function(r){ r.classList.remove('hidden'); });
   // Clear search
   var sb = document.getElementById('search-box');
   if (sb) sb.value = '';
-  // Update results meta
   var meta = document.getElementById('results-meta');
   if (meta) meta.textContent = '';
+  // Scroll to directory
+  window.location.hash = 'directory';
 }
 
 // Update sidebar counts on load
@@ -2965,7 +3010,9 @@ function filterByCategory(cat, btn) {
   if (plusLink) plusLink.classList.remove('active');
   var plusPill = document.querySelector('.pill.plus-pill');
   if (plusPill) plusPill.classList.remove('active');
-  document.querySelectorAll('.cat-section').forEach(function(sec){ sec.style.display = ''; });
+  document.querySelectorAll('#skills-container > .cat-section').forEach(function(sec){ sec.style.display = ''; });
+  var _wrapper = document.getElementById('plus-package-wrapper');
+  if (_wrapper) _wrapper.style.display = 'none';
   currentCategory = cat;
   catLinks.forEach(function(l) { l.classList.remove('active'); });
   if (btn) btn.classList.add('active');
