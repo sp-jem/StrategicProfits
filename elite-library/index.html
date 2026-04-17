@@ -2968,9 +2968,13 @@ function filterByPlus(btn) {
   document.querySelectorAll('#skills-container > .cat-section').forEach(function(sec){ sec.style.display = 'none'; });
   // Show plus wrapper
   var wrapper = document.getElementById('plus-package-wrapper');
-  if (wrapper) wrapper.style.display = '';
+  if (wrapper) {
+    wrapper.style.display = '';
+    wrapper.querySelectorAll('.cat-section').forEach(function(sec){ sec.style.display = ''; });
+  }
   // Show all skill-rows within plus wrapper
   rows.forEach(function(r){ r.classList.remove('hidden'); });
+  currentCategory = null;
   // Clear search
   var sb = document.getElementById('search-box');
   if (sb) sb.value = '';
