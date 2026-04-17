@@ -3023,6 +3023,11 @@ function filterByCategory(cat, btn) {
 
 function filterByCategoryPill(cat) {
   currentCategory = cat || null;
+  var _wrapper = document.getElementById('plus-package-wrapper');
+  if (_wrapper) _wrapper.style.display = 'none';
+  var plusLink = document.querySelector('.cat-link.plus-link');
+  if (plusLink) plusLink.classList.remove('active');
+  document.querySelectorAll('#skills-container > .cat-section').forEach(function(sec){ sec.style.display = ''; });
   pills.forEach(function(p) {
     p.classList.toggle('active', (p.dataset.cat || '') === (cat || ''));
   });
