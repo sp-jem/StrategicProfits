@@ -417,8 +417,89 @@ body {
   display: none;
 }
 
+.guide {
+  padding: 48px 40px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--surface-border);
+}
+.guide-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.guide-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 28px;
+  color: var(--text);
+}
+.guide-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.guide-card {
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
+  border-radius: 10px;
+  padding: 28px 24px;
+  position: relative;
+}
+.guide-card-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--accent);
+  opacity: 0.25;
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  line-height: 1;
+}
+.guide-card-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--text);
+}
+.guide-card-text {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.site-footer {
+  padding: 48px 40px;
+  border-top: 1px solid var(--surface-border);
+  text-align: center;
+  background: #0d1117;
+}
+.footer-inner {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.footer-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.footer-text {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+.footer-sub {
+  font-size: 11px;
+  color: var(--text-dim);
+}
+
 @media (max-width: 900px) {
   .buckets { grid-template-columns: repeat(2, 1fr); }
+  .guide-cards { grid-template-columns: 1fr; }
   .directory-layout { grid-template-columns: 1fr; }
   .sidebar { position: static; max-height: none; }
   .lesson-row { grid-template-columns: 60px 1fr; }
@@ -449,6 +530,29 @@ body {
     <div class="bucket"><div class="bucket-icon">&#x270D;&#xFE0F;</div><div class="bucket-title">Write Converting Copy</div><div class="bucket-desc">Four world-class copywriter systems, arena competition, ad copy</div></div>
     <div class="bucket"><div class="bucket-icon">&#x1F680;</div><div class="bucket-title">Build &amp; Launch</div><div class="bucket-desc">Funnels, landing pages, paid traffic, video production, webinars</div></div>
     <div class="bucket"><div class="bucket-icon">&#x2699;&#xFE0F;</div><div class="bucket-title">Scale Your System</div><div class="bucket-desc">AI agents, memory systems, workflow orchestration</div></div>
+  </div>
+</div>
+
+<div class="guide">
+  <div class="guide-inner">
+    <div class="guide-title">How to Use This Library</div>
+    <div class="guide-cards">
+      <div class="guide-card">
+        <div class="guide-card-num">1</div>
+        <div class="guide-card-heading">Start Here</div>
+        <div class="guide-card-text">See the full ZenithPro journey laid out in seven phases. If you're new, follow the sequence from top to bottom. If you've been in the program a while, jump to the phase you're working on now.</div>
+      </div>
+      <div class="guide-card">
+        <div class="guide-card-num">2</div>
+        <div class="guide-card-heading">Lesson Map</div>
+        <div class="guide-card-text">Find out what was taught in each of the 25 lessons and download the full tool package for any lesson. Use this when you want to revisit a specific call or grab tools you haven't installed yet.</div>
+      </div>
+      <div class="guide-card">
+        <div class="guide-card-num">3</div>
+        <div class="guide-card-heading">Tool Directory</div>
+        <div class="guide-card-text">Browse or search every prompt, skill package, and agent system by category. Use the sidebar to filter by topic, the pills to filter by type, or just search for what you need.</div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -1452,6 +1556,14 @@ function updateCounts(catCounts) {
 
 applyFilters();
 </script>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">ZenithPro Tool Library</div>
+    <div class="footer-text">Built by Strategic Profits. For ZenithPro members only.</div>
+    <div class="footer-sub">Do not share or distribute outside the program.</div>
+  </div>
+</footer>
 
 </body>
 </html>
