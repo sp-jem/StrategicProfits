@@ -66,6 +66,16 @@ body{background-color:var(--bg-canvas);color:var(--text-primary);font-family:var
 .section-title{font-family:var(--font-display);font-size:clamp(28px,4vw,44px);font-weight:700;color:var(--text-primary);line-height:1.15;letter-spacing:-0.01em;margin-bottom:var(--sp-4)}
 .section-body{font-size:16px;color:var(--text-secondary);max-width:680px;line-height:1.7;margin-bottom:var(--sp-8)}
 #start-here{background:var(--bg-canvas)}
+.start-pacing{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-5);margin-bottom:var(--sp-12);max-width:900px}
+@media(max-width:720px){.start-pacing{grid-template-columns:1fr}}
+.pace-card{position:relative;background:var(--bg-raised);border:1px solid var(--border-standard);border-radius:var(--r-lg);padding:var(--sp-6) var(--sp-6) var(--sp-5);overflow:hidden}
+.pace-card.today{border-color:var(--border-emphasis)}
+.pace-card.today::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--brass-500),var(--brass-300));opacity:0.85}
+.pace-when{font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--brass-400);margin-bottom:var(--sp-3)}
+.pace-card.this-week .pace-when{color:var(--text-muted)}
+.pace-title{font-family:var(--font-display);font-size:20px;font-weight:700;color:var(--text-primary);margin-bottom:var(--sp-3);line-height:1.25}
+.pace-body{font-size:14px;color:var(--text-secondary);line-height:1.65;margin-bottom:var(--sp-3)}
+.pace-cmd{font-family:'Courier New',Courier,monospace;font-size:13px;color:var(--brass-200);background:var(--ink-900);border:1px solid var(--border-standard);border-radius:var(--r-sm);padding:var(--sp-2) var(--sp-3);display:inline-block}
 .amplifier-heading{font-family:var(--font-display);font-size:22px;font-weight:700;color:var(--text-primary);margin-bottom:var(--sp-2)}
 .amplifier-subhead{font-size:14px;color:var(--text-secondary);margin-bottom:var(--sp-6);max-width:600px}
 .amplifiers-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:var(--sp-5);margin-bottom:var(--sp-12)}
@@ -167,7 +177,8 @@ body{background-color:var(--bg-canvas);color:var(--text-primary);font-family:var
   <span class="nav-brand">ZenithMind Elite</span>
   <div class="nav-divider"></div>
   <ul class="nav-links">
-    <li><a href="#hero">Welcome</a></li>
+    <li><a href="welcome.html">← Welcome</a></li>
+    <li><a href="#hero">Library</a></li>
     <li><a href="#start-here">Start Here</a></li>
     <li><a href="#if-stuck">If You're Stuck</a></li>
     <li><a href="#directory">Full Directory</a></li>
@@ -178,7 +189,7 @@ body{background-color:var(--bg-canvas);color:var(--text-primary);font-family:var
   <div class="hero-inner">
     <span class="hero-eyebrow">ZenithMind Elite — Member Reference</span>
     <h1 class="hero-title">Your complete <span>AI business<br>operating system.</span></h1>
-    <p class="hero-body">You now have hundreds of specialized skills covering copywriting, webinars, offers, ads, buyer psychology, research, content, positioning, and nearly every other function of a modern business. Nobody uses all of them. The point is that when you hit a specific problem, there is already a tool built for it.</p>
+    <p class="hero-body">You now have <strong>over 400 specialized skills</strong> covering copywriting, webinars, offers, ads, buyer psychology, research, content, positioning, and nearly every other function of a modern business. Nobody uses all of them. The point is that when you hit a specific problem, there is already a tool built for it.</p>
     <div class="hero-ctas">
       <a href="#start-here" class="btn-primary">Start Here</a>
       <a href="#directory" class="btn-secondary">Browse Full Library</a>
@@ -237,8 +248,23 @@ body{background-color:var(--bg-canvas);color:var(--text-primary);font-family:var
 <section id="start-here">
   <div class="section">
     <div class="section-label">Start Here</div>
-    <h2 class="section-title">Run these five skills first.</h2>
-    <p class="section-body">These are the Amplifier Skills. They produce reference files about you, your business, your voice, and your buyer. Every other skill in the system reads those files at runtime. Skip them and Claude writes for "a generic expert." Run them and Claude writes for you.</p>
+    <h2 class="section-title">Today, run one. This week, run five.</h2>
+    <p class="section-body">If you came from the welcome page, you've already seen the first beat. Here it is in context. <strong>/business-scanner</strong> proves the system works on <em>your</em> business in 90 seconds. The five Amplifiers calibrate Claude to <em>your</em> voice, positioning, and buyer — so every other skill in this library writes for you, not for a generic expert.</p>
+
+    <div class="start-pacing">
+      <div class="pace-card today">
+        <div class="pace-when">Today · 90 seconds</div>
+        <div class="pace-title">Run /business-scanner</div>
+        <p class="pace-body">A 90-second business intelligence scan from your name and URL. Three structured findings with dollar estimates. Proof that this is real, working on your business.</p>
+        <span class="pace-cmd">/business-scanner</span>
+      </div>
+      <div class="pace-card this-week">
+        <div class="pace-when">This week · 1–2 hours total</div>
+        <div class="pace-title">Run the 5 Amplifiers, in order</div>
+        <p class="pace-body">These produce reference files about you, your business, your voice, and your buyer. Every other skill reads them at runtime. Skip them and Claude writes for a generic expert. Run them and Claude writes for you.</p>
+        <span class="pace-cmd">↓ See below</span>
+      </div>
+    </div>
     <h3 class="amplifier-heading">The 5 Amplifier Skills</h3>
     <p class="amplifier-subhead">Complete them in order. Each one builds on the last.</p>
     <div class="amplifiers-grid">

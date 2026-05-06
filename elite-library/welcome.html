@@ -1,0 +1,1908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome — ZenithMind Elite</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ─────────────────────────────────────────────
+   Tokens — lifted directly from index.html
+   ───────────────────────────────────────────── */
+:root {
+  --ink-900:#0e0d0b; --ink-850:#141210; --ink-800:#1a1713; --ink-750:#211e19;
+  --ink-700:#2a261f; --ink-600:#3a3528; --ink-500:#4f4838; --ink-400:#6b6250;
+  --brass-500:#c9951a; --brass-400:#d9a82a; --brass-300:#e8bc4a;
+  --brass-200:#f0ce7a; --brass-100:#f7e4b0;
+  --cream-100:#f5f0e8; --cream-200:#e8e0d0; --cream-300:#cfc4b0;
+  --cream-400:#a89880; --cream-500:#7a6c58;
+  --text-primary:var(--cream-100); --text-secondary:var(--cream-300);
+  --text-muted:var(--cream-500); --text-accent:var(--brass-400);
+  --text-accent-dim:var(--brass-200);
+  --bg-canvas:var(--ink-900); --bg-base:var(--ink-850);
+  --bg-surface:var(--ink-800); --bg-raised:var(--ink-750);
+  --bg-elevated:var(--ink-700); --bg-control:var(--ink-600);
+  --border-subtle:rgba(201,149,26,0.10);
+  --border-standard:rgba(201,149,26,0.18);
+  --border-emphasis:rgba(201,149,26,0.35);
+  --border-focus:rgba(201,149,26,0.65);
+  --amplifier-glow:rgba(201,149,26,0.08);
+  --sp-1:4px;--sp-2:8px;--sp-3:12px;--sp-4:16px;--sp-5:20px;
+  --sp-6:24px;--sp-8:32px;--sp-10:40px;--sp-12:48px;--sp-16:64px;--sp-20:80px;
+  --r-sm:3px;--r-md:6px;--r-lg:10px;
+  --font-display:'Playfair Display',Georgia,serif;
+  --font-body:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --font-mono:'Courier New',Courier,monospace;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg-canvas);
+  color:var(--text-primary);
+  font-family:var(--font-body);
+  font-size:15px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--brass-500);color:var(--ink-900);}
+
+/* ─────────────────────────────────────────────
+   Top nav — same component as index.html
+   ───────────────────────────────────────────── */
+.site-nav{
+  position:sticky; top:0; z-index:100;
+  background:var(--bg-base);
+  border-bottom:1px solid var(--border-standard);
+  padding:0 var(--sp-8);
+  display:flex; align-items:center; gap:var(--sp-8);
+  height:52px;
+}
+.nav-brand{
+  font-family:var(--font-display);
+  font-size:15px; font-weight:700;
+  color:var(--brass-400);
+  letter-spacing:0.02em;
+  white-space:nowrap; flex-shrink:0;
+}
+.nav-divider{width:1px;height:20px;background:var(--border-standard);flex-shrink:0}
+.nav-links{display:flex;gap:var(--sp-1);list-style:none;align-items:center;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-links a{
+  display:block;
+  padding:var(--sp-2) var(--sp-3);
+  font-size:13px; font-weight:500;
+  color:var(--text-secondary);
+  text-decoration:none;
+  white-space:nowrap;
+  border-radius:var(--r-sm);
+  transition:color 0.15s, background 0.15s;
+}
+.nav-links a:hover{color:var(--text-accent);background:var(--amplifier-glow)}
+.nav-links a.current{color:var(--text-accent);background:var(--amplifier-glow)}
+
+/* ─────────────────────────────────────────────
+   Hero / Section 1 — Welcome
+   ───────────────────────────────────────────── */
+#welcome{
+  background:
+    radial-gradient(ellipse 90% 60% at 50% 0%, rgba(201,149,26,0.06), transparent 70%),
+    linear-gradient(180deg, var(--bg-base) 0%, var(--bg-base) 55%, #16130f 85%, #14110d 100%);
+  border-bottom:1px solid var(--border-standard);
+  position:relative;
+}
+.hero-inner{
+  max-width:1200px; margin:0 auto;
+  padding:var(--sp-20) var(--sp-8) var(--sp-16);
+}
+.hero-eyebrow{
+  display:inline-block;
+  font-size:11px; font-weight:600;
+  letter-spacing:0.14em; text-transform:uppercase;
+  color:var(--brass-400);
+  background:rgba(201,149,26,0.10);
+  border:1px solid var(--border-emphasis);
+  padding:var(--sp-1) var(--sp-3);
+  border-radius:var(--r-sm);
+  margin-bottom:var(--sp-6);
+}
+.hero-title{
+  font-family:var(--font-display);
+  font-size:clamp(36px,6vw,64px);
+  font-weight:700;
+  color:var(--text-primary);
+  line-height:1.1;
+  letter-spacing:-0.02em;
+  margin-bottom:var(--sp-5);
+  max-width:780px;
+  text-wrap:balance;
+}
+.hero-title .accent{color:var(--brass-400)}
+.hero-title span{color:var(--brass-400)}
+.hero-title em{
+  font-style:italic; font-weight:600;
+  color:var(--text-secondary);
+}
+.hero-body{
+  font-size:17px;
+  color:var(--text-secondary);
+  max-width:620px;
+  line-height:1.75;
+  margin-bottom:var(--sp-4);
+}
+.hero-body strong{color:var(--text-primary);font-weight:600}
+
+/* ─────────────────────────────────────────────
+   Section frame — matches index.html
+   ───────────────────────────────────────────── */
+.section{
+  max-width:1200px;
+  margin:0 auto;
+  padding:var(--sp-16) var(--sp-8);
+}
+.section + .section { border-top:1px solid var(--border-subtle); }
+
+.section-label{
+  font-size:11px; font-weight:600;
+  letter-spacing:0.12em; text-transform:uppercase;
+  color:var(--text-accent);
+  margin-bottom:var(--sp-3);
+}
+.section-title{
+  font-family:var(--font-display);
+  font-size:clamp(28px,4vw,44px);
+  font-weight:700;
+  color:var(--text-primary);
+  line-height:1.15;
+  letter-spacing:-0.01em;
+  margin-bottom:var(--sp-4);
+  text-wrap:balance;
+}
+.section-title em{
+  font-style:italic;
+  color:var(--text-accent-dim);
+  font-weight:600;
+}
+.section-body{
+  font-size:16px;
+  color:var(--text-secondary);
+  max-width:680px;
+  line-height:1.7;
+  margin-bottom:var(--sp-8);
+}
+.section-body strong{color:var(--text-primary);font-weight:600}
+
+/* ─────────────────────────────────────────────
+   Section 2 — Demo / chat mockup
+   ───────────────────────────────────────────── */
+#demo{
+  background:
+    radial-gradient(ellipse 60% 40% at 50% 0%, rgba(201,149,26,0.035), transparent 65%),
+    var(--bg-canvas);
+  position:relative;
+}
+
+.demo-frame{
+  background:var(--bg-raised);
+  border:1px solid var(--border-standard);
+  border-radius:var(--r-lg);
+  overflow:hidden;
+  position:relative;
+}
+.demo-frame::before{
+  content:'';
+  position:absolute; top:0; left:0; right:0;
+  height:2px;
+  background:linear-gradient(90deg,var(--brass-500),var(--brass-300));
+  opacity:0.7;
+}
+
+.demo-bar{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:var(--sp-3) var(--sp-5);
+  border-bottom:1px solid var(--border-subtle);
+  background:var(--bg-surface);
+  font-family:var(--font-mono);
+  font-size:11px;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  color:var(--text-muted);
+}
+.demo-dots{display:flex;gap:6px}
+.demo-dots span{
+  width:9px;height:9px;border-radius:50%;
+  background:var(--ink-600); display:block;
+}
+
+.demo-body{ padding:var(--sp-2) 0; }
+
+.turn{
+  padding:var(--sp-5) var(--sp-8);
+  border-bottom:1px dashed var(--border-subtle);
+}
+.turn:last-child{border-bottom:0}
+
+.turn-label{
+  display:flex; align-items:center; gap:var(--sp-3);
+  margin-bottom:var(--sp-3);
+  font-family:var(--font-mono);
+  font-size:11px;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--text-muted);
+}
+.tag{
+  font-family:var(--font-mono);
+  font-size:10px;
+  letter-spacing:0.14em;
+  padding:2px 8px;
+  border-radius:var(--r-sm);
+  border:1px solid var(--border-standard);
+  color:var(--text-secondary);
+}
+.tag.you{
+  color:var(--text-primary);
+  border-color:var(--cream-500);
+}
+.tag.claude{
+  color:var(--ink-900);
+  background:var(--brass-500);
+  border-color:var(--brass-500);
+}
+
+.turn-cmd{
+  font-family:var(--font-mono);
+  font-size:17px;
+  color:var(--text-primary);
+  background:var(--ink-900);
+  border:1px solid var(--border-standard);
+  border-radius:var(--r-sm);
+  padding:var(--sp-3) var(--sp-4);
+  line-height:1.4;
+  word-break:break-all;
+}
+.turn-cmd .slash{ color:var(--brass-300); font-weight:600; }
+.turn-cmd .url  { color:var(--text-secondary); }
+
+.claude-line{
+  display:flex; gap:var(--sp-3); align-items:baseline;
+  font-family:var(--font-mono);
+  font-size:13px;
+  color:var(--text-secondary);
+  line-height:1.7;
+}
+.claude-line .glyph{
+  color:var(--text-muted);
+  flex-shrink:0; width:14px;
+}
+.claude-line.done .glyph{ color:var(--brass-400); }
+.claude-line.done strong{ color:var(--text-primary); font-weight:600; }
+
+.findings{ margin-top:var(--sp-2); }
+.finding{
+  display:grid;
+  grid-template-columns:36px 1fr 150px;
+  gap:var(--sp-5);
+  padding:var(--sp-4) 0;
+  border-top:1px dashed var(--border-subtle);
+  align-items:baseline;
+}
+.finding:first-child{border-top:0}
+.finding-num{
+  font-family:var(--font-mono);
+  font-size:12px;
+  color:var(--text-accent);
+  letter-spacing:0.08em;
+  font-weight:600;
+}
+.finding-label{
+  font-size:11px; font-weight:600;
+  letter-spacing:0.12em; text-transform:uppercase;
+  color:var(--text-muted);
+  margin-bottom:var(--sp-2);
+}
+.finding-text{
+  font-size:14.5px;
+  color:var(--text-primary);
+  line-height:1.6;
+}
+.finding-est{
+  font-family:var(--font-display);
+  text-align:right;
+  font-size:20px; font-weight:700;
+  color:var(--brass-300);
+  line-height:1.1;
+  white-space:nowrap;
+}
+.finding-est small{
+  display:block;
+  font-family:var(--font-body);
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--text-muted);
+  margin-top:var(--sp-2);
+}
+
+.demo-foot{
+  display:flex; flex-wrap:wrap; gap:var(--sp-6);
+  margin-top:var(--sp-4);
+  padding:0 var(--sp-2);
+  font-size:11px; font-weight:600;
+  letter-spacing:0.12em; text-transform:uppercase;
+  color:var(--text-muted);
+}
+.demo-foot strong{ color:var(--text-accent-dim); font-weight:600; }
+
+/* ─── Step-by-step screenshot frames ───────── */
+.steps{
+  display:flex; flex-direction:column;
+  gap:var(--sp-10);
+}
+.step{
+  display:grid;
+  grid-template-columns:160px 1fr;
+  gap:var(--sp-8);
+  align-items:start;
+}
+@media (max-width:880px){
+  .step{ grid-template-columns:1fr; gap:var(--sp-4); }
+}
+.step-meta{
+  position:sticky; top:72px;
+  display:flex; flex-direction:column; gap:var(--sp-2);
+}
+@media (max-width:880px){ .step-meta{ position:static; } }
+
+.step-num{
+  font-family:var(--font-display);
+  font-size:48px;
+  font-weight:700;
+  color:var(--brass-300);
+  line-height:1;
+  letter-spacing:-0.02em;
+}
+.step-kicker{
+  font-size:11px; font-weight:600;
+  letter-spacing:0.14em; text-transform:uppercase;
+  color:var(--text-muted);
+}
+.step-head{
+  font-family:var(--font-display);
+  font-size:22px; font-weight:700;
+  color:var(--text-primary);
+  line-height:1.25;
+  margin-top:var(--sp-1);
+}
+.step-caption{
+  font-size:14px;
+  color:var(--text-secondary);
+  line-height:1.6;
+  max-width:30ch;
+  margin-top:var(--sp-2);
+}
+
+.shot{
+  background:var(--bg-raised);
+  border:1px solid var(--border-standard);
+  border-radius:var(--r-lg);
+  overflow:hidden;
+  position:relative;
+}
+.shot::before{
+  content:''; position:absolute; top:0; left:0; right:0;
+  height:2px;
+  background:linear-gradient(90deg,var(--brass-500),var(--brass-300));
+  opacity:0.7; z-index:2;
+}
+.shot-bar{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:var(--sp-3) var(--sp-4);
+  border-bottom:1px solid var(--border-subtle);
+  background:var(--bg-surface);
+  font-family:var(--font-mono);
+  font-size:11px;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  color:var(--text-muted);
+}
+.shot-bar .demo-dots{ display:flex; gap:6px; }
+.shot-bar .demo-dots span{
+  width:9px;height:9px;border-radius:50%;
+  background:var(--ink-600); display:block;
+}
+.shot-img{
+  display:block; width:100%; height:auto;
+  background:#0a0908;
+}
+.shot-tag{
+  position:absolute; top:48px; left:var(--sp-4);
+  font-family:var(--font-mono);
+  font-size:10px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  padding:4px 10px;
+  background:var(--ink-900);
+  color:var(--brass-300);
+  border:1px solid var(--border-emphasis);
+  border-radius:var(--r-sm);
+  z-index:3;
+}
+
+.shot-placeholder{
+  position:relative;
+  aspect-ratio: 2537 / 1325;
+  background:
+    repeating-linear-gradient(
+      135deg,
+      transparent 0 14px,
+      rgba(201,149,26,0.04) 14px 15px
+    ),
+    var(--bg-surface);
+  display:flex; flex-direction:column;
+  align-items:center; justify-content:center;
+  gap:var(--sp-3);
+  padding:var(--sp-8);
+  text-align:center;
+}
+.shot-placeholder-label{
+  font-family:var(--font-mono);
+  font-size:11px;
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+  color:var(--text-muted);
+}
+.shot-placeholder-title{
+  font-family:var(--font-display);
+  font-size:24px;
+  font-weight:700;
+  color:var(--text-secondary);
+  max-width:32ch;
+  line-height:1.3;
+}
+.shot-placeholder-note{
+  font-size:13px;
+  color:var(--text-muted);
+  font-style:italic;
+  max-width:44ch;
+  line-height:1.5;
+}
+
+/* Mocked output preview — visible inside the placeholder for step 3
+   so the page communicates output shape even before a real screenshot lands. */
+.shot-mock{
+  position:absolute;
+  inset:auto var(--sp-8) var(--sp-6) var(--sp-8);
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:var(--sp-3);
+  opacity:0.55;
+}
+.shot-mock-card{
+  background:var(--bg-raised);
+  border:1px solid var(--border-subtle);
+  border-radius:var(--r-sm);
+  padding:var(--sp-3);
+  font-size:11px;
+  color:var(--text-muted);
+  line-height:1.4;
+}
+.shot-mock-card strong{
+  display:block;
+  color:var(--brass-300);
+  font-family:var(--font-mono);
+  font-size:13px;
+  margin-bottom:4px;
+  font-weight:700;
+}
+
+/* ─── Hero — binary contrast lines ─────── */
+.hero-lede{ font-size:20px; max-width:64ch; }
+.hero-contrast{
+  font-family:var(--font-mono);
+  font-size:14px;
+  line-height:1.7;
+  color:var(--text-secondary);
+  border-left:2px solid var(--brass-500);
+  padding-left:var(--sp-5);
+  margin-top:var(--sp-6);
+  max-width:62ch;
+}
+.old-way, .new-way{
+  display:inline-block;
+  font-weight:700;
+  letter-spacing:0.04em;
+  text-transform:uppercase;
+  font-size:11px;
+  margin-right:var(--sp-2);
+  padding:2px 8px;
+  border-radius:var(--r-sm);
+  white-space:nowrap;
+}
+.old-way{
+  background:rgba(180,160,140,0.08);
+  color:var(--text-muted);
+  border:1px solid var(--border-subtle);
+}
+.new-way{
+  background:rgba(201,149,26,0.12);
+  color:var(--brass-200);
+  border:1px solid rgba(201,149,26,0.35);
+}
+
+/* ─── Bridge section (Section 1.5 — kill the AI-judges-you fear) ─────── */
+.bridge{
+  background:
+    radial-gradient(ellipse 70% 60% at 50% 50%, rgba(201,149,26,0.05), transparent 65%),
+    linear-gradient(180deg, #14110d 0%, #110e0a 45%, var(--bg-canvas) 100%);
+  position:relative;
+  padding-top:var(--sp-20);
+  padding-bottom:var(--sp-20);
+  overflow:hidden;
+}
+.bridge-inner{
+  max-width:760px;
+  margin:0 auto;
+}
+.bridge-title{
+  font-size:clamp(32px,4.4vw,52px);
+  margin-bottom:var(--sp-8);
+  text-wrap:balance;
+}
+.bridge-body{
+  display:flex;
+  flex-direction:column;
+  gap:var(--sp-6);
+}
+.bridge-body p{
+  font-size:18px;
+  line-height:1.65;
+  color:var(--text-secondary);
+  max-width:64ch;
+  margin:0;
+}
+.bridge-pivot{
+  display:flex;
+  flex-wrap:wrap;
+  gap:var(--sp-3);
+  align-items:center;
+  font-family:var(--font-display);
+  font-style:italic;
+  font-size:22px !important;
+  color:var(--text-primary) !important;
+  padding:var(--sp-4) 0 !important;
+  border-top:1px solid var(--border-subtle);
+  border-bottom:1px solid var(--border-subtle);
+  margin:var(--sp-2) 0 !important;
+}
+.bridge-pivot .old-way,
+.bridge-pivot .new-way{
+  font-size:11px;
+  padding:4px 10px;
+}
+.bridge-close{
+  color:var(--text-primary) !important;
+  font-size:19px !important;
+  line-height:1.6 !important;
+}
+.bridge-close em{
+  font-style:italic;
+  color:var(--brass-300);
+  font-weight:500;
+}
+@media (max-width:760px){
+  .bridge{ padding-top:var(--sp-12); padding-bottom:var(--sp-12); }
+  .bridge-body p{ font-size:16px; }
+  .bridge-pivot{ font-size:18px !important; }
+  .bridge-close{ font-size:17px !important; }
+}
+
+/* ─── Ownership section (Section 2.75 — permission to play) ─────── */
+.ownership{
+  background:
+    radial-gradient(ellipse 80% 55% at 50% 45%, rgba(201,149,26,0.055), transparent 70%),
+    linear-gradient(180deg, var(--bg-canvas) 0%, #110e0a 60%, #14110d 100%);
+  position:relative;
+  padding-top:var(--sp-20);
+  padding-bottom:var(--sp-20);
+  overflow:hidden;
+}
+.ownership-inner{
+  max-width:760px;
+  margin:0 auto;
+}
+.ownership-title{
+  font-size:clamp(32px,4.4vw,52px);
+  margin-bottom:var(--sp-8);
+  text-wrap:balance;
+}
+.ownership-body{
+  display:flex;
+  flex-direction:column;
+  gap:var(--sp-6);
+}
+.ownership-body p{
+  font-size:18px;
+  line-height:1.65;
+  color:var(--text-secondary);
+  max-width:64ch;
+  margin:0;
+}
+.ownership-body em{
+  font-style:italic;
+  color:var(--brass-300);
+  font-weight:500;
+}
+.ownership-pivot{
+  font-family:var(--font-display);
+  font-size:22px !important;
+  line-height:1.5 !important;
+  color:var(--text-primary) !important;
+  padding:var(--sp-5) 0 var(--sp-2) !important;
+  position:relative;
+  margin:var(--sp-2) 0 !important;
+}
+.ownership-pivot::before{
+  content:'';
+  position:absolute;
+  top:0; left:0;
+  width:48px; height:2px;
+  background:var(--brass-500);
+}
+.ownership-pivot strong{
+  font-style:italic;
+  color:var(--text-primary);
+  font-weight:500;
+}
+.ownership-reframe{
+  font-family:var(--font-display) !important;
+  font-size:30px !important;
+  line-height:1.35 !important;
+  color:var(--text-primary) !important;
+  text-wrap:balance;
+  max-width:60ch !important;
+  padding:var(--sp-2) 0 var(--sp-4) !important;
+  margin:0 !important;
+}
+.ownership-reframe em{
+  font-style:italic;
+  color:var(--text-muted);
+  font-weight:400;
+  font-family:var(--font-display);
+}
+.ownership-reframe-key{
+  font-style:italic;
+  color:var(--brass-300);
+  font-weight:500;
+  position:relative;
+  white-space:nowrap;
+}
+.ownership-reframe-key::after{
+  content:'';
+  position:absolute;
+  left:0; right:0; bottom:-4px;
+  height:2px;
+  background:linear-gradient(90deg, var(--brass-500), transparent);
+}
+.ownership-close{
+  font-family:var(--font-display);
+  font-size:24px !important;
+  line-height:1.5 !important;
+  color:var(--text-primary) !important;
+  padding-top:var(--sp-4) !important;
+  border-top:1px solid var(--border-subtle);
+  margin-top:var(--sp-2) !important;
+  display:flex;
+  flex-direction:column;
+  gap:var(--sp-2);
+}
+.ownership-close em{
+  font-style:italic;
+  color:var(--brass-300);
+  font-weight:500;
+  font-size:18px;
+  display:block;
+  margin-top:var(--sp-3);
+  font-family:var(--font-body);
+}
+.ownership-close .old-way,
+.ownership-close .new-way{
+  font-size:11px;
+  padding:4px 10px;
+}
+@media (max-width:760px){
+  .ownership{ padding-top:var(--sp-12); padding-bottom:var(--sp-12); }
+  .ownership-body p{ font-size:16px; }
+  .ownership-pivot{ font-size:18px !important; }
+  .ownership-reframe{ font-size:22px !important; }
+  .ownership-close{ font-size:20px !important; }
+  .ownership-close em{ font-size:16px; }
+}
+
+/* ─── Output panel (Section 2 — what comes back) ─────── */
+.output-panel{
+  margin-top:var(--sp-12);
+  background:var(--bg-raised);
+  border:1px solid var(--border-standard);
+  border-radius:var(--r-lg);
+  padding:var(--sp-8);
+  position:relative;
+  max-width:1100px;
+}
+.output-panel::before{
+  content:'';
+  position:absolute; top:-1px; left:24px; right:24px;
+  height:2px;
+  background:linear-gradient(90deg,var(--brass-500),transparent);
+}
+.output-panel-head{
+  display:flex;
+  flex-direction:column;
+  gap:var(--sp-2);
+  margin-bottom:var(--sp-6);
+  padding-bottom:var(--sp-5);
+  border-bottom:1px solid var(--border-subtle);
+}
+.output-panel-label{
+  font-family:var(--font-mono);
+  font-size:11px;
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+  color:var(--brass-300);
+  font-weight:700;
+}
+.output-panel-sub{
+  font-family:var(--font-display);
+  font-style:italic;
+  font-size:18px;
+  color:var(--text-secondary);
+  font-weight:500;
+}
+.output-panel-grid{
+  list-style:none;
+  margin:0; padding:0;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:var(--sp-6) var(--sp-8);
+}
+.output-panel-grid li{
+  display:grid;
+  grid-template-columns:auto 1fr;
+  grid-template-rows:auto auto;
+  column-gap:var(--sp-4);
+  row-gap:6px;
+  padding:var(--sp-4) 0;
+  border-top:1px solid var(--border-subtle);
+}
+.op-num{
+  grid-row:1 / span 2;
+  font-family:var(--font-display);
+  font-weight:700;
+  font-size:36px;
+  color:var(--brass-400);
+  line-height:1;
+  letter-spacing:-0.02em;
+  font-feature-settings:"lnum";
+}
+.op-name{
+  font-family:var(--font-mono);
+  font-weight:700;
+  font-size:13px;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  color:var(--text-primary);
+}
+.op-desc{
+  font-size:14px;
+  line-height:1.6;
+  color:var(--text-secondary);
+}
+@media (max-width:768px){
+  .output-panel{ padding:var(--sp-6); }
+  .output-panel-grid{ grid-template-columns:1fr; gap:var(--sp-4); }
+  .op-num{ font-size:28px; }
+}
+
+/* ─── Loom / video section ────────────────── */
+#walkthrough{ background:var(--bg-base); border-top:1px solid var(--border-subtle); }
+
+.video-frame{
+  position:relative;
+  background:var(--bg-raised);
+  border:1px solid var(--border-standard);
+  border-radius:var(--r-lg);
+  overflow:hidden;
+  max-width:1000px;
+}
+.video-frame::before{
+  content:''; position:absolute; top:0; left:0; right:0;
+  height:2px;
+  background:linear-gradient(90deg,var(--brass-500),var(--brass-300));
+  opacity:0.7; z-index:2;
+}
+.video-bar{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:var(--sp-3) var(--sp-4);
+  border-bottom:1px solid var(--border-subtle);
+  background:var(--bg-surface);
+  font-family:var(--font-mono);
+  font-size:11px;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  color:var(--text-muted);
+}
+.video-bar .demo-dots{ display:flex; gap:6px; }
+.video-bar .demo-dots span{
+  width:9px;height:9px;border-radius:50%;
+  background:var(--ink-600); display:block;
+}
+.video-stage{
+  position:relative;
+  aspect-ratio:16/9;
+  background:#0a0908;
+}
+.video-stage iframe,
+.video-stage video{
+  position:absolute; inset:0;
+  width:100%; height:100%;
+  border:0;
+}
+.video-placeholder{
+  position:absolute; inset:0;
+  display:flex; flex-direction:column;
+  align-items:center; justify-content:center;
+  gap:var(--sp-3);
+  padding:var(--sp-8);
+  text-align:center;
+  background:
+    repeating-linear-gradient(
+      135deg,
+      transparent 0 14px,
+      rgba(201,149,26,0.04) 14px 15px
+    ),
+    var(--bg-surface);
+}
+.video-play{
+  width:72px; height:72px; border-radius:50%;
+  background:var(--brass-500);
+  color:var(--ink-900);
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 8px 32px rgba(201,149,26,0.25);
+  margin-bottom:var(--sp-2);
+}
+.video-play svg{ width:28px; height:28px; margin-left:4px; }
+.video-placeholder-label{
+  font-family:var(--font-mono);
+  font-size:11px;
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+  color:var(--text-muted);
+}
+.video-placeholder-title{
+  font-family:var(--font-display);
+  font-size:22px;
+  font-weight:700;
+  color:var(--text-secondary);
+  max-width:36ch;
+  line-height:1.3;
+}
+.video-placeholder-note{
+  font-size:13px;
+  color:var(--text-muted);
+  font-style:italic;
+  max-width:48ch;
+  line-height:1.55;
+  font-family:var(--font-mono);
+}
+.video-placeholder-note code{
+  color:var(--brass-200);
+  background:var(--ink-900);
+  border:1px solid var(--border-standard);
+  border-radius:var(--r-sm);
+  padding:1px 6px;
+  font-style:normal;
+}
+
+/* ─────────────────────────────────────────────
+   Section 3 — Action / try this
+   ───────────────────────────────────────────── */
+#try{
+  background:var(--bg-base);
+  border-top:1px solid var(--border-subtle);
+}
+
+.action-card{
+  background:var(--bg-raised);
+  border:1px solid var(--border-emphasis);
+  border-radius:var(--r-lg);
+  padding:var(--sp-10);
+  position:relative;
+  overflow:hidden;
+  max-width:880px;
+}
+.action-card::before{
+  content:'';
+  position:absolute; top:0; left:0; right:0;
+  height:2px;
+  background:linear-gradient(90deg,var(--brass-500),var(--brass-300));
+}
+.action-prompt{
+  font-family:var(--font-display);
+  font-style:italic;
+  font-size:22px;
+  color:var(--text-primary);
+  margin-bottom:var(--sp-6);
+  line-height:1.4;
+  max-width:640px;
+}
+
+.copy-row{
+  display:flex; align-items:stretch;
+  background:var(--ink-900);
+  border:1px solid var(--border-standard);
+  border-radius:var(--r-md);
+  overflow:hidden;
+  margin-bottom:var(--sp-5);
+}
+.copy-cmd{
+  flex:1;
+  padding:var(--sp-5) var(--sp-6);
+  font-family:var(--font-mono);
+  font-size:18px;
+  color:var(--text-primary);
+  user-select:all;
+  overflow-x:auto;
+  white-space:nowrap;
+  line-height:1.3;
+}
+.copy-cmd .slash{ color:var(--brass-300); font-weight:600; }
+.copy-cmd .ph   { color:var(--text-muted); }
+.copy-btn{
+  border:0;
+  border-left:1px solid var(--border-standard);
+  background:transparent;
+  color:var(--text-secondary);
+  font-family:var(--font-body);
+  font-weight:600;
+  font-size:12px;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  padding:0 var(--sp-6);
+  cursor:pointer;
+  transition:background 0.15s, color 0.15s;
+  min-width:108px;
+}
+.copy-btn:hover{ background:rgba(201,149,26,0.08); color:var(--text-accent); }
+.copy-btn.copied{ color:var(--brass-300); }
+
+.action-meta{
+  display:flex; flex-wrap:wrap; gap:var(--sp-6);
+  font-size:12px; font-weight:600;
+  letter-spacing:0.1em; text-transform:uppercase;
+  color:var(--text-muted);
+}
+.action-meta strong{ color:var(--text-accent-dim); font-weight:600; }
+.action-meta .dot{
+  display:inline-block;
+  width:3px; height:3px;
+  background:var(--text-muted);
+  border-radius:50%;
+  margin-right:var(--sp-3);
+  vertical-align:middle;
+  transform:translateY(-2px);
+}
+
+/* ─────────────────────────────────────────────
+   Section 4 — What comes next / bridge
+   ───────────────────────────────────────────── */
+#next{ background:var(--bg-canvas); }
+
+.next-grid{
+  display:grid;
+  grid-template-columns:1.1fr 1fr;
+  gap:var(--sp-12);
+  align-items:start;
+}
+@media (max-width:880px){
+  .next-grid{ grid-template-columns:1fr; gap:var(--sp-8); }
+}
+
+.next-copy p{
+  font-size:16px;
+  color:var(--text-secondary);
+  line-height:1.7;
+  margin-bottom:var(--sp-4);
+  max-width:600px;
+}
+.next-copy p strong{ color:var(--text-primary); font-weight:600; }
+.next-copy p:last-child{ margin-bottom:var(--sp-8); }
+
+.btn-primary{
+  display:inline-flex; align-items:center; gap:var(--sp-3);
+  background:var(--brass-500);
+  color:var(--ink-900);
+  font-family:var(--font-body);
+  font-weight:600; font-size:14px;
+  padding:var(--sp-4) var(--sp-6);
+  border-radius:var(--r-md);
+  text-decoration:none;
+  border:none; cursor:pointer;
+  transition:background 0.15s, transform 0.15s;
+  letter-spacing:0.02em;
+}
+.btn-primary:hover{ background:var(--brass-400); }
+.btn-primary .arrow{ transition:transform 0.15s; }
+.btn-primary:hover .arrow{ transform:translateX(3px); }
+
+/* Amplifier preview list — visual echo of the Library cards */
+.amp-preview{
+  background:var(--bg-raised);
+  border:1px solid var(--border-standard);
+  border-radius:var(--r-lg);
+  padding:var(--sp-6);
+  position:relative;
+  overflow:hidden;
+}
+.amp-preview::before{
+  content:'';
+  position:absolute; top:0; left:0; right:0;
+  height:2px;
+  background:linear-gradient(90deg,var(--brass-500),var(--brass-300));
+  opacity:0.7;
+}
+.amp-preview-label{
+  font-size:11px; font-weight:600;
+  letter-spacing:0.12em; text-transform:uppercase;
+  color:var(--text-accent);
+  margin-bottom:var(--sp-4);
+}
+.amp-list{ list-style:none; display:flex; flex-direction:column; gap:1px; }
+.amp-list li{
+  display:grid;
+  grid-template-columns:32px 1fr;
+  gap:var(--sp-4);
+  align-items:baseline;
+  padding:var(--sp-3) 0;
+  border-top:1px dashed var(--border-subtle);
+}
+.amp-list li:first-child{ border-top:0; }
+.amp-num{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:24px; height:24px;
+  border-radius:50%;
+  background:rgba(201,149,26,0.15);
+  border:1px solid var(--border-emphasis);
+  font-size:11px; font-weight:700;
+  color:var(--brass-400);
+  font-family:var(--font-body);
+}
+.amp-name{
+  font-family:var(--font-display);
+  font-size:15px; font-weight:700;
+  color:var(--text-primary);
+  line-height:1.3;
+}
+.amp-foot{
+  margin-top:var(--sp-5);
+  padding-top:var(--sp-4);
+  border-top:1px solid var(--border-subtle);
+  font-size:12px;
+  color:var(--text-muted);
+  font-style:italic;
+}
+
+/* ─────────────────────────────────────────────
+   Section 5 — Stuck (two safety nets)
+   ───────────────────────────────────────────── */
+#stuck{ background:var(--bg-canvas); }
+
+.stuck-lede{
+  margin-bottom:var(--sp-10) !important;
+}
+
+.stuck-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:var(--sp-6);
+  max-width:1100px;
+}
+
+.stuck-card{
+  background:var(--bg-raised);
+  border:1px solid var(--border-standard);
+  border-radius:var(--r-lg);
+  padding:var(--sp-8);
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  gap:var(--sp-4);
+}
+.stuck-card--toolkit{
+  background:linear-gradient(180deg, rgba(201,149,26,0.04), transparent 40%), var(--bg-raised);
+  border-color:rgba(201,149,26,0.22);
+}
+.stuck-card--toolkit::before{
+  content:'';
+  position:absolute;
+  top:-1px; left:24px; right:24px;
+  height:2px;
+  background:linear-gradient(90deg, var(--brass-500), transparent);
+}
+.stuck-card--community::before{
+  content:'';
+  position:absolute;
+  top:-1px; left:24px; right:24px;
+  height:2px;
+  background:linear-gradient(90deg, var(--text-muted), transparent);
+  opacity:0.5;
+}
+
+.stuck-card-meta{
+  display:flex;
+  align-items:baseline;
+  gap:var(--sp-3);
+  margin-bottom:var(--sp-1);
+}
+.stuck-num{
+  font-family:var(--font-mono);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:0.1em;
+  color:var(--brass-300);
+  background:rgba(201,149,26,0.08);
+  border:1px solid rgba(201,149,26,0.25);
+  border-radius:var(--r-sm);
+  padding:3px 8px;
+}
+.stuck-card--community .stuck-num{
+  color:var(--text-muted);
+  background:rgba(180,160,140,0.06);
+  border-color:var(--border-subtle);
+}
+.stuck-kicker{
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--text-muted);
+}
+
+.stuck-card-title{
+  font-family:var(--font-display);
+  font-size:30px;
+  font-weight:600;
+  line-height:1.2;
+  color:var(--text-primary);
+  margin:0;
+  text-wrap:balance;
+}
+.stuck-mono{
+  font-family:var(--font-mono);
+  font-size:24px;
+  font-weight:600;
+  color:var(--brass-200);
+  letter-spacing:-0.01em;
+  background:var(--ink-900);
+  border:1px solid rgba(201,149,26,0.25);
+  border-radius:var(--r-sm);
+  padding:2px 10px;
+  white-space:nowrap;
+  display:inline-block;
+}
+
+.stuck-card-body{
+  font-size:15px;
+  line-height:1.65;
+  color:var(--text-secondary);
+  margin:0;
+  max-width:48ch;
+}
+.stuck-card-body strong{
+  color:var(--text-primary);
+  font-weight:600;
+}
+
+.stuck-card-list{
+  list-style:none;
+  padding:0;
+  margin:var(--sp-1) 0;
+  display:flex;
+  flex-direction:column;
+  gap:var(--sp-2);
+}
+.stuck-card-list li{
+  font-size:14px;
+  line-height:1.55;
+  color:var(--text-secondary);
+  padding-left:var(--sp-5);
+  position:relative;
+}
+.stuck-bullet{
+  position:absolute;
+  left:0; top:8px;
+  width:6px; height:6px;
+  background:var(--brass-500);
+  border-radius:1px;
+  transform:rotate(45deg);
+}
+.stuck-card-list em{
+  font-style:italic;
+  color:var(--brass-300);
+}
+
+.stuck-card-foot{
+  font-family:var(--font-display);
+  font-style:italic;
+  font-size:15px;
+  line-height:1.5;
+  color:var(--text-muted);
+  margin:var(--sp-2) 0 0;
+  padding-top:var(--sp-4);
+  border-top:1px solid var(--border-subtle);
+}
+
+.stuck-close{
+  font-family:var(--font-display);
+  font-size:22px;
+  line-height:1.55;
+  color:var(--text-secondary);
+  margin-top:var(--sp-10);
+  max-width:760px;
+  text-wrap:pretty;
+}
+.stuck-close em{
+  font-style:italic;
+  color:var(--brass-300);
+  font-weight:500;
+}
+.stuck-close-final{
+  font-size:32px !important;
+  line-height:1.35 !important;
+  color:var(--text-primary) !important;
+  margin-top:var(--sp-6) !important;
+  text-wrap:balance !important;
+}
+.stuck-close-final em{
+  color:var(--text-primary);
+  font-weight:500;
+}
+.stuck-close-key{
+  font-style:italic;
+  color:var(--brass-300);
+  font-weight:600;
+  position:relative;
+  white-space:nowrap;
+}
+.stuck-close-key::after{
+  content:'';
+  position:absolute;
+  left:0; right:0; bottom:-6px;
+  height:2px;
+  background:linear-gradient(90deg, var(--brass-500), transparent);
+}
+
+@media (max-width:880px){
+  .stuck-grid{ grid-template-columns:1fr; }
+  .stuck-card{ padding:var(--sp-6); }
+  .stuck-card-title{ font-size:24px; }
+  .stuck-mono{ font-size:20px; }
+  .stuck-close{ font-size:18px; margin-top:var(--sp-8); }
+  .stuck-close-final{ font-size:24px !important; }
+}
+
+/* ─────────────────────────────────────────────
+   Footer
+   ───────────────────────────────────────────── */
+.site-footer{
+  background:var(--bg-base);
+  border-top:1px solid var(--border-subtle);
+  padding:var(--sp-8);
+  text-align:center;
+  font-size:13px;
+  color:var(--text-muted);
+}
+
+/* ─────────────────────────────────────────────
+   Responsive
+   ───────────────────────────────────────────── */
+@media (max-width:768px){
+  .site-nav{ padding:0 var(--sp-4); gap:var(--sp-4); }
+  .hero-inner{ padding:var(--sp-12) var(--sp-4) var(--sp-10); }
+  .section{ padding:var(--sp-10) var(--sp-4); }
+  .turn{ padding:var(--sp-4) var(--sp-5); }
+  .finding{
+    grid-template-columns:28px 1fr;
+  }
+  .finding-est{
+    grid-column:2; text-align:left;
+    margin-top:var(--sp-2);
+    font-size:18px;
+  }
+  .action-card{ padding:var(--sp-6); }
+  .action-prompt{ font-size:18px; }
+  .copy-cmd{ font-size:14px; padding:var(--sp-4); }
+  .copy-btn{ padding:0 var(--sp-4); min-width:84px; font-size:11px; }
+}
+
+/* ─────────────────────────────────────────────
+   TWEAKS — three composable mode systems
+   Applied via body classes; everything reuses
+   the same tokens so they cascade cleanly.
+   ───────────────────────────────────────────── */
+
+/* Mode: editorial (default) — Playfair display, italic flair */
+/* Mode: operator — JetBrains Mono headlines, terminal-first */
+body.mode-operator .hero-title,
+body.mode-operator .section-title,
+body.mode-operator .amp-name,
+body.mode-operator .callout-title,
+body.mode-operator .nav-brand{
+  font-family:'JetBrains Mono',ui-monospace,monospace;
+  font-weight:600;
+  letter-spacing:-0.01em;
+}
+body.mode-operator .hero-title{
+  font-size:clamp(34px,5.4vw,60px);
+  line-height:1.1;
+  letter-spacing:-0.02em;
+}
+body.mode-operator .hero-title em,
+body.mode-operator .section-title em,
+body.mode-operator .action-prompt{
+  font-style:normal;
+}
+body.mode-operator .action-prompt{
+  font-family:'JetBrains Mono',ui-monospace,monospace;
+  font-size:18px;
+  font-weight:500;
+}
+body.mode-operator .finding-est{
+  font-family:'JetBrains Mono',ui-monospace,monospace;
+  font-weight:700;
+}
+body.mode-operator .hero-eyebrow,
+body.mode-operator .section-label{
+  border-radius:0;
+}
+body.mode-operator .hero-title::before{
+  content:"$ ";
+  color:var(--brass-300);
+  opacity:0.55;
+}
+
+/* Mode: quiet — soft, low-contrast, minimal display flair */
+body.mode-quiet{
+  --bg-canvas:#13110e;
+  --bg-base:#1a1714;
+  --bg-raised:#211d18;
+  --text-primary:#e6dfd2;
+  --text-secondary:#b3a791;
+}
+body.mode-quiet .hero-title,
+body.mode-quiet .section-title{
+  font-weight:600;
+  letter-spacing:-0.025em;
+}
+body.mode-quiet .hero-title em,
+body.mode-quiet .section-title em{
+  font-style:normal;
+  color:var(--text-secondary);
+}
+body.mode-quiet .hero-title .accent{
+  color:var(--text-primary);
+}
+body.mode-quiet .demo-frame::before,
+body.mode-quiet .action-card::before,
+body.mode-quiet .amp-preview::before{
+  opacity:0.35;
+}
+
+/* Intensity: monochrome — kill the brass entirely */
+body.intensity-monochrome{
+  --brass-500:#a89880;
+  --brass-400:#b8a890;
+  --brass-300:#cfc4b0;
+  --brass-200:#d8cdb8;
+  --brass-100:#e8e0d0;
+  --text-accent:#cfc4b0;
+  --text-accent-dim:#b8a890;
+  --border-subtle:rgba(168,152,128,0.10);
+  --border-standard:rgba(168,152,128,0.18);
+  --border-emphasis:rgba(168,152,128,0.30);
+  --border-focus:rgba(168,152,128,0.50);
+  --amplifier-glow:rgba(168,152,128,0.06);
+}
+body.intensity-monochrome .demo-frame::before,
+body.intensity-monochrome .action-card::before,
+body.intensity-monochrome .amp-preview::before{
+  background:linear-gradient(90deg,#6b6250,#a89880);
+  opacity:0.4;
+}
+body.intensity-monochrome .nav-brand{
+  color:var(--text-primary);
+}
+body.intensity-monochrome .tag.claude{
+  background:#cfc4b0;
+  border-color:#cfc4b0;
+}
+
+/* Intensity: restrained — softer brass, less saturated */
+body.intensity-restrained{
+  --brass-500:#a78838;
+  --brass-400:#bfa055;
+  --brass-300:#d4b87a;
+  --brass-200:#dcc593;
+  --border-subtle:rgba(167,136,56,0.08);
+  --border-standard:rgba(167,136,56,0.15);
+  --border-emphasis:rgba(167,136,56,0.28);
+  --border-focus:rgba(167,136,56,0.50);
+  --amplifier-glow:rgba(167,136,56,0.06);
+}
+body.intensity-restrained .demo-frame::before,
+body.intensity-restrained .action-card::before,
+body.intensity-restrained .amp-preview::before{
+  opacity:0.5;
+}
+
+/* Intensity: luxury (default) — full brass, gold accents */
+
+/* Density: spacious (default) */
+/* Density: regular — current shipping defaults */
+body.density-regular .hero-inner{ padding:var(--sp-16) var(--sp-8) var(--sp-12); }
+body.density-regular .section{ padding:var(--sp-12) var(--sp-8); }
+body.density-regular .hero-title{ font-size:clamp(36px,5.6vw,60px); }
+body.density-regular .section-title{ font-size:clamp(26px,3.4vw,38px); }
+body.density-regular .action-card{ padding:var(--sp-8); }
+
+/* Density: compact — briefing memo */
+body.density-compact .hero-inner{ padding:var(--sp-10) var(--sp-8) var(--sp-8); }
+body.density-compact .section{ padding:var(--sp-10) var(--sp-8); }
+body.density-compact .hero-title{
+  font-size:clamp(30px,4.6vw,48px);
+  margin-bottom:var(--sp-4);
+}
+body.density-compact .hero-body{ font-size:16px; margin-bottom:var(--sp-3); }
+body.density-compact .section-title{
+  font-size:clamp(22px,2.8vw,30px);
+  margin-bottom:var(--sp-3);
+}
+body.density-compact .section-body{
+  font-size:14.5px; margin-bottom:var(--sp-5);
+}
+body.density-compact .action-card{ padding:var(--sp-6); }
+body.density-compact .action-prompt{
+  font-size:17px; margin-bottom:var(--sp-4);
+}
+body.density-compact .copy-cmd{ font-size:15px; padding:var(--sp-4); }
+body.density-compact .turn{ padding:var(--sp-4) var(--sp-6); }
+body.density-compact .finding{ padding:var(--sp-3) 0; }
+body.density-compact .finding-text{ font-size:13.5px; }
+body.density-compact .demo-foot{ font-size:10.5px; }
+body.density-compact .stuck-card{ padding:var(--sp-6); }
+</style>
+</head>
+<body class="mode-quiet intensity-luxury density-regular">
+
+<!-- ─────────────────────────────────────────────
+     Top nav — same component as Skill Library
+     ───────────────────────────────────────────── -->
+<nav class="site-nav">
+  <span class="nav-brand">ZenithMind Elite</span>
+  <div class="nav-divider"></div>
+  <ul class="nav-links">
+    <li><a href="welcome.html" class="current">Welcome</a></li>
+    <li><a href="index.html#hero">Library</a></li>
+    <li><a href="index.html#start-here">Start Here</a></li>
+    <li><a href="index.html#if-stuck">If You're Stuck</a></li>
+    <li><a href="index.html#directory">Full Directory</a></li>
+  </ul>
+</nav>
+
+<!-- ─────────────────────────────────────────────
+     SECTION 1 — Welcome
+     ───────────────────────────────────────────── -->
+<section id="welcome">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Welcome</div>
+    <h1 class="hero-title">Welcome to <em>ZenithMind</em> <span>Elite.</span></h1>
+    <p class="hero-body hero-lede">
+      The point of this program is one thing: <strong>agentic AI, working for your business.</strong> The unfair advantage your competitors don't have. The version of your week where the work happens — and you make <em>more money, in less time.</em>
+    </p>
+    <p class="hero-body">
+      You have over <strong>400 skills installed.</strong> You don't have to learn all of them. We all start with one.
+    </p>
+    <p class="hero-body hero-contrast">
+      <span class="old-way">The old way:</span> stare at the cursor, try to engineer the perfect prompt, give up.<br>
+      <span class="new-way">The new way:</span> type one line, Claude does the work, you get a result. You can be lazy. You can't break anything. Just go.
+    </p>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────
+     SECTION 1.5 — Bridge: kill the "AI judges you" fear
+     ───────────────────────────────────────────── -->
+<section id="bridge" class="section bridge">
+  <div class="bridge-inner">
+    <div class="section-label">Before you run one</div>
+    <h2 class="section-title bridge-title">Stop trying to <em>talk to it right.</em></h2>
+
+    <div class="bridge-body">
+      <p>
+        Years of headlines told you that AI needs perfect prompts — that the reason your last AI experiment was disappointing is because you typed the wrong magic words.
+      </p>
+
+      <p class="bridge-pivot">
+        <span class="old-way">That was the old AI.</span>
+        <span class="new-way">This is not that.</span>
+      </p>
+
+      <p>
+        Claude Code does not grade your input. It does not need precision, expertise, or technique. You can type a sentence fragment. You can paste a screenshot. You can be vague, lazy, half-finished. You can be the version of you that hasn't had coffee yet.
+      </p>
+
+      <p class="bridge-close">
+        The skills give you a running start. They turn the blank page into a button you can press. The rest you learn the only way anyone learns anything — by doing it. Type something. See what comes back. Type something better. <em>That's the whole skill.</em>
+      </p>
+    </div>
+  </div>
+</section>
+<!-- ─────────────────────────────────────────────
+     SECTION 2 — Show what it looks like
+     ───────────────────────────────────────────── -->
+<section id="demo" class="section">
+  <div class="section-label">What it looks like</div>
+  <h2 class="section-title">Here's what running a skill <em>actually</em> looks like.</h2>
+  <p class="section-body">
+    Three things happen. You type one line. Claude does the work. You get a structured result back. That's it — no prompt to engineer, no settings to tune.
+  </p>
+
+  <div class="steps">
+
+    <!-- ── Step 01 — Type the command (real screenshot) ── -->
+    <div class="step">
+      <div class="step-meta">
+        <div class="step-num">01</div>
+        <div class="step-kicker">You</div>
+        <div class="step-head">Type one line into Claude.</div>
+        <div class="step-caption">Just the slash command, your name, and a URL. No prompt to engineer.</div>
+      </div>
+
+      <figure class="shot">
+        <div class="shot-bar">
+          <div class="demo-dots"><span></span><span></span><span></span></div>
+          <div>Claude — Code session</div>
+          <div>/business-scanner</div>
+        </div>
+        <span class="shot-tag">You typed</span>
+        <img class="shot-img" src="assets/claude-step-01-typing.png"
+             alt="Claude desktop app showing /business-scanner Rich Schefren, Strategicprofits.com typed into the input field" />
+      </figure>
+    </div>
+
+    <!-- ── Step 02 — Claude runs the skill (placeholder) ── -->
+    <div class="step">
+      <div class="step-meta">
+        <div class="step-num">02</div>
+        <div class="step-kicker">Claude</div>
+        <div class="step-head">Claude runs the skill.</div>
+        <div class="step-caption">Reads your site, maps the funnel, compares against category benchmarks. You watch it work.</div>
+      </div>
+
+      <figure class="shot">
+        <div class="shot-bar">
+          <div class="demo-dots"><span></span><span></span><span></span></div>
+          <div>Claude — running /business-scanner</div>
+          <div>in progress</div>
+        </div>
+        <span class="shot-tag">Claude is working</span>
+        <img class="shot-img" src="assets/claude-step-02-running.png"
+             alt="Claude mid-run on /business-scanner — Browsed the web, used a tool list showing WebFetch and WebSearch calls to strategicprofits.com, richschefren.com, mastermind pricing pages, then 'I have everything I need. Writing the report now.'" />
+      </figure>
+    </div>
+
+    <!-- ── Step 03 — You get three findings (placeholder + mock preview) ── -->
+    <div class="step">
+      <div class="step-meta">
+        <div class="step-num">03</div>
+        <div class="step-kicker">You — done</div>
+        <div class="step-head">A structured Business Intelligence Scan.</div>
+        <div class="step-caption">Three findings, ranked by impact. Each one quotes evidence from your site. No fluff, no waiting.</div>
+      </div>
+
+      <figure class="shot">
+        <div class="shot-bar">
+          <div class="demo-dots"><span></span><span></span><span></span></div>
+          <div>Claude — /business-scanner complete</div>
+          <div>3 findings</div>
+        </div>
+        <span class="shot-tag">You got back</span>
+        <img class="shot-img" src="assets/claude-step-03-output.png"
+             alt="Claude returns Business Intelligence Scan with three findings: Your Bottleneck, Where Leads Break Down, and Why They're Not Converting" />
+      </figure>
+    </div>
+
+  </div>
+
+  <div class="demo-foot">
+    <span><strong>Input</strong> — a name and a URL</span>
+    <span><strong>Output</strong> — a structured Business Intelligence Scan</span>
+  </div>
+
+  <!-- Panel B — what comes back, structured -->
+  <div class="output-panel" aria-label="What the Business Scanner returns">
+    <div class="output-panel-head">
+      <span class="output-panel-label">What comes back</span>
+      <span class="output-panel-sub">Every scan returns the same shape, regardless of business type.</span>
+    </div>
+    <ol class="output-panel-grid">
+      <li>
+        <div class="op-num">01</div>
+        <div class="op-name">Three findings</div>
+        <div class="op-desc">Bottleneck, lead leak, conversion problem — each backed by quoted evidence from your site and a dollar estimate.</div>
+      </li>
+      <li>
+        <div class="op-num">02</div>
+        <div class="op-name">Revenue left behind</div>
+        <div class="op-desc">A conservative range and an if-activated range. The cost of leaving the findings unaddressed.</div>
+      </li>
+      <li>
+        <div class="op-num">03</div>
+        <div class="op-name">Avatar insight</div>
+        <div class="op-desc">Your primary buyer in 3–5 words, the specific signal blocking their decision, and the language they actually use.</div>
+      </li>
+      <li>
+        <div class="op-num">04</div>
+        <div class="op-name">Three tools to build</div>
+        <div class="op-desc">One named agent or skill per finding — the exact thing to build next, with a one-sentence brief.</div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────
+     SECTION 2.5 — Loom walkthrough
+     ───────────────────────────────────────────── -->
+<section id="walkthrough" class="section">
+  <div class="section-label">Watch it run</div>
+  <h2 class="section-title">A quick <em>walkthrough</em>.</h2>
+  <p class="section-body">
+    If you'd rather see one before you type one — here's the whole thing start to finish, narrated.
+  </p>
+
+  <div class="video-frame">
+    <div class="video-bar">
+      <div class="demo-dots"><span></span><span></span><span></span></div>
+      <div>Loom — /business-scanner walkthrough</div>
+      <div>watch</div>
+    </div>
+    <div class="video-stage">
+      <!-- Drop the Loom embed here. Replace this placeholder with:
+           <iframe src="https://www.loom.com/embed/YOUR_VIDEO_ID"
+                   frameborder="0" allowfullscreen
+                   allow="autoplay; fullscreen; picture-in-picture"></iframe>
+      -->
+      <div class="video-placeholder">
+        <div class="video-play" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <div class="video-placeholder-label">Loom embed — pending</div>
+        <div class="video-placeholder-title">Drop the walkthrough video here</div>
+        <div class="video-placeholder-note">
+          Replace this block with <code>&lt;iframe src="https://www.loom.com/embed/…"&gt;</code> — the frame is already 16:9 and styled.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────
+     SECTION 2.75 — Belief: ownership + permission to play
+     ───────────────────────────────────────────── -->
+<section id="ownership" class="section ownership">
+  <div class="ownership-inner">
+    <div class="section-label">Before you type one</div>
+    <h2 class="section-title ownership-title">This is your business. <em>You get to play with it.</em></h2>
+
+    <div class="ownership-body">
+      <p>
+        Here's the part nobody says out loud about Elite, so we'll say it: the team is here for you. There are calls every other week. There's a community in GoHighLevel where you can ask anything and someone will answer. Our team will help.
+      </p>
+
+      <p class="ownership-pivot">
+        But none of us are going to run it for you. <strong>The business is yours. The choices are yours. The work is yours.</strong>
+      </p>
+
+      <p class="ownership-reframe">
+        And that's <em>not a warning.</em> That's the <span class="ownership-reframe-key">good part.</span>
+      </p>
+
+      <p>
+        It means you get to play. Run the scanner. Run it again with a different URL. Run a different skill. See what comes out. Throw out the parts that don't fit. Keep the parts that do. Nothing here is a test. Nothing locks anything in. <em>The scan is a piece of paper</em> — read it, ignore it, save it, share it. Up to you.
+      </p>
+
+      <p>
+        Most of what you're going to learn in this program, you'll learn by trying things and watching what happens. Not by reading more. Not by waiting for the right moment. Not by making sure you understand the system before you touch it.
+      </p>
+
+      <p class="ownership-close">
+        <span class="old-way">Tourists</span> wait for the tour.<br>
+        <span class="new-way">Owners</span> try things. <em>Pick which one you're going to be in this room.</em>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────
+     SECTION 3 — Try it now
+     ───────────────────────────────────────────── -->
+<section id="try" class="section">
+  <div class="section-label">Try it now</div>
+  <h2 class="section-title">Open Claude. <em>Type this.</em></h2>
+  <p class="section-body">
+    Swap in your own name and URL. Press Enter. Claude reads your site and writes you a Business Intelligence Scan: three findings about your business you probably haven't named yet, what they're costing you, who your buyer actually is, and three specific tools to build next.
+  </p>
+
+  <div class="action-card">
+    <p class="action-prompt">Copy. Paste into Claude. Hit Enter.</p>
+
+    <div class="copy-row">
+      <div class="copy-cmd" id="cmd"><span class="slash">/business-scanner</span> <span class="ph">[your website URL]</span></div>
+      <button class="copy-btn" id="copyBtn" type="button" aria-label="Copy command">Copy</button>
+    </div>
+
+    <div class="action-meta">
+      <span><span class="dot"></span>No setup, no prerequisites</span>
+      <span><span class="dot"></span>Works on any business URL</span>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────
+     SECTION 4 — What comes next
+     ───────────────────────────────────────────── -->
+<section id="next" class="section">
+  <div class="section-label">What comes next</div>
+  <h2 class="section-title">That was a trial run. <em>Now build your foundation.</em></h2>
+
+  <div class="next-grid">
+    <div class="next-copy">
+      <p>
+        Business Scanner showed you what <strong>one skill</strong> can do. Now here's where you actually start building.
+      </p>
+      <p>
+        Start with the five <strong>Amplifiers</strong>. These five skills produce reference files about you — <em>your</em> voice, <em>your</em> positioning, <em>your</em> buyer. Every other skill in the library reads those files at runtime.
+      </p>
+      <p>
+        <span class="old-way">Before:</span> Claude writes for a generic expert.<br>
+        <span class="new-way">After:</span> Claude writes for <em>you.</em>
+      </p>
+      <p>
+        That's the difference. It's the highest-leverage thing you can do with your Elite membership this week.
+      </p>
+      <a class="btn-primary" href="index.html#start-here">
+        Open the Skill Library
+        <span class="arrow">→</span>
+      </a>
+    </div>
+
+    <aside class="amp-preview" aria-label="The five Amplifier skills in order">
+      <div class="amp-preview-label">The 5 Amplifiers — in order</div>
+      <ol class="amp-list">
+        <li><span class="amp-num">1</span><span class="amp-name">Personal Brand DNA Extractor</span></li>
+        <li><span class="amp-num">2</span><span class="amp-name">Unique Genius Discovery</span></li>
+        <li><span class="amp-num">3</span><span class="amp-name">Client Compass</span></li>
+        <li><span class="amp-num">4</span><span class="amp-name">Copywriter Setup</span></li>
+        <li><span class="amp-num">5</span><span class="amp-name">Psychographic Excavation</span></li>
+      </ol>
+      <div class="amp-foot">Each one builds on the last.</div>
+    </aside>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────
+     SECTION 5 — If you're stuck (mirrors index.html)
+     ───────────────────────────────────────────── -->
+<section id="stuck" class="section">
+  <div class="section-label">If you're stuck</div>
+  <h2 class="section-title">You're never <em>actually stuck.</em></h2>
+  <p class="section-body stuck-lede">
+    Two safety nets. One is a skill. One is people. Use either, use both.
+  </p>
+
+  <div class="stuck-grid">
+
+    <!-- Net 1 — /my-toolkit: the navigator -->
+    <article class="stuck-card stuck-card--toolkit">
+      <div class="stuck-card-meta">
+        <div class="stuck-num">01</div>
+        <div class="stuck-kicker">The navigator</div>
+      </div>
+      <h3 class="stuck-card-title">Type <span class="stuck-mono">/my-toolkit</span></h3>
+      <p class="stuck-card-body">
+        You don't need to memorize 400+ skills. <strong>This one knows them all for you.</strong> It reads your installed library, flags the five Amplifiers, and gives you a recommended run order based on what you've already done and what you haven't.
+      </p>
+      <ul class="stuck-card-list">
+        <li><span class="stuck-bullet"></span>What's installed and what each one does</li>
+        <li><span class="stuck-bullet"></span>Which skill to run <em>next</em>, not just which exist</li>
+        <li><span class="stuck-bullet"></span>What downstream skills depend on the one you're about to run</li>
+      </ul>
+      <p class="stuck-card-foot">
+        Run it any time. It's the map of the territory you're standing in.
+      </p>
+    </article>
+
+    <!-- Net 2 — Community + team -->
+    <article class="stuck-card stuck-card--community">
+      <div class="stuck-card-meta">
+        <div class="stuck-num">02</div>
+        <div class="stuck-kicker">The humans</div>
+      </div>
+      <h3 class="stuck-card-title">Ask the room.</h3>
+      <p class="stuck-card-body">
+        The <strong>GoHighLevel community</strong> is full of other Elite members running the same skills on their own businesses, getting unstuck in real time. Post a screenshot. Paste what came back. Ask why something didn't land. Someone has probably been there in the last 48 hours.
+      </p>
+      <p class="stuck-card-body">
+        Our team shows up there too. <strong>Tech and support calls</strong> happen regularly. If a skill isn't behaving, or you can't tell whether the output is good, that's exactly what those calls are for.
+      </p>
+      <p class="stuck-card-foot">
+        You bought a membership. Use it like one.
+      </p>
+    </article>
+
+  </div>
+
+  <p class="stuck-close">
+    You came here for an <em>unfair advantage.</em> Here's the deal: it's real, it's yours, and it doesn't run itself. Today you'll run one skill. This week you run the five Amplifiers. Next month, you stop wondering whether the skills <em>work</em> and start wondering which one to <em>run next.</em>
+  </p>
+  <p class="stuck-close stuck-close-final">
+    That's the kind of month that changes your <em>entire business year.</em><br>
+    Welcome to <span class="stuck-close-key">the new era of AI.</span>
+  </p>
+</section>
+
+<footer class="site-footer">ZenithMind Elite — Member Resource — Not for distribution</footer>
+
+<script>
+  // Copy → clipboard, with execCommand fallback.
+  (function () {
+    var btn = document.getElementById('copyBtn');
+    var cmd = '/business-scanner [your website URL]';
+    var resetTimer;
+
+    function flashCopied() {
+      btn.classList.add('copied');
+      btn.textContent = 'Copied';
+      clearTimeout(resetTimer);
+      resetTimer = setTimeout(function () {
+        btn.classList.remove('copied');
+        btn.textContent = 'Copy';
+      }, 1800);
+    }
+
+    function fallback() {
+      var ta = document.createElement('textarea');
+      ta.value = cmd;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'absolute';
+      ta.style.left = '-9999px';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); } catch (e) {}
+      document.body.removeChild(ta);
+      flashCopied();
+    }
+
+    btn.addEventListener('click', function () {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(cmd).then(flashCopied, fallback);
+      } else {
+        fallback();
+      }
+    });
+  })();
+</script>
+
+
+</body>
+</html>
