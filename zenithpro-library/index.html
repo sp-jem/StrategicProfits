@@ -60,6 +60,16 @@ body {
   color: var(--accent);
   margin-bottom: 16px;
 }
+.last-updated {
+  position: absolute;
+  top: 20px;
+  right: 28px;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  color: var(--muted);
+  opacity: 0.6;
+  letter-spacing: 0.3px;
+}
 .hero h1 {
   font-family: 'Playfair Display', serif;
   font-size: 48px;
@@ -528,6 +538,7 @@ body {
   .lesson-download { grid-column: 2; }
 }
 @media (max-width: 600px) {
+  .last-updated { top: 10px; right: 14px; font-size: 10px; }
   .hero { padding: 50px 20px 40px; }
   .hero h1 { font-size: 32px; }
   .buckets { grid-template-columns: 1fr; }
@@ -543,6 +554,7 @@ body {
 <body>
 
 <div class="hero">
+  <div class="last-updated">Updated May 7, 2026</div>
   <div class="hero-kicker">ZenithPro Tool Library</div>
   <h1>Every Tool from <em>Every Lesson</em>,<br>in One Place</h1>
   <p class="hero-lede">Your complete index of prompts, skill packages, agent systems, and reference materials from all 22 ZenithPro lessons. Search by topic, browse by category, or follow the lesson timeline.</p>
