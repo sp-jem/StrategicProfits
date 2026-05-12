@@ -83,8 +83,28 @@ body {
   font-size: 18px;
   color: var(--text-muted);
   max-width: 640px;
-  margin: 0 auto 40px;
+  margin: 0 auto 28px;
   line-height: 1.7;
+}
+.hero-platform-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  background: var(--accent);
+  padding: 12px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-bottom: 40px;
+  transition: background 0.2s, transform 0.15s;
+  letter-spacing: 0.3px;
+}
+.hero-platform-link:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
 }
 
 .buckets {
@@ -554,10 +574,11 @@ body {
 <body>
 
 <div class="hero">
-  <div class="last-updated">Updated May 8, 2026</div>
+  <div class="last-updated">Updated May 12, 2026</div>
   <div class="hero-kicker">ZenithPro Tool Library</div>
   <h1>Every Tool from <em>Every Lesson</em>,<br>in One Place</h1>
   <p class="hero-lede">Your complete index of prompts, skill packages, agent systems, and reference materials from all 26 ZenithPro lessons. Search by topic, browse by category, or follow the lesson timeline.</p>
+  <a href="https://zenithpro.io/communities/groups/zenithpro/learning" target="_blank" class="hero-platform-link">&#x25B6; Watch Recordings &amp; Transcripts</a>
   <div class="buckets">
     <div class="bucket"><div class="bucket-icon">&#x1F50D;</div><div class="bucket-title">Understand Your Market</div><div class="bucket-desc">Deep psychographic profiling, desire mapping, behavioral science</div></div>
     <div class="bucket"><div class="bucket-icon">&#x1F4A1;</div><div class="bucket-title">Create Your Message</div><div class="bucket-desc">Core Concept, USP, Chain of Beliefs, positioning, naming</div></div>
