@@ -86,6 +86,19 @@ body {
   margin: 0 auto 28px;
   line-height: 1.7;
 }
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+.hero-button-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .hero-platform-link {
   display: inline-flex;
   align-items: center;
@@ -98,13 +111,18 @@ body {
   padding: 12px 28px;
   border-radius: 8px;
   text-decoration: none;
-  margin-bottom: 40px;
   transition: background 0.2s, transform 0.15s;
   letter-spacing: 0.3px;
 }
 .hero-platform-link:hover {
   background: var(--accent-hover);
   transform: translateY(-1px);
+}
+.hero-button-note {
+  font-size: 12px;
+  color: rgba(255,255,255,0.55);
+  margin-top: 6px;
+  font-family: 'Inter', sans-serif;
 }
 
 .buckets {
@@ -578,7 +596,13 @@ body {
   <div class="hero-kicker">ZenithPro Tool Library</div>
   <h1>Every Tool from <em>Every Lesson</em>,<br>in One Place</h1>
   <p class="hero-lede">Your complete index of prompts, skill packages, agent systems, and reference materials from all 26 ZenithPro lessons. Search by topic, browse by category, or follow the lesson timeline.</p>
-  <a href="https://zenithpro.io/communities/groups/zenithpro/learning" target="_blank" class="hero-platform-link">&#x25B6; Watch All Recordings</a>
+  <div class="hero-buttons">
+    <a href="https://zenithpro.io/communities/groups/zenithpro/learning" target="_blank" class="hero-platform-link">&#x25B6; Watch All Recordings</a>
+    <div class="hero-button-group">
+      <a href="https://github.com/sp-jem/StrategicProfits/releases/download/zenithpro-lessons-v1/ZenithPro-All-Lessons.zip" class="hero-platform-link">&#x2B07; Download All Lesson Materials</a>
+      <div class="hero-button-note">All tools, transcripts, and guides &mdash; no recordings</div>
+    </div>
+  </div>
   <div class="buckets">
     <div class="bucket"><div class="bucket-icon">&#x1F50D;</div><div class="bucket-title">Understand Your Market</div><div class="bucket-desc">Deep psychographic profiling, desire mapping, behavioral science</div></div>
     <div class="bucket"><div class="bucket-icon">&#x1F4A1;</div><div class="bucket-title">Create Your Message</div><div class="bucket-desc">Core Concept, USP, Chain of Beliefs, positioning, naming</div></div>
