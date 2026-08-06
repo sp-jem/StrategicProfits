@@ -294,6 +294,7 @@ body {
   font-weight: 600;
   margin-bottom: 6px;
 }
+.lesson-content { min-width: 0; }
 .lesson-items { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
 .lesson-download { padding-top: 4px; display: flex; flex-wrap: wrap; gap: 6px; }
 .lesson-download a {
@@ -323,6 +324,76 @@ body {
   font-weight: 500;
   color: var(--text-dim);
   font-style: italic;
+}
+
+.install-prompts { margin-top: 14px; max-width: 100%; }
+.install-prompts-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 8px;
+}
+.install-prompt {
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--surface-border);
+  border-left: 3px solid var(--accent);
+  border-radius: 6px;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  max-width: 100%;
+  overflow: hidden;
+}
+.install-prompt:last-child { margin-bottom: 0; }
+.install-prompt-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.install-prompt-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text);
+}
+.install-copy {
+  flex: 0 0 auto;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--accent);
+  background: transparent;
+  border: 1px solid var(--surface-border);
+  border-radius: 5px;
+  padding: 4px 10px;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s, color 0.2s;
+}
+.install-copy:hover { border-color: var(--accent); background: var(--accent-soft); }
+.install-copy.copied { color: var(--text); border-color: var(--accent); background: var(--accent-soft); }
+.install-prompt-text {
+  font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  line-height: 1.65;
+  color: var(--text-muted);
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  max-width: 100%;
+  margin: 0;
+}
+.install-prompt-note {
+  font-size: 11px;
+  line-height: 1.6;
+  color: var(--text-dim);
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--surface-border);
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 .directory-layout {
@@ -448,6 +519,51 @@ body {
   padding: 2px 8px;
   border-radius: 4px;
   white-space: nowrap;
+}
+a.skill-lesson.skill-dl {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  position: relative; /* contains the .sr-only label */
+  color: var(--accent);
+  text-decoration: none;
+  transition: border-color 0.2s, background 0.2s, color 0.2s;
+}
+a.skill-lesson.skill-dl:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent-hover);
+}
+.skill-dl-icon { font-size: 10px; line-height: 1; opacity: 0.85; }
+.skill-dl-group { display: inline-flex; flex-wrap: wrap; gap: 6px; }
+.skill-dl-plat {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--accent);
+  text-decoration: none;
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
+  padding: 2px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  transition: border-color 0.2s, background 0.2s, color 0.2s;
+}
+.skill-dl-plat:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent-hover);
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 .skill-type {
   font-size: 10px;
@@ -586,16 +702,19 @@ body {
   .phase-title { font-size: 17px; }
   .nav-tab { padding: 12px 16px; font-size: 13px; }
   .section { padding: 24px 16px; }
+  /* Stack the card so a two-button download group can never overflow. */
+  .skill-row { grid-template-columns: 1fr; gap: 10px; }
+  .skill-meta { flex-wrap: wrap; }
 }
 </style>
 </head>
 <body>
 
 <div class="hero">
-  <div class="last-updated">Updated Jul 6, 2026</div>
+  <div class="last-updated">Updated Aug 7, 2026</div>
   <div class="hero-kicker">ZenithPro Tool Library</div>
   <h1>Every Tool from <em>Every Lesson</em>,<br>in One Place</h1>
-  <p class="hero-lede">Your complete index of prompts, skill packages, agent systems, and reference materials from all 31 ZenithPro lessons. Search by topic, browse by category, or follow the lesson timeline.</p>
+  <p class="hero-lede">Your complete index of prompts, skill packages, agent systems, and reference materials from all 35 ZenithPro lessons. Search by topic, browse by category, or follow the lesson timeline.</p>
   <div class="hero-buttons">
     <a href="https://zenithpro.io/communities/groups/zenithpro/learning" target="_blank" class="hero-platform-link">&#x25B6; Watch All Recordings</a>
     <div class="hero-button-group">
@@ -624,7 +743,7 @@ body {
       <div class="guide-card">
         <div class="guide-card-num">2</div>
         <div class="guide-card-heading">Lesson Map</div>
-        <div class="guide-card-text">Find out what was taught in each of the 31 lessons and download the full tool package for any lesson. Use this when you want to revisit a specific call or grab tools you haven't installed yet.</div>
+        <div class="guide-card-text">Find out what was taught in each of the 35 lessons and download the full tool package for any lesson. Use this when you want to revisit a specific call or grab tools you haven't installed yet.</div>
       </div>
       <div class="guide-card">
         <div class="guide-card-num">3</div>
@@ -723,7 +842,7 @@ body {
         <div class="phase-line"></div>
       </div>
       <div class="phase-content">
-        <div class="phase-lessons">Lessons 19–30</div>
+        <div class="phase-lessons">Lessons 19–35</div>
         <div class="phase-title">Build Your Operating System</div>
         <div class="phase-desc">Build your marketing intelligence dashboard, select optimal funnels, orchestrate full campaigns end-to-end, test ads scientifically, package offers for premium pricing, and master the buying triggers framework.</div>
         <div class="phase-outcome"><span class="outcome-label">You'll have:</span> Complete AI-powered business operating system</div>
@@ -977,12 +1096,62 @@ body {
       <div class="lesson-download"><a href="https://github.com/sp-jem/StrategicProfits/releases/download/zenithpro-lessons-v1/ZenithPro-Lesson-30.zip">&#x2B07; Download Lesson 30</a></div>
     </div>
     <div class="lesson-row">
-      <div class="lesson-num">31<div class="lesson-date">Jul 1</div></div>
+      <div class="lesson-num">31<div class="lesson-date">Jun 17</div></div>
       <div class="lesson-content">
-        <div class="lesson-title">Affiliate Finder Skill Release</div>
-        <div class="lesson-items">How to score and recruit affiliates and JV partners for a launch. This standalone tool release scores every candidate against your own conversion history instead of follower count or list size — the same partner can convert 16% of their audience on an offer that fits and about 1% on one that doesn&#x27;t. It hands back a GREEN/CAUTION/RED/PROFILE-ONLY verdict with the evidence shown, and can find new candidates, build a launch shortlist, and draft the recruiting outreach.</div>
+        <div class="lesson-title">Manifesto as Judgment Layer, Synchronized Virality, and Organic Reach</div>
+        <div class="lesson-items">Ashley-hosted session (Rich was traveling in Morocco) that opens with tool-release updates — the campaign builder now live in the community, the webinar dashboard, and Rich&#x27;s judgment skill, which his own system told him not to ship yet — then turns into a working discussion of the manifesto launch. Ashley shows how a strong manifesto becomes a judgment layer and source of truth you can reverse-engineer an entire product ladder and set of content pillars from, and why virality comes from concentrated timing: AI influencers with pre-release copies, affiliates mailing once or twice in the same week, owned social and email, and paid ads all landing as one wave. Members work through why giving something away free still isn&#x27;t enough without a movie-trailer hook that sells the read, and Ashley&#x27;s advice on organic reach — get genuinely excited about your topic, then study the analytics weekly and double down on outliers by views rather than likes.</div>
       </div>
-      <div class="lesson-download"><a href="https://github.com/sp-jem/StrategicProfits/releases/download/zenithpro-lessons-v1/ZenithPro-Lesson-31.zip">&#x2B07; Download Lesson 31</a></div>
+      <div class="lesson-download"><span class="lesson-no-zip">Teaching only</span></div>
+    </div>
+    <div class="lesson-row">
+      <div class="lesson-num">32<div class="lesson-date">Jun 24</div></div>
+      <div class="lesson-content">
+        <div class="lesson-title">Behavioral Hooks, Always-On Context, and the Affiliate Machine</div>
+        <div class="lesson-items">Ashley-hosted session that opens with member wins — Facebook ads built on Lucas Garvin&#x27;s Context Frame Method, the interpretation-first point that you should teach AI to see the world the way you do before you judge what it generates, and behavioral if-then hooks that hold your priorities steady across sessions better than a long list of &#x27;don&#x27;t do this&#x27; rules. The group works through how to make a ported-over ZenithMind OS an always-on layer in Claude Code rather than something you reference manually: set it as a standing rule or hook, or build an agent of yourself to conserve context, with the context living in your CLAUDE.md files and core-context folder that Claude pulls per folder via the master index. Ashley then covers the manifesto launch&#x27;s virality combination — leaking physical copies to high-authority figures with a personal note, an affiliate army, a warm-list push, a podcast and live tour, and a tight value-first back end — and how affiliates get paid when the manifesto itself is free, at the standard 40% on the paid offers behind it, with the affiliate machine modeled on Mastermind.com and Hormozi&#x27;s affiliate black book.</div>
+      </div>
+      <div class="lesson-download"><span class="lesson-no-zip">Teaching only</span></div>
+    </div>
+    <div class="lesson-row">
+      <div class="lesson-num">33<div class="lesson-date">Jul 2</div></div>
+      <div class="lesson-content">
+        <div class="lesson-title">Gateless Launch Assets, Product Roadmaps, and Reading Your Ad Data</div>
+        <div class="lesson-items">How to build a launch around an asset nobody has to opt in for — a gateless manifesto that can actually spread, with the leads captured downstream (three training videos, an agent-side page) and the money made later on the Zenith Mind offer inside the 90-day affiliate cookie window instead of at the gate. Ashley walks through the black-box mailing to AI influencers, the human-vs-agent landing page, and why every business needs a product roadmap: when customers can see all the stages, they know where they are and which rung is missing. She then opens Facebook Ads Manager live to show how she reads which creative the algorithm is prioritizing and lifts that winning hook into her emails and landing pages, plus when to hand Advantage+ the keys and when narrow interest targeting is really just caging the AI.</div>
+      </div>
+      <div class="lesson-download"><a href="https://github.com/sp-jem/StrategicProfits/releases/download/zenithpro-lessons-v1/ZenithPro-Lesson-33.zip">&#x2B07; Download Lesson 33</a></div>
+    </div>
+    <div class="lesson-row">
+      <div class="lesson-num">34<div class="lesson-date">Jul 8</div></div>
+      <div class="lesson-content">
+        <div class="lesson-title">The Affiliate Black Book, Capturing Your Judgment, and Why the Offer Beats the Copy</div>
+        <div class="lesson-items">How to hand promoters everything they need instead of hoping they write it themselves — a Black Book of ads, standalone emails, SMS scripts, one-liners, per-channel posts, video outlines, a calendar, and competition tiers. Ashley covers the signed, numbered launch box going out to about 50 people, the planned audiobook and hard-copy release, and how to scope an AI audit with a single lens so it doesn&#x27;t burn your whole token budget in one run. She also talks through how to capture your own judgment so the AI stops making the assumptions that keep you stuck, and makes the case that a great offer beats great copy every time: fix the offer first, then write it at a fifth-grade reading level.</div>
+      </div>
+      <div class="lesson-download"><span class="lesson-no-zip">Teaching only</span></div>
+    </div>
+    <div class="lesson-row">
+      <div class="lesson-num">35<div class="lesson-date">Jul 22</div></div>
+      <div class="lesson-content">
+        <div class="lesson-title">Launch Command Center, Manifesto Seeding, and AI Teaching Companions</div>
+        <div class="lesson-items">Ashley-hosted strategy session built around the command center she made for the AI manifesto launch — one high-level view of the reach waves, the calendar, ads and budget, open proposals, and the $10 million model. She also covers how to get a report read and shared without making an ask: unexpected black-box mailings with a personal letter from Rich seeded to about 50 AI influencers and podcast hosts, a value-first five-layer AI audit prompt on the manifesto page, and a podcast-and-live-events wave that borrows other people&#x27;s audiences. Members discuss Jay Abraham&#x27;s push for emotional testimonials and specific outcome numbers over feature lists, and whether LMS platforms or interactive AI teaching-companion dashboards better package a coach&#x27;s IP.</div>
+        <div class="install-prompts">
+          <div class="install-prompts-title">Paste this into Claude Code</div>
+      <div class="install-prompt">
+        <div class="install-prompt-head">
+          <span class="install-prompt-label">Install Launch Command Center</span>
+          <button type="button" class="install-copy" onclick="copyInstallPrompt(this)">Copy</button>
+        </div>
+        <pre class="install-prompt-text">I downloaded zenithpro-launch-command-center-1.0.0-2026-08-06.zip to my Downloads folder. Please: (1) verify its SHA-256 is 2a9d3958019a155a861b93ee618f6c8a0855d1c56bdcfb3a82b9530b937971cb — stop and show me the actual hash if it doesn&#x27;t match; (2) unzip it to ~/Downloads/zenithpro-launch-command-center; (3) run ./install.sh (no sudo); (4) then run /launch-command-center and interview me to build my launch dashboard.</pre>
+        <div class="install-prompt-note">Not using Claude Code? You can open template/launch-command-center.template.html in a browser and edit it directly — every field is in {{double braces}}, and there’s a fully-worked example in examples/.</div>
+      </div>
+      <div class="install-prompt">
+        <div class="install-prompt-head">
+          <span class="install-prompt-label">Install Webinar Dashboard</span>
+          <button type="button" class="install-copy" onclick="copyInstallPrompt(this)">Copy</button>
+        </div>
+        <pre class="install-prompt-text">I downloaded zenithpro-webinar-dashboard-2026-08-06.zip to my Downloads folder. Please: (1) verify its SHA-256 is b055542c4c93970d330c79d041a63db59bc1dfbb0e5b03e4995b281560776bfe — stop and show me the actual hash if it doesn&#x27;t match; (2) unzip it to ~/Downloads/zenithpro-webinar-dashboard; (3) run ./install.sh, then follow the README to build a dashboard from your webinar data.</pre>
+      </div>
+        </div>
+      </div>
+      <div class="lesson-download"><a href="https://github.com/sp-jem/StrategicProfits/releases/download/zenithpro-lessons-v1/zenithpro-launch-command-center-1.0.0-2026-08-06.zip" class="extra-download">&#x2B07; Launch Command Center</a><a href="https://github.com/sp-jem/StrategicProfits/releases/download/zenithpro-lessons-v1/zenithpro-webinar-dashboard-2026-08-06.zip" class="extra-download">&#x2B07; Webinar Dashboard</a></div>
     </div>
   </div>
 </div>
@@ -1025,31 +1194,31 @@ body {
         <div class="cat-intro">Use these when you&#x27;re entering a new market, launching a new offer, or your copy isn&#x27;t connecting because you don&#x27;t truly understand who you&#x27;re talking to.</div>
         <div class="skill-row" data-name="the ultimate psychographic excavation system" data-desc="deep-mines reddit, youtube, and forums for your market&#x27;s raw language — beliefs, desires, failures, and blamed external forces across multiple excavation phases." data-category="Avatar &amp; Market Research" data-type="prompt">
           <div><div class="skill-name">The Ultimate Psychographic Excavation System</div><div class="skill-desc">Deep-mines Reddit, YouTube, and forums for your market&#x27;s raw language — beliefs, desires, failures, and blamed external forces across multiple excavation phases.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L1</span><span class="skill-type type-prompt">Prompt</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L1-the-ultimate-psychographic-excavation-system.md" download title="Download The Ultimate Psychographic Excavation System (lesson 1)">L1<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-prompt">Prompt</span></div>
         </div>
         <div class="skill-row" data-name="desire hierarchy mapper" data-desc="maps a prospect&#x27;s complete desire hierarchy using reese&#x27;s 16 basic desires, schwartz&#x27;s breakthrough advertising, and schefren&#x27;s d3 — showing how fundamental drives channel into product demand." data-category="Avatar &amp; Market Research" data-type="prompt">
           <div><div class="skill-name">Desire Hierarchy Mapper</div><div class="skill-desc">Maps a prospect&#x27;s complete desire hierarchy using Reese&#x27;s 16 Basic Desires, Schwartz&#x27;s Breakthrough Advertising, and Schefren&#x27;s D3 — showing how fundamental drives channel into product demand.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L1</span><span class="skill-type type-prompt">Prompt</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L1-desire-hierarchy-mapper.md" download title="Download Desire Hierarchy Mapper (lesson 1)">L1<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-prompt">Prompt</span></div>
         </div>
         <div class="skill-row" data-name="ultimate avatar excavation system" data-desc="generates 3–5 forensically complete psychological profiles from a single url — built deep enough to predict responses, ghost-write journals, and write copy that feels telepathic." data-category="Avatar &amp; Market Research" data-type="prompt">
           <div><div class="skill-name">Ultimate Avatar Excavation System</div><div class="skill-desc">Generates 3–5 forensically complete psychological profiles from a single URL — built deep enough to predict responses, ghost-write journals, and write copy that feels telepathic.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L1</span><span class="skill-type type-prompt">Prompt</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L1-ultimate-avatar-excavation-system.md" download title="Download Ultimate Avatar Excavation System (lesson 1)">L1<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-prompt">Prompt</span></div>
         </div>
         <div class="skill-row" data-name="multi ai consolidator" data-desc="synthesizes outputs from claude, gemini, grok, and chatgpt into one document — preserving unique insights, maintaining attribution on conflicts, and surfacing cross-model patterns." data-category="Avatar &amp; Market Research" data-type="prompt">
           <div><div class="skill-name">Multi AI Consolidator</div><div class="skill-desc">Synthesizes outputs from Claude, Gemini, Grok, and ChatGPT into one document — preserving unique insights, maintaining attribution on conflicts, and surfacing cross-model patterns.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L1</span><span class="skill-type type-prompt">Prompt</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L1-multi-ai-consolidator.md" download title="Download Multi AI Consolidator (lesson 1)">L1<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-prompt">Prompt</span></div>
         </div>
         <div class="skill-row" data-name="shadow mining protocol" data-desc="uncovers hidden contradictions in desire through three lenses — denial dynamics, performance paradox, and internal war zone — then synthesizes a master concept that addresses both conscious and shadow patterns." data-category="Avatar &amp; Market Research" data-type="prompt">
           <div><div class="skill-name">Shadow Mining Protocol</div><div class="skill-desc">Uncovers hidden contradictions in desire through three lenses — Denial Dynamics, Performance Paradox, and Internal War Zone — then synthesizes a Master Concept that addresses both conscious and shadow patterns.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L2</span><span class="skill-type type-prompt">Prompt</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L2-shadow-mining-protocol.md" download title="Download Shadow Mining Protocol (lesson 2)">L2<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-prompt">Prompt</span></div>
         </div>
         <div class="skill-row" data-name="ideal buying mindset architect" data-desc="defines the exact psychological state prospects must reach before selling becomes unnecessary, mapping four dimensions of readiness using schefren&#x27;s d3, cialdini&#x27;s pre-suasion, and blair warren&#x27;s principles." data-category="Avatar &amp; Market Research" data-type="prompt">
           <div><div class="skill-name">Ideal Buying Mindset Architect</div><div class="skill-desc">Defines the exact psychological state prospects must reach before selling becomes unnecessary, mapping four dimensions of readiness using Schefren&#x27;s D3, Cialdini&#x27;s pre-suasion, and Blair Warren&#x27;s principles.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L2</span><span class="skill-type type-prompt">Prompt</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L2-ideal-buying-mindset-architect.md" download title="Download Ideal Buying Mindset Architect (lesson 2)">L2<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-prompt">Prompt</span></div>
         </div>
         <div class="skill-row" data-name="failure pattern forensic excavation" data-desc="forensically diagnoses why a market perpetually fails using four frameworks: past intervention graveyard, false belief audit, success anomaly analysis, and systemic pattern triangulation." data-category="Avatar &amp; Market Research" data-type="prompt">
           <div><div class="skill-name">Failure Pattern Forensic Excavation</div><div class="skill-desc">Forensically diagnoses why a market perpetually fails using four frameworks: past intervention graveyard, false belief audit, success anomaly analysis, and systemic pattern triangulation.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L3</span><span class="skill-type type-prompt">Prompt</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L3-failure-pattern-forensic-excavation.md" download title="Download Failure Pattern Forensic Excavation (lesson 3)">L3<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-prompt">Prompt</span></div>
         </div>
       </div>
 
@@ -1058,47 +1227,47 @@ body {
         <div class="cat-intro">Use these when you need to define or sharpen what makes your offer categorically different — not just better.</div>
         <div class="skill-row" data-name="enhanced usp generator" data-desc="builds a differentiated market position using schefren&#x27;s d3, schwartz&#x27;s sophistication levels, claude hopkins&#x27; reason-why advertising, and rosser reeves&#x27; usp — through a feature → benefit → promise transmutation process." data-category="Core Concept &amp; Positioning" data-type="prompt">
           <div><div class="skill-name">Enhanced USP Generator</div><div class="skill-desc">Builds a differentiated market position using Schefren&#x27;s D3, Schwartz&#x27;s sophistication levels, Claude Hopkins&#x27; reason-why advertising, and Rosser Reeves&#x27; USP — through a Feature → Benefit → Promise transmutation process.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L2</span><span class="skill-type type-prompt">Prompt</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L2-enhanced-usp-generator.md" download title="Download Enhanced USP Generator (lesson 2)">L2<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-prompt">Prompt</span></div>
         </div>
         <div class="skill-row" data-name="value proposition stacker" data-desc="architects irresistible offers by stacking schefren&#x27;s 12-component complete offer with brunson&#x27;s value stack and hormozi&#x27;s grand slam offer framework, using towards-language to attract high-ltv customers." data-category="Core Concept &amp; Positioning" data-type="prompt">
           <div><div class="skill-name">Value Proposition Stacker</div><div class="skill-desc">Architects irresistible offers by stacking Schefren&#x27;s 12-Component Complete Offer with Brunson&#x27;s Value Stack and Hormozi&#x27;s Grand Slam Offer framework, using towards-language to attract high-LTV customers.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L2</span><span class="skill-type type-prompt">Prompt</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L2-value-proposition-stacker.md" download title="Download Value Proposition Stacker (lesson 2)">L2<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-prompt">Prompt</span></div>
         </div>
         <div class="skill-row" data-name="core concept generator" data-desc="generates 5 core concept options from your avatar documents — extracting the invisible root cause and framing a paradigm shift that makes your solution feel inevitable." data-category="Core Concept &amp; Positioning" data-type="prompt">
           <div><div class="skill-name">Core Concept Generator</div><div class="skill-desc">Generates 5 Core Concept options from your avatar documents — extracting the invisible root cause and framing a paradigm shift that makes your solution feel inevitable.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L3</span><span class="skill-type type-prompt">Prompt</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L3-core-concept-generator.md" download title="Download Core Concept Generator (lesson 3)">L3<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-prompt">Prompt</span></div>
         </div>
         <div class="skill-row" data-name="core concept articulation optimizer" data-desc="takes one core concept sentence and generates 100+ phrasing variations across rhythmic, alliterative, metaphorical, and contrast structures to maximize memorability and repeatability." data-category="Core Concept &amp; Positioning" data-type="prompt">
           <div><div class="skill-name">Core Concept Articulation Optimizer</div><div class="skill-desc">Takes one core concept sentence and generates 100+ phrasing variations across rhythmic, alliterative, metaphorical, and contrast structures to maximize memorability and repeatability.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L3</span><span class="skill-type type-prompt">Prompt</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L3-core-concept-articulation-optimizer.md" download title="Download Core Concept Articulation Optimizer (lesson 3)">L3<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-prompt">Prompt</span></div>
         </div>
         <div class="skill-row" data-name="core concept scorecard" data-desc="evaluates core concept quality across 12 weighted categories — articulation simplicity, memorability, usp connection logic, and competitive differentiation — with a minimum passing score of 80/100." data-category="Core Concept &amp; Positioning" data-type="prompt">
           <div><div class="skill-name">Core Concept Scorecard</div><div class="skill-desc">Evaluates core concept quality across 12 weighted categories — articulation simplicity, memorability, USP connection logic, and competitive differentiation — with a minimum passing score of 80/100.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L4</span><span class="skill-type type-prompt">Prompt</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L4-core-concept-scorecard.md" download title="Download Core Concept Scorecard (lesson 4)">L4<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-prompt">Prompt</span></div>
         </div>
         <div class="skill-row" data-name="core concept research finder" data-desc="forensically validates a core concept through academic studies, expert testimony, historical precedents, and contrary evidence — transmuting positioning from assertion into bulletproof market truth." data-category="Core Concept &amp; Positioning" data-type="prompt">
           <div><div class="skill-name">Core Concept Research Finder</div><div class="skill-desc">Forensically validates a core concept through academic studies, expert testimony, historical precedents, and contrary evidence — transmuting positioning from assertion into bulletproof market truth.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L4</span><span class="skill-type type-prompt">Prompt</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L4-core-concept-research-finder.md" download title="Download Core Concept Research Finder (lesson 4)">L4<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-prompt">Prompt</span></div>
         </div>
         <div class="skill-row" data-name="core concept validation engine" data-desc="validates that your core concept addresses every failed solution in the market&#x27;s graveyard using the &#x27;incomplete not wrong&#x27; framework, creating &#x27;that&#x27;s why nothing worked&#x27; moments." data-category="Core Concept &amp; Positioning" data-type="prompt">
           <div><div class="skill-name">Core Concept Validation Engine</div><div class="skill-desc">Validates that your core concept addresses every failed solution in the market&#x27;s graveyard using the &#x27;Incomplete Not Wrong&#x27; framework, creating &#x27;THAT&#x27;S why nothing worked&#x27; moments.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L4</span><span class="skill-type type-prompt">Prompt</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L4-core-concept-validation-engine.md" download title="Download Core Concept Validation Engine (lesson 4)">L4<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-prompt">Prompt</span></div>
         </div>
         <div class="skill-row" data-name="toffler naming engine" data-desc="generates 20+ naming variations using structural formulas from alvin toffler, malcolm gladwell, and seth godin — each rated on memorability, specificity, and pattern-interrupt." data-category="Core Concept &amp; Positioning" data-type="prompt">
           <div><div class="skill-name">Toffler Naming Engine</div><div class="skill-desc">Generates 20+ naming variations using structural formulas from Alvin Toffler, Malcolm Gladwell, and Seth Godin — each rated on memorability, specificity, and pattern-interrupt.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L3</span><span class="skill-type type-prompt">Prompt</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L3-toffler-naming-engine.md" download title="Download Toffler Naming Engine (lesson 3)">L3<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-prompt">Prompt</span></div>
         </div>
         <div class="skill-row" data-name="mechanism ideator" data-desc="ideates the named, proprietary mechanism that makes your offer categorically different — the unique process or system competitors cannot easily replicate or claim." data-category="Core Concept &amp; Positioning" data-type="tool-system">
           <div><div class="skill-name">Mechanism Ideator</div><div class="skill-desc">Ideates the named, proprietary mechanism that makes your offer categorically different — the unique process or system competitors cannot easily replicate or claim.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L13</span><span class="skill-type type-tool-system">Tool System</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L13-mechanism-ideator.zip" download title="Download Mechanism Ideator (lesson 13)">L13<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-tool-system">Tool System</span></div>
         </div>
         <div class="skill-row" data-name="personal brand dna extractor" data-desc="extracts your brand dna from existing materials and live social feeds, producing 8 ai-optimized files — voice, credentials, stories, results, and philosophy — that power all downstream copywriting and webinar systems." data-category="Core Concept &amp; Positioning" data-type="skill-package">
           <div><div class="skill-name">Personal Brand DNA Extractor</div><div class="skill-desc">Extracts your brand DNA from existing materials and live social feeds, producing 8 AI-optimized files — voice, credentials, stories, results, and philosophy — that power all downstream copywriting and webinar systems.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L13</span><span class="skill-type type-skill-package">Skill Package</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L13-personal-brand-dna-extractor.zip" download title="Download Personal Brand DNA Extractor (lesson 13)">L13<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-skill-package">Skill Package</span></div>
         </div>
         <div class="skill-row" data-name="proximity architect" data-desc="designs how your business leverages closeness to authority, results, or community to strengthen positioning without fabricating credentials." data-category="Core Concept &amp; Positioning" data-type="tool-system">
           <div><div class="skill-name">Proximity Architect</div><div class="skill-desc">Designs how your business leverages closeness to authority, results, or community to strengthen positioning without fabricating credentials.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L13</span><span class="skill-type type-tool-system">Tool System</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L13-proximity-architect.zip" download title="Download Proximity Architect (lesson 13)">L13<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-tool-system">Tool System</span></div>
         </div>
       </div>
 
@@ -1107,31 +1276,31 @@ body {
         <div class="cat-intro">Use these when you need to engineer the invisible belief journey that moves prospects from skepticism to &#x27;I need this now&#x27; — before they ever see a sales page.</div>
         <div class="skill-row" data-name="cob methodology map" data-desc="overview map showing how all lesson 6 chain of beliefs tools connect and sequence within the complete invisible influence system." data-category="Chain of Beliefs" data-type="reference">
           <div><div class="skill-name">COB Methodology Map</div><div class="skill-desc">Overview map showing how all Lesson 6 Chain of Beliefs tools connect and sequence within the complete invisible influence system.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L6</span><span class="skill-type type-reference">Reference</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L6-cob-methodology-map.pdf" download title="Download COB Methodology Map (lesson 6)">L6<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-reference">Reference</span></div>
         </div>
         <div class="skill-row" data-name="belief path mapper" data-desc="maps every possible pathway from a prospect&#x27;s current beliefs to full core concept acceptance — with s.u.c. scoring and micro-commitment sequences for each path." data-category="Chain of Beliefs" data-type="prompt">
           <div><div class="skill-name">Belief Path Mapper</div><div class="skill-desc">Maps every possible pathway from a prospect&#x27;s current beliefs to full Core Concept acceptance — with S.U.C. scoring and micro-commitment sequences for each path.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L6</span><span class="skill-type type-prompt">Prompt</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L6-belief-path-mapper.md" download title="Download Belief Path Mapper (lesson 6)">L6<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-prompt">Prompt</span></div>
         </div>
         <div class="skill-row" data-name="strategic blueprint generator" data-desc="takes one belief path and produces a complete strategic architecture — s.u.c.-scored content assets, micro-commitment sequences, and tension design — adaptable to webinar, email, challenge, or live event." data-category="Chain of Beliefs" data-type="prompt">
           <div><div class="skill-name">Strategic Blueprint Generator</div><div class="skill-desc">Takes one belief path and produces a complete strategic architecture — S.U.C.-scored content assets, micro-commitment sequences, and tension design — adaptable to webinar, email, challenge, or live event.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L6</span><span class="skill-type type-prompt">Prompt</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L6-strategic-blueprint-generator.md" download title="Download Strategic Blueprint Generator (lesson 6)">L6<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-prompt">Prompt</span></div>
         </div>
         <div class="skill-row" data-name="content ecosystem architecture" data-desc="transforms belief path mapper output into a distributed content ecosystem — organizing beliefs into epiphany units and designing invisible installation across social, video, and long-form channels." data-category="Chain of Beliefs" data-type="prompt">
           <div><div class="skill-name">Content Ecosystem Architecture</div><div class="skill-desc">Transforms Belief Path Mapper output into a distributed content ecosystem — organizing beliefs into Epiphany Units and designing invisible installation across social, video, and long-form channels.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L6</span><span class="skill-type type-prompt">Prompt</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L6-content-ecosystem-architecture.md" download title="Download Content Ecosystem Architecture (lesson 6)">L6<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-prompt">Prompt</span></div>
         </div>
         <div class="skill-row" data-name="belief gap analyzer" data-desc="analyzes the distance between core concept acceptance and purchase readiness, then designs the invisible architecture to close that gap without the prospect feeling sold." data-category="Chain of Beliefs" data-type="prompt">
           <div><div class="skill-name">Belief Gap Analyzer</div><div class="skill-desc">Analyzes the distance between Core Concept acceptance and purchase readiness, then designs the invisible architecture to close that gap without the prospect feeling sold.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L6</span><span class="skill-type type-prompt">Prompt</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L6-belief-gap-analyzer.md" download title="Download Belief Gap Analyzer (lesson 6)">L6<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-prompt">Prompt</span></div>
         </div>
         <div class="skill-row" data-name="character empire generator" data-desc="transforms a zenithmind os scorecard into a character empire blueprint — mapping your psychological profile onto 8 frameworks, designing natural character adoption, and generating a 30-episode content plan." data-category="Chain of Beliefs" data-type="prompt">
           <div><div class="skill-name">Character Empire Generator</div><div class="skill-desc">Transforms a ZenithMind OS Scorecard into a Character Empire Blueprint — mapping your psychological profile onto 8 frameworks, designing natural character adoption, and generating a 30-episode content plan.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L6</span><span class="skill-type type-prompt">Prompt</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L6-character-empire-generator.md" download title="Download Character Empire Generator (lesson 6)">L6<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-prompt">Prompt</span></div>
         </div>
         <div class="skill-row" data-name="belief installation orchestrator" data-desc="master synthesis engine that takes outputs from all chain of beliefs tools and produces a unified invisible influence blueprint — finding gaps, creating cross-touchpoint synergies, and designing the complete belief journey." data-category="Chain of Beliefs" data-type="prompt">
           <div><div class="skill-name">Belief Installation Orchestrator</div><div class="skill-desc">Master synthesis engine that takes outputs from all Chain of Beliefs tools and produces a unified Invisible Influence Blueprint — finding gaps, creating cross-touchpoint synergies, and designing the complete belief journey.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L6</span><span class="skill-type type-prompt">Prompt</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L6-belief-installation-orchestrator.md" download title="Download Belief Installation Orchestrator (lesson 6)">L6<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-prompt">Prompt</span></div>
         </div>
       </div>
 
@@ -1140,23 +1309,23 @@ body {
         <div class="cat-intro">Use these when you&#x27;re ready to build the full system that generates market demand rather than chasing buyers who are already looking.</div>
         <div class="skill-row" data-name="zenithpro complete demand system v1" data-desc="three-path demand creation pipeline — away (pain-driven, 10 skills), toward (aspiration-driven, 11 skills), and hybrid (13 skills) — with a motivation-spectrum-analyzer that scores your market and routes to the correct path." data-category="Demand Creation" data-type="tool-system">
           <div><div class="skill-name">ZenithPro Complete Demand System v1</div><div class="skill-desc">Three-path demand creation pipeline — Away (pain-driven, 10 skills), Toward (aspiration-driven, 11 skills), and Hybrid (13 skills) — with a motivation-spectrum-analyzer that scores your market and routes to the correct path.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L18</span><span class="skill-type type-tool-system">Tool System</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L18-zenithpro-complete-demand-system-v1.zip" download title="Download ZenithPro Complete Demand System v1 (lesson 18)">L18<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-tool-system">Tool System</span></div>
         </div>
         <div class="skill-row" data-name="demand architect pack" data-desc="guides the away-path demand pipeline — desire hierarchy mapping, psychographic excavation, avatar profiling, core concept validation, and integrated demand brief production." data-category="Demand Creation" data-type="skill-package">
           <div><div class="skill-name">Demand Architect Pack</div><div class="skill-desc">Guides the Away-path demand pipeline — desire hierarchy mapping, psychographic excavation, avatar profiling, core concept validation, and integrated demand brief production.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L21</span><span class="skill-type type-skill-package">Skill Package</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L21-demand-architect-pack.zip" download title="Download Demand Architect Pack (lesson 21)">L21<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-skill-package">Skill Package</span></div>
         </div>
         <div class="skill-row" data-name="demand architect" data-desc="runs a 9-step orchestrated pipeline that produces psychologically grounded, competitively uncontested market positioning — covering desire mapping, psychographic excavation, avatar segmentation, failure forensics, belief gap analysis, and usp generation." data-category="Demand Creation" data-type="skill-package">
           <div><div class="skill-name">Demand Architect</div><div class="skill-desc">Runs a 9-step orchestrated pipeline that produces psychologically grounded, competitively uncontested market positioning — covering desire mapping, psychographic excavation, avatar segmentation, failure forensics, belief gap analysis, and USP generation.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L17</span><span class="skill-type type-skill-package">Skill Package</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L17-demand-architect.zip" download title="Download Demand Architect (lesson 17)">L17<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-skill-package">Skill Package</span></div>
         </div>
         <div class="skill-row" data-name="zenithpro hybrid skills" data-desc="diagnoses a market&#x27;s toward/away motivation ratio and runs a blended demand creation pipeline calibrated to that spectrum — covering motivation scoring, five blend modes, and proportional pipeline mixing." data-category="Demand Creation" data-type="skill-package">
           <div><div class="skill-name">ZenithPro Hybrid Skills</div><div class="skill-desc">Diagnoses a market&#x27;s toward/away motivation ratio and runs a blended demand creation pipeline calibrated to that spectrum — covering motivation scoring, five blend modes, and proportional pipeline mixing.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L17</span><span class="skill-type type-skill-package">Skill Package</span></div>
+          <div class="skill-meta"><span class="skill-lesson">L17</span><span class="skill-dl-group"><a class="skill-dl-plat" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L17-zenithpro-hybrid-skills-mac.zip" download title="Download ZenithPro Hybrid Skills for Mac"><span aria-hidden="true">&#x2B07;</span>&nbsp;Mac</a><a class="skill-dl-plat" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L17-zenithpro-hybrid-skills-pc.zip" download title="Download ZenithPro Hybrid Skills for PC"><span aria-hidden="true">&#x2B07;</span>&nbsp;PC</a></span><span class="skill-type type-skill-package">Skill Package</span></div>
         </div>
         <div class="skill-row" data-name="zenithpro toward markets" data-desc="runs the complete demand creation pipeline for approach-motivated markets — covering desire mapping, aspiration excavation, avatar segmentation, progression patterns, permission concepts, identity belief gaps, and community demand strategy." data-category="Demand Creation" data-type="skill-package">
           <div><div class="skill-name">ZenithPro Toward Markets</div><div class="skill-desc">Runs the complete demand creation pipeline for approach-motivated markets — covering desire mapping, aspiration excavation, avatar segmentation, progression patterns, permission concepts, identity belief gaps, and community demand strategy.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L17</span><span class="skill-type type-skill-package">Skill Package</span></div>
+          <div class="skill-meta"><span class="skill-lesson">L17</span><span class="skill-dl-group"><a class="skill-dl-plat" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L17-zenithpro-toward-markets-mac.zip" download title="Download ZenithPro Toward Markets for Mac"><span aria-hidden="true">&#x2B07;</span>&nbsp;Mac</a><a class="skill-dl-plat" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L17-zenithpro-toward-markets-pc.zip" download title="Download ZenithPro Toward Markets for PC"><span aria-hidden="true">&#x2B07;</span>&nbsp;PC</a></span><span class="skill-type type-skill-package">Skill Package</span></div>
         </div>
       </div>
 
@@ -1165,23 +1334,23 @@ body {
         <div class="cat-intro">Use these when you need to understand the deeper psychological forces driving your market&#x27;s desire, status-seeking, and curiosity — and how to architect for them.</div>
         <div class="skill-row" data-name="girard deep marketing system" data-desc="eight skills applying rene girard&#x27;s mimetic desire theory to marketing — covering desire propagation, rivalry detection, model mapping, scapegoat radar, field intelligence, and content strategy." data-category="Behavioral Science" data-type="skill-package">
           <div><div class="skill-name">Girard Deep Marketing System</div><div class="skill-desc">Eight skills applying Rene Girard&#x27;s mimetic desire theory to marketing — covering desire propagation, rivalry detection, model mapping, scapegoat radar, field intelligence, and content strategy.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L17</span><span class="skill-type type-skill-package">Skill Package</span></div>
+          <div class="skill-meta"><span class="skill-lesson">L17</span><span class="skill-dl-group"><a class="skill-dl-plat" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L17-girard-deep-marketing-system-mac.zip" download title="Download Girard Deep Marketing System for Mac"><span aria-hidden="true">&#x2B07;</span>&nbsp;Mac</a><a class="skill-dl-plat" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L17-girard-deep-marketing-system-pc.zip" download title="Download Girard Deep Marketing System for PC"><span aria-hidden="true">&#x2B07;</span>&nbsp;PC</a></span><span class="skill-type type-skill-package">Skill Package</span></div>
         </div>
         <div class="skill-row" data-name="veblen status psychology skills v1" data-desc="seven skills applying thorstein veblen&#x27;s status and conspicuous consumption theory — covering status intelligence, display mapping, emulation tracking, price ladder design, signal decoding, and waste auditing." data-category="Behavioral Science" data-type="tool-system">
           <div><div class="skill-name">Veblen Status Psychology Skills v1</div><div class="skill-desc">Seven skills applying Thorstein Veblen&#x27;s status and conspicuous consumption theory — covering status intelligence, display mapping, emulation tracking, price ladder design, signal decoding, and waste auditing.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L18</span><span class="skill-type type-tool-system">Tool System</span></div>
+          <div class="skill-meta"><span class="skill-lesson">L18</span><span class="skill-dl-group"><a class="skill-dl-plat" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L18-veblen-status-psychology-skills-v1-mac.zip" download title="Download Veblen Status Psychology Skills v1 for Mac"><span aria-hidden="true">&#x2B07;</span>&nbsp;Mac</a><a class="skill-dl-plat" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L18-veblen-status-psychology-skills-v1-pc.zip" download title="Download Veblen Status Psychology Skills v1 for PC"><span aria-hidden="true">&#x2B07;</span>&nbsp;PC</a></span><span class="skill-type type-tool-system">Tool System</span></div>
         </div>
         <div class="skill-row" data-name="loewenstein curiosity architecture skills v1" data-desc="seven skills applying george loewenstein&#x27;s curiosity and information-gap research — covering anticipation engineering, empathy-gap mapping, risk-as-feelings framing, and visceral auditing for email, webinar, and launch sequences." data-category="Behavioral Science" data-type="tool-system">
           <div><div class="skill-name">Loewenstein Curiosity Architecture Skills v1</div><div class="skill-desc">Seven skills applying George Loewenstein&#x27;s curiosity and information-gap research — covering anticipation engineering, empathy-gap mapping, risk-as-feelings framing, and visceral auditing for email, webinar, and launch sequences.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L18</span><span class="skill-type type-tool-system">Tool System</span></div>
+          <div class="skill-meta"><span class="skill-lesson">L18</span><span class="skill-dl-group"><a class="skill-dl-plat" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L18-loewenstein-curiosity-architecture-skills-v1-mac.zip" download title="Download Loewenstein Curiosity Architecture Skills v1 for Mac"><span aria-hidden="true">&#x2B07;</span>&nbsp;Mac</a><a class="skill-dl-plat" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L18-loewenstein-curiosity-architecture-skills-v1-pc.zip" download title="Download Loewenstein Curiosity Architecture Skills v1 for PC"><span aria-hidden="true">&#x2B07;</span>&nbsp;PC</a></span><span class="skill-type type-tool-system">Tool System</span></div>
         </div>
         <div class="skill-row" data-name="girard desire autopsy" data-desc="dissects what prospects truly want beneath their stated desires using girard-influenced frameworks — separating mimetic desire from authentic motivation." data-category="Behavioral Science" data-type="skill-package">
           <div><div class="skill-name">Girard Desire Autopsy</div><div class="skill-desc">Dissects what prospects truly want beneath their stated desires using Girard-influenced frameworks — separating mimetic desire from authentic motivation.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L21</span><span class="skill-type type-skill-package">Skill Package</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L21-girard-desire-autopsy.zip" download title="Download Girard Desire Autopsy (lesson 21)">L21<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-skill-package">Skill Package</span></div>
         </div>
         <div class="skill-row" data-name="mimetic market intelligence" data-desc="maps competitive positioning at the desire level using rene girard&#x27;s mimetic theory and live web research — covering convergence mapping, competitor desire analysis, and a 6-document strategic intelligence package." data-category="Behavioral Science" data-type="skill-package">
           <div><div class="skill-name">Mimetic Market Intelligence</div><div class="skill-desc">Maps competitive positioning at the desire level using Rene Girard&#x27;s mimetic theory and live web research — covering convergence mapping, competitor desire analysis, and a 6-document strategic intelligence package.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L16</span><span class="skill-type type-skill-package">Skill Package</span></div>
+          <div class="skill-meta"><span class="skill-lesson">L16</span><span class="skill-dl-group"><a class="skill-dl-plat" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L16-mimetic-market-intelligence-mac.zip" download title="Download Mimetic Market Intelligence for Mac"><span aria-hidden="true">&#x2B07;</span>&nbsp;Mac</a><a class="skill-dl-plat" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L16-mimetic-market-intelligence-pc.zip" download title="Download Mimetic Market Intelligence for PC"><span aria-hidden="true">&#x2B07;</span>&nbsp;PC</a></span><span class="skill-type type-skill-package">Skill Package</span></div>
         </div>
       </div>
 
@@ -1190,35 +1359,35 @@ body {
         <div class="cat-intro">Use these when you&#x27;re writing persuasive copy and need a specific methodology — or when you want multiple expert frameworks competing to produce the strongest version.</div>
         <div class="skill-row" data-name="john carlton copywriting system" data-desc="16 specialized skills covering carlton&#x27;s complete methodology — headlines, hooks, leads, body copy, bullets, closes, offers, structure, voice, research, strategy, features-to-benefits, psychology, testimonials, turbulence, and master orchestration." data-category="Copywriting Systems" data-type="skill-package">
           <div><div class="skill-name">John Carlton Copywriting System</div><div class="skill-desc">16 specialized skills covering Carlton&#x27;s complete methodology — headlines, hooks, leads, body copy, bullets, closes, offers, structure, voice, research, strategy, features-to-benefits, psychology, testimonials, turbulence, and master orchestration.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L10</span><span class="skill-type type-skill-package">Skill Package</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L10-john-carlton-copywriting-system.zip" download title="Download John Carlton Copywriting System (lesson 10)">L10<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-skill-package">Skill Package</span></div>
         </div>
         <div class="skill-row" data-name="clayton makepeace copywriting system" data-desc="15 specialized skills covering makepeace&#x27;s methodology — headlines, leads, body copy, bullets, closes, offers, structure, psychology, proof, process, email, events, business contexts, testing, and master orchestration." data-category="Copywriting Systems" data-type="skill-package">
           <div><div class="skill-name">Clayton Makepeace Copywriting System</div><div class="skill-desc">15 specialized skills covering Makepeace&#x27;s methodology — headlines, leads, body copy, bullets, closes, offers, structure, psychology, proof, process, email, events, business contexts, testing, and master orchestration.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L10</span><span class="skill-type type-skill-package">Skill Package</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L10-clayton-makepeace-copywriting-system.zip" download title="Download Clayton Makepeace Copywriting System (lesson 10)">L10<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-skill-package">Skill Package</span></div>
         </div>
         <div class="skill-row" data-name="david deutsch copywriting system" data-desc="10 specialized skills covering deutsch&#x27;s educator-style methodology — headlines, leads, body copy, bullets, closes, psychology, stories, process, strategy, and master orchestration." data-category="Copywriting Systems" data-type="skill-package">
           <div><div class="skill-name">David Deutsch Copywriting System</div><div class="skill-desc">10 specialized skills covering Deutsch&#x27;s educator-style methodology — headlines, leads, body copy, bullets, closes, psychology, stories, process, strategy, and master orchestration.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L10</span><span class="skill-type type-skill-package">Skill Package</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L10-david-deutsch-copywriting-system.zip" download title="Download David Deutsch Copywriting System (lesson 10)">L10<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-skill-package">Skill Package</span></div>
         </div>
         <div class="skill-row" data-name="evaldo albuquerque copywriting system" data-desc="9 specialized skills covering albuquerque&#x27;s story-driven methodology — headlines, leads, body copy, bullets, closes, ideas, lifts, philosophy, and master orchestration." data-category="Copywriting Systems" data-type="skill-package">
           <div><div class="skill-name">Evaldo Albuquerque Copywriting System</div><div class="skill-desc">9 specialized skills covering Albuquerque&#x27;s story-driven methodology — headlines, leads, body copy, bullets, closes, ideas, lifts, philosophy, and master orchestration.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L10</span><span class="skill-type type-skill-package">Skill Package</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L10-evaldo-albuquerque-copywriting-system.zip" download title="Download Evaldo Albuquerque Copywriting System (lesson 10)">L10<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-skill-package">Skill Package</span></div>
         </div>
         <div class="skill-row" data-name="copywriting arena" data-desc="evolutionary competition system where multiple copywriter personas generate, critique each other&#x27;s work, and synthesize a final output stronger than any single approach could produce." data-category="Copywriting Systems" data-type="skill-package">
           <div><div class="skill-name">Copywriting Arena</div><div class="skill-desc">Evolutionary competition system where multiple copywriter personas generate, critique each other&#x27;s work, and synthesize a final output stronger than any single approach could produce.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L10</span><span class="skill-type type-skill-package">Skill Package</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L10-copywriting-arena.zip" download title="Download Copywriting Arena (lesson 10)">L10<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-skill-package">Skill Package</span></div>
         </div>
         <div class="skill-row" data-name="ad copy arena v2.1.0" data-desc="generates and stress-tests ad copy through a structured arena competition — producing multiple variants, evaluating each, and surfacing what actually outperforms." data-category="Copywriting Systems" data-type="skill-package">
           <div><div class="skill-name">Ad Copy Arena v2.1.0</div><div class="skill-desc">Generates and stress-tests ad copy through a structured arena competition — producing multiple variants, evaluating each, and surfacing what actually outperforms.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L22</span><span class="skill-type type-skill-package">Skill Package</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L22-ad-copy-arena-v2-1-0.zip" download title="Download Ad Copy Arena v2.1.0 (lesson 22)">L22<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-skill-package">Skill Package</span></div>
         </div>
         <div class="skill-row" data-name="short form copy v1" data-desc="writes ads, social posts, email subject lines, and other short-form persuasive formats — distinct from the longer-form copywriter systems in its brevity and platform specificity." data-category="Copywriting Systems" data-type="tool-system">
           <div><div class="skill-name">Short Form Copy v1</div><div class="skill-desc">Writes ads, social posts, email subject lines, and other short-form persuasive formats — distinct from the longer-form copywriter systems in its brevity and platform specificity.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L17</span><span class="skill-type type-tool-system">Tool System</span></div>
+          <div class="skill-meta"><span class="skill-lesson">L17</span><span class="skill-dl-group"><a class="skill-dl-plat" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L17-short-form-copy-v1-mac.zip" download title="Download Short Form Copy v1 for Mac"><span aria-hidden="true">&#x2B07;</span>&nbsp;Mac</a><a class="skill-dl-plat" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L17-short-form-copy-v1-pc.zip" download title="Download Short Form Copy v1 for PC"><span aria-hidden="true">&#x2B07;</span>&nbsp;PC</a></span><span class="skill-type type-tool-system">Tool System</span></div>
         </div>
         <div class="skill-row" data-name="copy modernizer v1" data-desc="updates dated sales copy using modern frameworks and language — for existing assets that convert but sound like they were written a decade ago." data-category="Copywriting Systems" data-type="tool-system">
           <div><div class="skill-name">Copy Modernizer v1</div><div class="skill-desc">Updates dated sales copy using modern frameworks and language — for existing assets that convert but sound like they were written a decade ago.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L13</span><span class="skill-type type-tool-system">Tool System</span></div>
+          <div class="skill-meta"><span class="skill-lesson">L13</span><span class="skill-dl-group"><a class="skill-dl-plat" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L13-copy-modernizer-v1-mac.zip" download title="Download Copy Modernizer v1 for Mac"><span aria-hidden="true">&#x2B07;</span>&nbsp;Mac</a><a class="skill-dl-plat" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L13-copy-modernizer-v1-pc.zip" download title="Download Copy Modernizer v1 for PC"><span aria-hidden="true">&#x2B07;</span>&nbsp;PC</a></span><span class="skill-type type-tool-system">Tool System</span></div>
         </div>
       </div>
 
@@ -1227,39 +1396,39 @@ body {
         <div class="cat-intro">Use these when you&#x27;re setting up, optimizing, or troubleshooting paid traffic campaigns and need your belief architecture translated into targeting, creative, and funnels.</div>
         <div class="skill-row" data-name="targeting translator" data-desc="translates belief path mapper output into facebook/meta audience cohorts using belief-based targeting — prioritizing solution-confused prospects via the p.r.i.m.e. profile." data-category="Paid Traffic &amp; Advertising" data-type="prompt">
           <div><div class="skill-name">Targeting Translator</div><div class="skill-desc">Translates Belief Path Mapper output into Facebook/Meta audience cohorts using Belief-Based Targeting — prioritizing Solution-Confused prospects via the P.R.I.M.E. profile.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L7</span><span class="skill-type type-prompt">Prompt</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L7-targeting-translator.md" download title="Download Targeting Translator (lesson 7)">L7<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-prompt">Prompt</span></div>
         </div>
         <div class="skill-row" data-name="creative generator" data-desc="transforms content ecosystem analysis into ad creative using the invisible influence creative system — scoring epiphany units on s.p.a.r.k. metrics and applying the reframe sequence structure." data-category="Paid Traffic &amp; Advertising" data-type="prompt">
           <div><div class="skill-name">Creative Generator</div><div class="skill-desc">Transforms Content Ecosystem analysis into ad creative using the Invisible Influence Creative system — scoring Epiphany Units on S.P.A.R.K. metrics and applying the Reframe Sequence structure.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L7</span><span class="skill-type type-prompt">Prompt</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L7-creative-generator.md" download title="Download Creative Generator (lesson 7)">L7<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-prompt">Prompt</span></div>
         </div>
         <div class="skill-row" data-name="campaign architect" data-desc="synthesizes targeting cohorts and creative into a complete deployment scaffold with testable hypotheses, using the 1-1-1 architecture and belief-tribe pairing matrices for systematic validation." data-category="Paid Traffic &amp; Advertising" data-type="prompt">
           <div><div class="skill-name">Campaign Architect</div><div class="skill-desc">Synthesizes targeting cohorts and creative into a complete Deployment Scaffold with testable hypotheses, using the 1-1-1 architecture and belief-tribe pairing matrices for systematic validation.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L7</span><span class="skill-type type-prompt">Prompt</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L7-campaign-architect.md" download title="Download Campaign Architect (lesson 7)">L7<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-prompt">Prompt</span></div>
         </div>
         <div class="skill-row" data-name="retargeting builder" data-desc="organizes content clips into a 30-50 ad visibility stack for manufactured omnipresence at roughly $1/day per ad — categorized by connection, authority, credibility, and activation type." data-category="Paid Traffic &amp; Advertising" data-type="prompt">
           <div><div class="skill-name">Retargeting Builder</div><div class="skill-desc">Organizes content clips into a 30-50 ad Visibility Stack for manufactured omnipresence at roughly $1/day per ad — categorized by Connection, Authority, Credibility, and Activation type.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L7</span><span class="skill-type type-prompt">Prompt</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L7-retargeting-builder.md" download title="Download Retargeting Builder (lesson 7)">L7<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-prompt">Prompt</span></div>
         </div>
         <div class="skill-row" data-name="testing evaluator" data-desc="transforms raw campaign data into cut/prune/scale decisions using the quick verdict framework — diagnosing creative failures specifically for solution-confused audiences." data-category="Paid Traffic &amp; Advertising" data-type="prompt">
           <div><div class="skill-name">Testing Evaluator</div><div class="skill-desc">Transforms raw campaign data into cut/prune/scale decisions using the Quick Verdict framework — diagnosing creative failures specifically for Solution-Confused audiences.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L7</span><span class="skill-type type-prompt">Prompt</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L7-testing-evaluator.md" download title="Download Testing Evaluator (lesson 7)">L7<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-prompt">Prompt</span></div>
         </div>
         <div class="skill-row" data-name="static ad asset generator" data-desc="generates ad copy and dedicated gemini image prompts for every static ad format (1:1, 4:5, 9:16) — one prompt per image for higher quality, with primary text, headline, cta, and alt text." data-category="Paid Traffic &amp; Advertising" data-type="prompt">
           <div><div class="skill-name">Static Ad Asset Generator</div><div class="skill-desc">Generates ad copy and dedicated Gemini image prompts for every static ad format (1:1, 4:5, 9:16) — one prompt per image for higher quality, with primary text, headline, CTA, and alt text.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L8</span><span class="skill-type type-prompt">Prompt</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L8-static-ad-asset-generator.md" download title="Download Static Ad Asset Generator (lesson 8)">L8<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-prompt">Prompt</span></div>
         </div>
         <div class="skill-row" data-name="facebook launch checklist" data-desc="complete technical pre-launch checklist for meta ads — business manager setup, domain verification, pixel installation, and everything required before a first ad can go live." data-category="Paid Traffic &amp; Advertising" data-type="reference">
           <div><div class="skill-name">Facebook Launch Checklist</div><div class="skill-desc">Complete technical pre-launch checklist for Meta ads — Business Manager setup, domain verification, pixel installation, and everything required before a first ad can go live.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L14</span><span class="skill-type type-reference">Reference</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L14-facebook-launch-checklist.md" download title="Download Facebook Launch Checklist (lesson 14)">L14<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-reference">Reference</span></div>
         </div>
         <div class="skill-row" data-name="zenithpro campaign builder — electron app" data-desc="desktop application for building zenithpro campaigns — cross-platform electron app available as mac and pc source packages." data-category="Paid Traffic &amp; Advertising" data-type="tool-system">
           <div><div class="skill-name">ZenithPro Campaign Builder — Electron App</div><div class="skill-desc">Desktop application for building ZenithPro campaigns — cross-platform Electron app available as Mac and PC source packages.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L23</span><span class="skill-type type-tool-system">Tool System</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L23-zenithpro-campaign-builder-electron-app.zip" download title="Download ZenithPro Campaign Builder — Electron App (lesson 23)">L23<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-tool-system">Tool System</span></div>
         </div>
         <div class="skill-row" data-name="paid traffic launch orchestrator" data-desc="end-to-end paid traffic orchestrator for students who already have their offer and funnel built — covers audience research, meta ad copy and creative, youtube ad scripts and creative, optional video production, and organized asset delivery with a launch brief." data-category="Paid Traffic &amp; Advertising" data-type="skill-package">
           <div><div class="skill-name">Paid Traffic Launch Orchestrator</div><div class="skill-desc">End-to-end paid traffic orchestrator for students who already have their offer and funnel built — covers audience research, Meta ad copy and creative, YouTube ad scripts and creative, optional video production, and organized asset delivery with a launch brief.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L20</span><span class="skill-type type-skill-package">Skill Package</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L20-paid-traffic-launch-orchestrator.zip" download title="Download Paid Traffic Launch Orchestrator (lesson 20)">L20<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-skill-package">Skill Package</span></div>
         </div>
       </div>
 
@@ -1268,55 +1437,63 @@ body {
         <div class="cat-intro">Use these when you&#x27;re building or auditing the conversion infrastructure that turns traffic and webinar attendees into buyers.</div>
         <div class="skill-row" data-name="funnel translator" data-desc="converts belief gap analyzer output into a match funnel — stages, email sequences, and sales page architecture where each stage addresses one of the 6 conversion gaps for solution-confused prospects." data-category="Funnel &amp; Launch" data-type="prompt">
           <div><div class="skill-name">Funnel Translator</div><div class="skill-desc">Converts Belief Gap Analyzer output into a Match Funnel — stages, email sequences, and sales page architecture where each stage addresses one of the 6 Conversion Gaps for Solution-Confused prospects.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L7</span><span class="skill-type type-prompt">Prompt</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L7-funnel-translator.md" download title="Download Funnel Translator (lesson 7)">L7<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-prompt">Prompt</span></div>
         </div>
         <div class="skill-row" data-name="landing page copy generator" data-desc="generates complete opt-in page copy — above/below fold, about section, testimonial placeholders, thank you page, and modular cluster variants — using the acknowledge-validate-reveal-position framework." data-category="Funnel &amp; Launch" data-type="prompt">
           <div><div class="skill-name">Landing Page Copy Generator</div><div class="skill-desc">Generates complete opt-in page copy — above/below fold, about section, testimonial placeholders, thank you page, and modular cluster variants — using the acknowledge-validate-reveal-position framework.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L8</span><span class="skill-type type-prompt">Prompt</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L8-landing-page-copy-generator.md" download title="Download Landing Page Copy Generator (lesson 8)">L8<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-prompt">Prompt</span></div>
         </div>
         <div class="skill-row" data-name="lead magnet content builder" data-desc="generates a complete 12-15 page lead magnet with hook story, framework explanation, 15 diagnostic questions with scoring, gap identification, and next-step priming — without overt selling." data-category="Funnel &amp; Launch" data-type="prompt">
           <div><div class="skill-name">Lead Magnet Content Builder</div><div class="skill-desc">Generates a complete 12-15 page lead magnet with hook story, framework explanation, 15 diagnostic questions with scoring, gap identification, and next-step priming — without overt selling.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L8</span><span class="skill-type type-prompt">Prompt</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L8-lead-magnet-content-builder.md" download title="Download Lead Magnet Content Builder (lesson 8)">L8<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-prompt">Prompt</span></div>
         </div>
         <div class="skill-row" data-name="launch work order generator" data-desc="synthesizes all strategic outputs into a prioritized mvp build checklist — defining minimum viable test scope (2-3 clusters, $30-50/day, 7-day window) with a sequenced asset production work order." data-category="Funnel &amp; Launch" data-type="prompt">
           <div><div class="skill-name">Launch Work Order Generator</div><div class="skill-desc">Synthesizes all strategic outputs into a prioritized MVP build checklist — defining minimum viable test scope (2-3 clusters, $30-50/day, 7-day window) with a sequenced asset production work order.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L7</span><span class="skill-type type-prompt">Prompt</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L7-launch-work-order-generator.md" download title="Download Launch Work Order Generator (lesson 7)">L7<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-prompt">Prompt</span></div>
         </div>
         <div class="skill-row" data-name="offer launch pipeline v1.0" data-desc="executes a structured launch sequence from positioning through conversion — with a defined stage order and handoff points between phases." data-category="Funnel &amp; Launch" data-type="skill-package">
           <div><div class="skill-name">Offer Launch Pipeline v1.0</div><div class="skill-desc">Executes a structured launch sequence from positioning through conversion — with a defined stage order and handoff points between phases.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L21</span><span class="skill-type type-skill-package">Skill Package</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L21-offer-launch-pipeline-v1-0.zip" download title="Download Offer Launch Pipeline v1.0 (lesson 21)">L21<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-skill-package">Skill Package</span></div>
         </div>
         <div class="skill-row" data-name="webinar launch orchestrator" data-desc="meta-skill that chains up to 11 specialized skills across 6 phases, managed by persona kai — taking you from offer to live webinar campaign with quality gates and cross-session save points." data-category="Funnel &amp; Launch" data-type="skill-package">
           <div><div class="skill-name">Webinar Launch Orchestrator</div><div class="skill-desc">Meta-skill that chains up to 11 specialized skills across 6 phases, managed by Persona Kai — taking you from offer to live webinar campaign with quality gates and cross-session save points.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L18</span><span class="skill-type type-skill-package">Skill Package</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L18-webinar-launch-orchestrator.zip" download title="Download Webinar Launch Orchestrator (lesson 18)">L18<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-skill-package">Skill Package</span></div>
         </div>
         <div class="skill-row" data-name="webinar arena v1.0" data-desc="ai-assisted webinar creation and optimization system — designed to stress-test and improve webinar content through competitive evaluation." data-category="Funnel &amp; Launch" data-type="skill-package">
           <div><div class="skill-name">Webinar Arena v1.0</div><div class="skill-desc">AI-assisted webinar creation and optimization system — designed to stress-test and improve webinar content through competitive evaluation.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L11</span><span class="skill-type type-skill-package">Skill Package</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L11-webinar-arena-v1-0.zip" download title="Download Webinar Arena v1.0 (lesson 11)">L11<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-skill-package">Skill Package</span></div>
         </div>
         <div class="skill-row" data-name="website funnel auditor" data-desc="audits your existing website funnel — evaluating copy, page structure, and conversion mechanics to identify what&#x27;s leaking revenue." data-category="Funnel &amp; Launch" data-type="skill-package">
           <div><div class="skill-name">Website Funnel Auditor</div><div class="skill-desc">Audits your existing website funnel — evaluating copy, page structure, and conversion mechanics to identify what&#x27;s leaking revenue.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L21</span><span class="skill-type type-skill-package">Skill Package</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L21-website-funnel-auditor.zip" download title="Download Website Funnel Auditor (lesson 21)">L21<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-skill-package">Skill Package</span></div>
         </div>
         <div class="skill-row" data-name="fm offer arena pack" data-desc="force multiplier offer-building arena — prompts and workflows for constructing, stress-testing, and refining high-ticket offers." data-category="Funnel &amp; Launch" data-type="skill-package">
           <div><div class="skill-name">FM Offer Arena Pack</div><div class="skill-desc">Force Multiplier offer-building arena — prompts and workflows for constructing, stress-testing, and refining high-ticket offers.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L21</span><span class="skill-type type-skill-package">Skill Package</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L21-fm-offer-arena-pack.zip" download title="Download FM Offer Arena Pack (lesson 21)">L21<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-skill-package">Skill Package</span></div>
         </div>
         <div class="skill-row" data-name="revenue opportunity mapper v1.4" data-desc="identifies and scores untapped revenue opportunities within an existing business — audit prompts and scoring frameworks for finding what you&#x27;re leaving on the table." data-category="Funnel &amp; Launch" data-type="skill-package">
           <div><div class="skill-name">Revenue Opportunity Mapper v1.4</div><div class="skill-desc">Identifies and scores untapped revenue opportunities within an existing business — audit prompts and scoring frameworks for finding what you&#x27;re leaving on the table.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L21</span><span class="skill-type type-skill-package">Skill Package</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L21-revenue-opportunity-mapper-v1-4.zip" download title="Download Revenue Opportunity Mapper v1.4 (lesson 21)">L21<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-skill-package">Skill Package</span></div>
         </div>
         <div class="skill-row" data-name="low-ticket funnel orchestrator" data-desc="end-to-end build system for low-ticket ($7–$47) facebook ads funnels — chains 13+ skills across a 7-phase workflow covering economics validation, audience research, offer stack design, sales mechanism, post-purchase pages, email sequences, ad copy, and campaign setup." data-category="Funnel &amp; Launch" data-type="skill-package">
           <div><div class="skill-name">Low-Ticket Funnel Orchestrator</div><div class="skill-desc">End-to-end build system for low-ticket ($7–$47) Facebook ads funnels — chains 13+ skills across a 7-phase workflow covering economics validation, audience research, offer stack design, sales mechanism, post-purchase pages, email sequences, ad copy, and campaign setup.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L20</span><span class="skill-type type-skill-package">Skill Package</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L20-low-ticket-funnel-orchestrator.zip" download title="Download Low-Ticket Funnel Orchestrator (lesson 20)">L20<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-skill-package">Skill Package</span></div>
         </div>
         <div class="skill-row" data-name="low-ticket economics calculator" data-desc="validates unit economics for a low-ticket funnel before anything gets built — calculates aov across the full offer stack, identifies the #1 leverage point, and issues a green/yellow/red launch verdict." data-category="Funnel &amp; Launch" data-type="skill-package">
           <div><div class="skill-name">Low-Ticket Economics Calculator</div><div class="skill-desc">Validates unit economics for a low-ticket funnel before anything gets built — calculates AOV across the full offer stack, identifies the #1 leverage point, and issues a GREEN/YELLOW/RED launch verdict.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L20</span><span class="skill-type type-skill-package">Skill Package</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L20-low-ticket-economics-calculator.zip" download title="Download Low-Ticket Economics Calculator (lesson 20)">L20<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-skill-package">Skill Package</span></div>
         </div>
         <div class="skill-row" data-name="funnel page architect" data-desc="builds all post-purchase funnel pages for low-ticket funnels — order bump, oto1, oto2/downsell, and thank you page, matching copy to the buyer&#x27;s psychological state at each stage." data-category="Funnel &amp; Launch" data-type="skill-package">
           <div><div class="skill-name">Funnel Page Architect</div><div class="skill-desc">Builds all post-purchase funnel pages for low-ticket funnels — order bump, OTO1, OTO2/downsell, and thank you page, matching copy to the buyer&#x27;s psychological state at each stage.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L20</span><span class="skill-type type-skill-package">Skill Package</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L20-funnel-page-architect.zip" download title="Download Funnel Page Architect (lesson 20)">L20<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-skill-package">Skill Package</span></div>
+        </div>
+        <div class="skill-row" data-name="launch command center" data-desc="puts a whole launch on one screen — calendar, four reach waves, budget math, story arc, path-to-goal model — as a credential-free html file safe to share with partners." data-category="Funnel &amp; Launch" data-type="skill-package">
+          <div><div class="skill-name">Launch Command Center</div><div class="skill-desc">Puts a whole launch on one screen — calendar, four reach waves, budget math, story arc, path-to-goal model — as a credential-free HTML file safe to share with partners.</div></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L35-launch-command-center.zip" download title="Download Launch Command Center (lesson 35)">L35<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-skill-package">Skill Package</span></div>
+        </div>
+        <div class="skill-row" data-name="webinar conversion intelligence dashboard" data-desc="turns one webinar’s real numbers into a self-contained html post-mortem — retention curve, funnel waterfall, objection map with verbatim quotes, sales velocity, chat sentiment, run-over-run comparison." data-category="Funnel &amp; Launch" data-type="skill-package">
+          <div><div class="skill-name">Webinar Conversion Intelligence Dashboard</div><div class="skill-desc">Turns one webinar’s real numbers into a self-contained HTML post-mortem — retention curve, funnel waterfall, objection map with verbatim quotes, sales velocity, chat sentiment, run-over-run comparison.</div></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L35-webinar-conversion-intelligence-dashboard.zip" download title="Download Webinar Conversion Intelligence Dashboard (lesson 35)">L35<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-skill-package">Skill Package</span></div>
         </div>
       </div>
 
@@ -1325,23 +1502,23 @@ body {
         <div class="cat-intro">Use these when you&#x27;re building the long-form content and speaking assets that establish authority and shift beliefs at scale.</div>
         <div class="skill-row" data-name="pillar content architect" data-desc="creates the full architecture for a manifesto-style pillar piece — section breakdown, quotable moments map, proprietary language, story arc, and distribution strategy designed as an &#x27;internet business manifesto&#x27; moment." data-category="Content &amp; Authority" data-type="prompt">
           <div><div class="skill-name">Pillar Content Architect</div><div class="skill-desc">Creates the full architecture for a manifesto-style pillar piece — section breakdown, quotable moments map, proprietary language, story arc, and distribution strategy designed as an &#x27;Internet Business Manifesto&#x27; moment.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L8</span><span class="skill-type type-prompt">Prompt</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L8-pillar-content-architect.md" download title="Download Pillar Content Architect (lesson 8)">L8<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-prompt">Prompt</span></div>
         </div>
         <div class="skill-row" data-name="pillar content writer" data-desc="writes a complete 3,000-5,000 word manifesto draft from the architect blueprint — with word counts, marked quotable moments, bolded proprietary terms, and editing recommendations." data-category="Content &amp; Authority" data-type="prompt">
           <div><div class="skill-name">Pillar Content Writer</div><div class="skill-desc">Writes a complete 3,000-5,000 word manifesto draft from the Architect blueprint — with word counts, marked quotable moments, bolded proprietary terms, and editing recommendations.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L8</span><span class="skill-type type-prompt">Prompt</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L8-pillar-content-writer.md" download title="Download Pillar Content Writer (lesson 8)">L8<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-prompt">Prompt</span></div>
         </div>
         <div class="skill-row" data-name="signature talk architect" data-desc="architects a complete 20-30 minute authority-establishing presentation — two modules: core positioning talk (always used) and optional close module — for conferences, podcasts, stages, and webinars." data-category="Content &amp; Authority" data-type="prompt">
           <div><div class="skill-name">Signature Talk Architect</div><div class="skill-desc">Architects a complete 20-30 minute authority-establishing presentation — two modules: Core Positioning Talk (always used) and Optional Close Module — for conferences, podcasts, stages, and webinars.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L15</span><span class="skill-type type-prompt">Prompt</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L15-signature-talk-architect.md" download title="Download Signature Talk Architect (lesson 15)">L15<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-prompt">Prompt</span></div>
         </div>
         <div class="skill-row" data-name="content strategy skills" data-desc="bundled content strategy skills covering content planning, topic generation, and distribution strategy for systematic authority building." data-category="Content &amp; Authority" data-type="tool-system">
           <div><div class="skill-name">Content Strategy Skills</div><div class="skill-desc">Bundled content strategy skills covering content planning, topic generation, and distribution strategy for systematic authority building.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L17</span><span class="skill-type type-tool-system">Tool System</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L17-content-strategy-skills.zip" download title="Download Content Strategy Skills (lesson 17)">L17<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-tool-system">Tool System</span></div>
         </div>
         <div class="skill-row" data-name="spcl content audit install" data-desc="audits a strategic profits content library or client content asset portfolio — identifying gaps, redundancies, and highest-leverage pieces." data-category="Content &amp; Authority" data-type="tool-system">
           <div><div class="skill-name">SPCL Content Audit Install</div><div class="skill-desc">Audits a Strategic Profits content library or client content asset portfolio — identifying gaps, redundancies, and highest-leverage pieces.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L13</span><span class="skill-type type-tool-system">Tool System</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L13-spcl-content-audit-install.zip" download title="Download SPCL Content Audit Install (lesson 13)">L13<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-tool-system">Tool System</span></div>
         </div>
       </div>
 
@@ -1350,31 +1527,31 @@ body {
         <div class="cat-intro">Use these when you&#x27;re transforming your ideas, methodology, or raw content into teachable, ownable intellectual property.</div>
         <div class="skill-row" data-name="framework forge v3.1" data-desc="deep mining edition that exhaustively extracts 30-100+ frameworks from raw content using 17 pattern types — combining dan sullivan&#x27;s framework mastery, matt church&#x27;s pink sheet methodology, and diagnostic tool positioning." data-category="Framework &amp; IP Creation" data-type="prompt">
           <div><div class="skill-name">Framework Forge v3.1</div><div class="skill-desc">Deep Mining Edition that exhaustively extracts 30-100+ frameworks from raw content using 17 pattern types — combining Dan Sullivan&#x27;s Framework Mastery, Matt Church&#x27;s Pink Sheet methodology, and Diagnostic Tool Positioning.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L9</span><span class="skill-type type-prompt">Prompt</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L9-framework-forge-v3-1.md" download title="Download Framework Forge v3.1 (lesson 9)">L9<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-prompt">Prompt</span></div>
         </div>
         <div class="skill-row" data-name="brunson engine" data-desc="transforms complex business concepts into simplified belief-building frameworks using russell brunson&#x27;s 7 simplification laws — the three-step rule, memorable naming, simple math, and the napkin test." data-category="Framework &amp; IP Creation" data-type="prompt">
           <div><div class="skill-name">Brunson Engine</div><div class="skill-desc">Transforms complex business concepts into simplified belief-building frameworks using Russell Brunson&#x27;s 7 Simplification Laws — the three-step rule, memorable naming, simple math, and the napkin test.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L4</span><span class="skill-type type-prompt">Prompt</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L4-brunson-engine.md" download title="Download Brunson Engine (lesson 4)">L4<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-prompt">Prompt</span></div>
         </div>
         <div class="skill-row" data-name="brunson simplification engine" data-desc="compresses complex methodology into a belief-first framework using brunson&#x27;s 7 simplification laws — companion to the brunson engine with a different prompt structure." data-category="Framework &amp; IP Creation" data-type="prompt">
           <div><div class="skill-name">Brunson Simplification Engine</div><div class="skill-desc">Compresses complex methodology into a belief-first framework using Brunson&#x27;s 7 Simplification Laws — companion to the Brunson Engine with a different prompt structure.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L4</span><span class="skill-type type-prompt">Prompt</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L4-brunson-simplification-engine.md" download title="Download Brunson Simplification Engine (lesson 4)">L4<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-prompt">Prompt</span></div>
         </div>
         <div class="skill-row" data-name="distinction system v2" data-desc="second-generation pipeline for extracting distinctions from source content and transforming them into teaching units that produce perceptual shifts — includes distinction finder, expander, critic agents, and methodology docs." data-category="Framework &amp; IP Creation" data-type="tool-system">
           <div><div class="skill-name">Distinction System v2</div><div class="skill-desc">Second-generation pipeline for extracting distinctions from source content and transforming them into teaching units that produce perceptual shifts — includes Distinction Finder, Expander, critic agents, and methodology docs.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L15</span><span class="skill-type type-tool-system">Tool System</span></div>
+          <div class="skill-meta"><span class="skill-lesson">L15</span><span class="skill-dl-group"><a class="skill-dl-plat" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L15-distinction-system-v2-mac.zip" download title="Download Distinction System v2 for Mac"><span aria-hidden="true">&#x2B07;</span>&nbsp;Mac</a><a class="skill-dl-plat" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L15-distinction-system-v2-pc.zip" download title="Download Distinction System v2 for PC"><span aria-hidden="true">&#x2B07;</span>&nbsp;PC</a></span><span class="skill-type type-tool-system">Tool System</span></div>
         </div>
         <div class="skill-row" data-name="tle refiner prompt" data-desc="refactors any draft prompt using the tle framework — tyrant (strict input constraints), libertarian (output format freedom), and evangelist (emotional/strategic outcome) — separating outcome from method." data-category="Framework &amp; IP Creation" data-type="prompt">
           <div><div class="skill-name">TLE Refiner Prompt</div><div class="skill-desc">Refactors any draft prompt using the TLE Framework — Tyrant (strict input constraints), Libertarian (output format freedom), and Evangelist (emotional/strategic outcome) — separating outcome from method.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L15</span><span class="skill-type type-prompt">Prompt</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L15-tle-refiner-prompt.md" download title="Download TLE Refiner Prompt (lesson 15)">L15<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-prompt">Prompt</span></div>
         </div>
         <div class="skill-row" data-name="tle swipe file" data-desc="copy-paste library of tle framework prompt blocks organized by use case — ready-made t-blocks, e-blocks, and l-blocks that combine into complete prompts for emails, social posts, and sales pages." data-category="Framework &amp; IP Creation" data-type="reference">
           <div><div class="skill-name">TLE Swipe File</div><div class="skill-desc">Copy-paste library of TLE Framework prompt blocks organized by use case — ready-made T-blocks, E-blocks, and L-blocks that combine into complete prompts for emails, social posts, and sales pages.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L15</span><span class="skill-type type-reference">Reference</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L15-tle-swipe-file.md" download title="Download TLE Swipe File (lesson 15)">L15<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-reference">Reference</span></div>
         </div>
         <div class="skill-row" data-name="framework forge 3.0" data-desc="transforms raw content into full-spectrum pink sheet frameworks using dan sullivan&#x27;s framework mastery and matt church&#x27;s pink sheet methodology — covering pattern mining, three-layer architecture, and six delivery mode adaptations." data-category="Framework &amp; IP Creation" data-type="prompt">
           <div><div class="skill-name">Framework Forge 3.0</div><div class="skill-desc">Transforms raw content into full-spectrum Pink Sheet frameworks using Dan Sullivan&#x27;s framework mastery and Matt Church&#x27;s Pink Sheet methodology — covering pattern mining, three-layer architecture, and six delivery mode adaptations.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L4</span><span class="skill-type type-prompt">Prompt</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L4-framework-forge-3-0.md" download title="Download Framework Forge 3.0 (lesson 4)">L4<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-prompt">Prompt</span></div>
         </div>
       </div>
 
@@ -1383,31 +1560,31 @@ body {
         <div class="cat-intro">Use these when you&#x27;re producing video ads, AI-generated visuals, or avatar videos and need to move faster than manual production allows.</div>
         <div class="skill-row" data-name="vo3 cinematic ad creator v1.1" data-desc="creates professional cinematic video ads using google veo 3 — based on pj ace&#x27;s methodology, with shot-by-shot prompts, 6 scene templates, character consistency methods, and platform-specific optimization." data-category="Video &amp; Visual Production" data-type="skill-package">
           <div><div class="skill-name">VO3 Cinematic Ad Creator v1.1</div><div class="skill-desc">Creates professional cinematic video ads using Google Veo 3 — based on PJ Ace&#x27;s methodology, with shot-by-shot prompts, 6 scene templates, character consistency methods, and platform-specific optimization.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L25</span><span class="skill-type type-skill-package">Skill Package</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L25-vo3-cinematic-ad-creator-v1-1.zip" download title="Download VO3 Cinematic Ad Creator v1.1 (lesson 25)">L25<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-skill-package">Skill Package</span></div>
         </div>
         <div class="skill-row" data-name="kling ai video producer" data-desc="turns claude into an ai video production assistant for kling ai — covering model selection (v2.1-3.0), image-to-video and text-to-video pipelines, camera vocabulary, and character consistency for demos, ads, and trailers." data-category="Video &amp; Visual Production" data-type="skill-package">
           <div><div class="skill-name">Kling AI Video Producer</div><div class="skill-desc">Turns Claude into an AI video production assistant for Kling AI — covering model selection (v2.1-3.0), image-to-video and text-to-video pipelines, camera vocabulary, and character consistency for demos, ads, and trailers.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L18</span><span class="skill-type type-skill-package">Skill Package</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L18-kling-ai-video-producer.zip" download title="Download Kling AI Video Producer (lesson 18)">L18<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-skill-package">Skill Package</span></div>
         </div>
         <div class="skill-row" data-name="newspaper ad asset builder" data-desc="turns copy into editorial-style newspaper ad creatives across all major formats — html/css layouts captured as high-res pngs via puppeteer, with safe zones enforced and optional video reel output via ffmpeg." data-category="Video &amp; Visual Production" data-type="skill-package">
           <div><div class="skill-name">Newspaper Ad Asset Builder</div><div class="skill-desc">Turns copy into editorial-style newspaper ad creatives across all major formats — HTML/CSS layouts captured as high-res PNGs via Puppeteer, with safe zones enforced and optional video reel output via ffmpeg.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L18</span><span class="skill-type type-skill-package">Skill Package</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L18-newspaper-ad-asset-builder.zip" download title="Download Newspaper Ad Asset Builder (lesson 18)">L18<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-skill-package">Skill Package</span></div>
         </div>
         <div class="skill-row" data-name="heygen video toolkit" data-desc="produces ai avatar videos using heygen — covering prompt writing, avatar selection, script formatting, and the complete video generation workflow for mac and pc." data-category="Video &amp; Visual Production" data-type="tool-system">
           <div><div class="skill-name">HeyGen Video Toolkit</div><div class="skill-desc">Produces AI avatar videos using HeyGen — covering prompt writing, avatar selection, script formatting, and the complete video generation workflow for Mac and PC.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L15</span><span class="skill-type type-tool-system">Tool System</span></div>
+          <div class="skill-meta"><span class="skill-lesson">L15</span><span class="skill-dl-group"><a class="skill-dl-plat" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L15-heygen-video-toolkit-mac.zip" download title="Download HeyGen Video Toolkit for Mac"><span aria-hidden="true">&#x2B07;</span>&nbsp;Mac</a><a class="skill-dl-plat" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L15-heygen-video-toolkit-pc.zip" download title="Download HeyGen Video Toolkit for PC"><span aria-hidden="true">&#x2B07;</span>&nbsp;PC</a></span><span class="skill-type type-tool-system">Tool System</span></div>
         </div>
         <div class="skill-row" data-name="gemini visual prompt generator" data-desc="generates individual gemini image prompts for every visual asset in a launch — landing page visuals, lead magnet interior, social media profiles, email headers, and thank you pages." data-category="Video &amp; Visual Production" data-type="prompt">
           <div><div class="skill-name">Gemini Visual Prompt Generator</div><div class="skill-desc">Generates individual Gemini image prompts for every visual asset in a launch — landing page visuals, lead magnet interior, social media profiles, email headers, and thank you pages.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L8</span><span class="skill-type type-prompt">Prompt</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L8-gemini-visual-prompt-generator.md" download title="Download Gemini Visual Prompt Generator (lesson 8)">L8<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-prompt">Prompt</span></div>
         </div>
         <div class="skill-row" data-name="video asset identifier" data-desc="catalogs every video asset needed for an mvp launch into a numbered master inventory organized by cluster and retargeting category, with priority production order and batch recommendations." data-category="Video &amp; Visual Production" data-type="prompt">
           <div><div class="skill-name">Video Asset Identifier</div><div class="skill-desc">Catalogs every video asset needed for an MVP launch into a numbered master inventory organized by cluster and retargeting category, with priority production order and batch recommendations.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L8</span><span class="skill-type type-prompt">Prompt</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L8-video-asset-identifier.md" download title="Download Video Asset Identifier (lesson 8)">L8<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-prompt">Prompt</span></div>
         </div>
         <div class="skill-row" data-name="video script generator" data-desc="generates teleprompter-ready video scripts with timed sections, delivery notes, pause indicators, setup instructions, b-roll notes, and caption timing — calibrated for solution-confused audiences." data-category="Video &amp; Visual Production" data-type="prompt">
           <div><div class="skill-name">Video Script Generator</div><div class="skill-desc">Generates teleprompter-ready video scripts with timed sections, delivery notes, pause indicators, setup instructions, B-roll notes, and caption timing — calibrated for Solution-Confused audiences.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L8</span><span class="skill-type type-prompt">Prompt</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L8-video-script-generator.md" download title="Download Video Script Generator (lesson 8)">L8<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-prompt">Prompt</span></div>
         </div>
       </div>
 
@@ -1416,83 +1593,83 @@ body {
         <div class="cat-intro">Use these when you&#x27;re setting up your Claude Code environment, building multi-agent workflows, or extending your system with memory, databases, or automated pipelines.</div>
         <div class="skill-row" data-name="core agent operations" data-desc="baseline autonomous agent execution protocols — context window management with handoff at 70-80%, verified source consumption, traceable requirements execution, session management, and persistent progress logging." data-category="AI Systems &amp; Automation" data-type="skill-package">
           <div><div class="skill-name">Core Agent Operations</div><div class="skill-desc">Baseline autonomous agent execution protocols — context window management with handoff at 70-80%, verified source consumption, traceable requirements execution, session management, and persistent progress logging.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L10</span><span class="skill-type type-skill-package">Skill Package</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L10-core-agent-operations.md" download title="Download Core Agent Operations (lesson 10)">L10<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-skill-package">Skill Package</span></div>
         </div>
         <div class="skill-row" data-name="dispatcher-manager agent" data-desc="three-tier orchestration pattern where claude acts as manager — decomposing objectives into task graphs, spawning persona-optimized sub-agents, enforcing quality gates, and reporting options with recommendations." data-category="AI Systems &amp; Automation" data-type="skill-package">
           <div><div class="skill-name">Dispatcher-Manager Agent</div><div class="skill-desc">Three-tier orchestration pattern where Claude acts as manager — decomposing objectives into task graphs, spawning persona-optimized sub-agents, enforcing quality gates, and reporting options with recommendations.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L12</span><span class="skill-type type-skill-package">Skill Package</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L12-dispatcher-manager-agent.zip" download title="Download Dispatcher-Manager Agent (lesson 12)">L12<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-skill-package">Skill Package</span></div>
         </div>
         <div class="skill-row" data-name="strategic builder v5" data-desc="complete project lifecycle framework for significant builds — setup, build, test, audit, optimize, finish, deploy, and archive phases — keeping claude code disciplined across complex multi-session projects." data-category="AI Systems &amp; Automation" data-type="skill-package">
           <div><div class="skill-name">Strategic Builder v5</div><div class="skill-desc">Complete project lifecycle framework for significant builds — Setup, Build, Test, Audit, Optimize, Finish, Deploy, and Archive phases — keeping Claude Code disciplined across complex multi-session projects.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L25</span><span class="skill-type type-skill-package">Skill Package</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L25-strategic-builder-v5.zip" download title="Download Strategic Builder v5 (lesson 25)">L25<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-skill-package">Skill Package</span></div>
         </div>
         <div class="skill-row" data-name="claude deep research v1" data-desc="sends a research question to claude&#x27;s deep research capability and saves organized markdown output — for market analysis, competitor research, trend analysis, and technical deep dives." data-category="AI Systems &amp; Automation" data-type="tool-system">
           <div><div class="skill-name">Claude Deep Research v1</div><div class="skill-desc">Sends a research question to Claude&#x27;s deep research capability and saves organized markdown output — for market analysis, competitor research, trend analysis, and technical deep dives.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L18</span><span class="skill-type type-tool-system">Tool System</span></div>
+          <div class="skill-meta"><span class="skill-lesson">L18</span><span class="skill-dl-group"><a class="skill-dl-plat" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L18-claude-deep-research-v1-mac.zip" download title="Download Claude Deep Research v1 for Mac"><span aria-hidden="true">&#x2B07;</span>&nbsp;Mac</a><a class="skill-dl-plat" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L18-claude-deep-research-v1-pc.zip" download title="Download Claude Deep Research v1 for PC"><span aria-hidden="true">&#x2B07;</span>&nbsp;PC</a></span><span class="skill-type type-tool-system">Tool System</span></div>
         </div>
         <div class="skill-row" data-name="course factory v1" data-desc="end-to-end course creation pipeline — researches youtube channels, downloads transcripts, builds curriculum with ai, runs a 6-writer copywriting arena for sales copy, builds the landing page, and deploys to cloudflare." data-category="AI Systems &amp; Automation" data-type="tool-system">
           <div><div class="skill-name">Course Factory v1</div><div class="skill-desc">End-to-end course creation pipeline — researches YouTube channels, downloads transcripts, builds curriculum with AI, runs a 6-writer copywriting arena for sales copy, builds the landing page, and deploys to Cloudflare.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L18</span><span class="skill-type type-tool-system">Tool System</span></div>
+          <div class="skill-meta"><span class="skill-lesson">L18</span><span class="skill-dl-group"><a class="skill-dl-plat" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L18-course-factory-v1-mac.zip" download title="Download Course Factory v1 for Mac"><span aria-hidden="true">&#x2B07;</span>&nbsp;Mac</a><a class="skill-dl-plat" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L18-course-factory-v1-pc.zip" download title="Download Course Factory v1 for PC"><span aria-hidden="true">&#x2B07;</span>&nbsp;PC</a></span><span class="skill-type type-tool-system">Tool System</span></div>
         </div>
         <div class="skill-row" data-name="pptx presentation skill v1" data-desc="creates professional powerpoint presentations using garr reynolds&#x27; presentation zen philosophy — full-bleed ai-generated images via gemini, minimal text, dark overlays, built programmatically with pptxgenjs." data-category="AI Systems &amp; Automation" data-type="tool-system">
           <div><div class="skill-name">PPTX Presentation Skill v1</div><div class="skill-desc">Creates professional PowerPoint presentations using Garr Reynolds&#x27; Presentation Zen philosophy — full-bleed AI-generated images via Gemini, minimal text, dark overlays, built programmatically with pptxgenjs.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L18</span><span class="skill-type type-tool-system">Tool System</span></div>
+          <div class="skill-meta"><span class="skill-lesson">L18</span><span class="skill-dl-group"><a class="skill-dl-plat" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L18-pptx-presentation-skill-v1-mac.zip" download title="Download PPTX Presentation Skill v1 for Mac"><span aria-hidden="true">&#x2B07;</span>&nbsp;Mac</a><a class="skill-dl-plat" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L18-pptx-presentation-skill-v1-pc.zip" download title="Download PPTX Presentation Skill v1 for PC"><span aria-hidden="true">&#x2B07;</span>&nbsp;PC</a></span><span class="skill-type type-tool-system">Tool System</span></div>
         </div>
         <div class="skill-row" data-name="expert content processor v1" data-desc="points at a folder of raw content — videos, audio, pdfs, powerpoints, word docs — converts everything to organized markdown, deduplicates, identifies gaps, and creates a research prompt for missing material." data-category="AI Systems &amp; Automation" data-type="tool-system">
           <div><div class="skill-name">Expert Content Processor v1</div><div class="skill-desc">Points at a folder of raw content — videos, audio, PDFs, PowerPoints, Word docs — converts everything to organized markdown, deduplicates, identifies gaps, and creates a research prompt for missing material.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L18</span><span class="skill-type type-tool-system">Tool System</span></div>
+          <div class="skill-meta"><span class="skill-lesson">L18</span><span class="skill-dl-group"><a class="skill-dl-plat" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L18-expert-content-processor-v1-mac.zip" download title="Download Expert Content Processor v1 for Mac"><span aria-hidden="true">&#x2B07;</span>&nbsp;Mac</a><a class="skill-dl-plat" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L18-expert-content-processor-v1-pc.zip" download title="Download Expert Content Processor v1 for PC"><span aria-hidden="true">&#x2B07;</span>&nbsp;PC</a></span><span class="skill-type type-tool-system">Tool System</span></div>
         </div>
         <div class="skill-row" data-name="loms system" data-desc="packaged loms system for zenithpro workflows — installable zip for mac and pc." data-category="AI Systems &amp; Automation" data-type="tool-system">
           <div><div class="skill-name">LOMS System</div><div class="skill-desc">Packaged LOMS system for ZenithPro workflows — installable zip for Mac and PC.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L12</span><span class="skill-type type-tool-system">Tool System</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L12-loms-system.zip" download title="Download LOMS System (lesson 12)">L12<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-tool-system">Tool System</span></div>
         </div>
         <div class="skill-row" data-name="memory system" data-desc="local knowledge and memory layer for zenithpro workflows — pairs with setup pinecone and setup supabase for persistent cross-session intelligence." data-category="AI Systems &amp; Automation" data-type="tool-system">
           <div><div class="skill-name">Memory System</div><div class="skill-desc">Local knowledge and memory layer for ZenithPro workflows — pairs with Setup Pinecone and Setup Supabase for persistent cross-session intelligence.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L23</span><span class="skill-type type-tool-system">Tool System</span></div>
+          <div class="skill-meta"><span class="skill-lesson">L23</span><span class="skill-dl-group"><a class="skill-dl-plat" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L23-memory-system-mac.zip" download title="Download Memory System for Mac"><span aria-hidden="true">&#x2B07;</span>&nbsp;Mac</a><a class="skill-dl-plat" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L23-memory-system-pc.zip" download title="Download Memory System for PC"><span aria-hidden="true">&#x2B07;</span>&nbsp;PC</a></span><span class="skill-type type-tool-system">Tool System</span></div>
         </div>
         <div class="skill-row" data-name="setup pinecone" data-desc="configures and connects pinecone vector database — setup guide and integration prompts for adding semantic memory to ai workflows." data-category="AI Systems &amp; Automation" data-type="skill-package">
           <div><div class="skill-name">Setup Pinecone</div><div class="skill-desc">Configures and connects Pinecone vector database — setup guide and integration prompts for adding semantic memory to AI workflows.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L23</span><span class="skill-type type-skill-package">Skill Package</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L23-setup-pinecone.zip" download title="Download Setup Pinecone (lesson 23)">L23<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-skill-package">Skill Package</span></div>
         </div>
         <div class="skill-row" data-name="setup supabase" data-desc="configures supabase as a backend for ai and memory-driven workflows — setup guide and integration prompts for connecting structured storage." data-category="AI Systems &amp; Automation" data-type="skill-package">
           <div><div class="skill-name">Setup Supabase</div><div class="skill-desc">Configures Supabase as a backend for AI and memory-driven workflows — setup guide and integration prompts for connecting structured storage.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L23</span><span class="skill-type type-skill-package">Skill Package</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L23-setup-supabase.zip" download title="Download Setup Supabase (lesson 23)">L23<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-skill-package">Skill Package</span></div>
         </div>
         <div class="skill-row" data-name="strategic memory" data-desc="builds and uses a persistent strategic memory layer — capturing, organizing, and retrieving business intelligence across sessions so context doesn&#x27;t reset between conversations." data-category="AI Systems &amp; Automation" data-type="skill-package">
           <div><div class="skill-name">Strategic Memory</div><div class="skill-desc">Builds and uses a persistent strategic memory layer — capturing, organizing, and retrieving business intelligence across sessions so context doesn&#x27;t reset between conversations.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L23</span><span class="skill-type type-skill-package">Skill Package</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L23-strategic-memory.zip" download title="Download Strategic Memory (lesson 23)">L23<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-skill-package">Skill Package</span></div>
         </div>
         <div class="skill-row" data-name="claude session archiver — updated" data-desc="archives claude code sessions as organized records with a sessionstart hook that automatically detects and repairs the session index so resumed conversations are properly captured." data-category="AI Systems &amp; Automation" data-type="tool-system">
           <div><div class="skill-name">Claude Session Archiver — Updated</div><div class="skill-desc">Archives Claude Code sessions as organized records with a SessionStart hook that automatically detects and repairs the session index so resumed conversations are properly captured.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L18</span><span class="skill-type type-tool-system">Tool System</span></div>
+          <div class="skill-meta"><span class="skill-lesson">L18</span><span class="skill-dl-group"><a class="skill-dl-plat" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L18-claude-session-archiver-updated-mac.zip" download title="Download Claude Session Archiver — Updated for Mac"><span aria-hidden="true">&#x2B07;</span>&nbsp;Mac</a><a class="skill-dl-plat" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L18-claude-session-archiver-updated-pc.zip" download title="Download Claude Session Archiver — Updated for PC"><span aria-hidden="true">&#x2B07;</span>&nbsp;PC</a></span><span class="skill-type type-tool-system">Tool System</span></div>
         </div>
         <div class="skill-row" data-name="lisa&#x27;s claude code automation prompt" data-desc="claude code cli orchestration prompt that reads a student workbook, identifies all embedded prompts, runs them sequentially, and saves each output as a separate file — configured with just two file path variables." data-category="AI Systems &amp; Automation" data-type="prompt">
           <div><div class="skill-name">Lisa&#x27;s Claude Code Automation Prompt</div><div class="skill-desc">Claude Code CLI orchestration prompt that reads a student workbook, identifies all embedded prompts, runs them sequentially, and saves each output as a separate file — configured with just two file path variables.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L8</span><span class="skill-type type-prompt">Prompt</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L8-lisa-s-claude-code-automation-prompt.md" download title="Download Lisa&#x27;s Claude Code Automation Prompt (lesson 8)">L8<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-prompt">Prompt</span></div>
         </div>
         <div class="skill-row" data-name="prompt amplification engine" data-desc="project-level custom instructions that automatically enhance any prompt — replacing weak verbs with power words and applying cognitive depth triggers without requiring explicit user instruction." data-category="AI Systems &amp; Automation" data-type="tool-system">
           <div><div class="skill-name">Prompt Amplification Engine</div><div class="skill-desc">Project-level custom instructions that automatically enhance any prompt — replacing weak verbs with power words and applying cognitive depth triggers without requiring explicit user instruction.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L2</span><span class="skill-type type-tool-system">Tool System</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L2-prompt-amplification-engine.md" download title="Download Prompt Amplification Engine (lesson 2)">L2<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-tool-system">Tool System</span></div>
         </div>
         <div class="skill-row" data-name="role amplification engine" data-desc="project-level custom instructions that automatically optimize role assignments — analyzing task domain and complexity, then engineering the optimal expert role to trigger maximum ai performance depth." data-category="AI Systems &amp; Automation" data-type="tool-system">
           <div><div class="skill-name">Role Amplification Engine</div><div class="skill-desc">Project-level custom instructions that automatically optimize role assignments — analyzing task domain and complexity, then engineering the optimal expert role to trigger maximum AI performance depth.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L2</span><span class="skill-type type-tool-system">Tool System</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L2-role-amplification-engine.md" download title="Download Role Amplification Engine (lesson 2)">L2<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-tool-system">Tool System</span></div>
         </div>
         <div class="skill-row" data-name="youtube transcript downloader v2" data-desc="bulk-downloads youtube channel transcripts using youtube-transcript-api with whisper as fallback — outputs markdown and json, supports parallel processing, and prioritizes portuguese then english captions." data-category="AI Systems &amp; Automation" data-type="tool-system">
           <div><div class="skill-name">YouTube Transcript Downloader v2</div><div class="skill-desc">Bulk-downloads YouTube channel transcripts using youtube-transcript-api with Whisper as fallback — outputs Markdown and JSON, supports parallel processing, and prioritizes Portuguese then English captions.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L9</span><span class="skill-type type-tool-system">Tool System</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L9-youtube-transcript-downloader-v2.md" download title="Download YouTube Transcript Downloader v2 (lesson 9)">L9<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-tool-system">Tool System</span></div>
         </div>
         <div class="skill-row" data-name="claude code obsidian installer" data-desc="sets up claude code to work with an obsidian vault — configures the integration, folder structure, or mcp connection for seamless note-taking and knowledge management." data-category="AI Systems &amp; Automation" data-type="tool-system">
           <div><div class="skill-name">Claude Code Obsidian Installer</div><div class="skill-desc">Sets up Claude Code to work with an Obsidian vault — configures the integration, folder structure, or MCP connection for seamless note-taking and knowledge management.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L14</span><span class="skill-type type-tool-system">Tool System</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L14-claude-code-obsidian-installer.zip" download title="Download Claude Code Obsidian Installer (lesson 14)">L14<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-tool-system">Tool System</span></div>
         </div>
         <div class="skill-row" data-name="frontend-design skill" data-desc="creates distinctive production-grade frontend interfaces with bold aesthetic direction — generating html/css/js, react, or vue implementations that don&#x27;t look like generic ai output." data-category="AI Systems &amp; Automation" data-type="skill-package">
           <div><div class="skill-name">frontend-design Skill</div><div class="skill-desc">Creates distinctive production-grade frontend interfaces with bold aesthetic direction — generating HTML/CSS/JS, React, or Vue implementations that don&#x27;t look like generic AI output.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L11</span><span class="skill-type type-skill-package">Skill Package</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L11-frontend-design-skill.md" download title="Download frontend-design Skill (lesson 11)">L11<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-skill-package">Skill Package</span></div>
         </div>
         <div class="skill-row" data-name="deep research skill" data-desc="dispatches research queries to perplexity, gemini, tavily, and exa.ai simultaneously using parallel python scripts — multi-source synthesis with structured output to json and markdown." data-category="AI Systems &amp; Automation" data-type="tool-system">
           <div><div class="skill-name">Deep Research Skill</div><div class="skill-desc">Dispatches research queries to Perplexity, Gemini, Tavily, and Exa.ai simultaneously using parallel Python scripts — multi-source synthesis with structured output to JSON and Markdown.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L12</span><span class="skill-type type-tool-system">Tool System</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L12-deep-research-skill.zip" download title="Download Deep Research Skill (lesson 12)">L12<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-tool-system">Tool System</span></div>
         </div>
       </div>
 
@@ -1501,43 +1678,43 @@ body {
         <div class="cat-intro">Use these when you&#x27;re onboarding to ZenithPro, setting up your technical environment, or need a reference for how the pieces fit together.</div>
         <div class="skill-row" data-name="zenithpro installation guide" data-desc="step-by-step pdf setup instructions for the zenithpro system — the starting point for new students installing the skills and environment." data-category="Guides &amp; Setup" data-type="guide">
           <div><div class="skill-name">ZenithPro Installation Guide</div><div class="skill-desc">Step-by-step PDF setup instructions for the ZenithPro system — the starting point for new students installing the skills and environment.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L10</span><span class="skill-type type-guide">Guide</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L10-zenithpro-installation-guide.pdf" download title="Download ZenithPro Installation Guide (lesson 10)">L10<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-guide">Guide</span></div>
         </div>
         <div class="skill-row" data-name="claude code setup guide" data-desc="pdf walkthrough for setting up claude code from scratch — covers installation, configuration, and initial setup steps." data-category="Guides &amp; Setup" data-type="guide">
           <div><div class="skill-name">Claude Code Setup Guide</div><div class="skill-desc">PDF walkthrough for setting up Claude Code from scratch — covers installation, configuration, and initial setup steps.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L14</span><span class="skill-type type-guide">Guide</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L14-claude-code-setup-guide.pdf" download title="Download Claude Code Setup Guide (lesson 14)">L14<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-guide">Guide</span></div>
         </div>
         <div class="skill-row" data-name="zenithpro architecture quick start" data-desc="pdf quick-start guide explaining how zenithpro&#x27;s skills, agents, and workflows fit together — the conceptual map before diving into individual tools." data-category="Guides &amp; Setup" data-type="guide">
           <div><div class="skill-name">ZenithPro Architecture Quick Start</div><div class="skill-desc">PDF quick-start guide explaining how ZenithPro&#x27;s skills, agents, and workflows fit together — the conceptual map before diving into individual tools.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L14</span><span class="skill-type type-guide">Guide</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L14-zenithpro-architecture-quick-start.pdf" download title="Download ZenithPro Architecture Quick Start (lesson 14)">L14<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-guide">Guide</span></div>
         </div>
         <div class="skill-row" data-name="markdown viewer guide" data-desc="companion guide for reading and navigating the skill and memory system files delivered in lesson 23 and beyond." data-category="Guides &amp; Setup" data-type="guide">
           <div><div class="skill-name">Markdown Viewer Guide</div><div class="skill-desc">Companion guide for reading and navigating the skill and memory system files delivered in Lesson 23 and beyond.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L23</span><span class="skill-type type-guide">Guide</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L23-markdown-viewer-guide.pdf" download title="Download Markdown Viewer Guide (lesson 23)">L23<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-guide">Guide</span></div>
         </div>
         <div class="skill-row" data-name="lesson 4 quick reference" data-desc="quick reference pdf for lesson 4 — summarizing the core concept scorecard, validation process, framework forge, and brunson engine in one place." data-category="Guides &amp; Setup" data-type="reference">
           <div><div class="skill-name">Lesson 4 Quick Reference</div><div class="skill-desc">Quick reference PDF for Lesson 4 — summarizing the Core Concept Scorecard, validation process, Framework Forge, and Brunson Engine in one place.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L4</span><span class="skill-type type-reference">Reference</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L4-lesson-4-quick-reference.pdf" download title="Download Lesson 4 Quick Reference (lesson 4)">L4<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-reference">Reference</span></div>
         </div>
         <div class="skill-row" data-name="lesson 7 student workbook" data-desc="complete self-study workbook for lesson 7&#x27;s paid traffic execution — includes a pre-flight checklist verifying l6 outputs and embedded prompts for all 7 traffic tools." data-category="Guides &amp; Setup" data-type="reference">
           <div><div class="skill-name">Lesson 7 Student Workbook</div><div class="skill-desc">Complete self-study workbook for Lesson 7&#x27;s paid traffic execution — includes a pre-flight checklist verifying L6 outputs and embedded prompts for all 7 traffic tools.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L7</span><span class="skill-type type-reference">Reference</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L7-lesson-7-student-workbook.pdf" download title="Download Lesson 7 Student Workbook (lesson 7)">L7<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-reference">Reference</span></div>
         </div>
         <div class="skill-row" data-name="lesson 8 asset production workbook" data-desc="student workbook for lesson 8 asset production — embeds all 8 prompts for landing page, lead magnet, video assets, scripts, static ads, pillar content, and visual generation." data-category="Guides &amp; Setup" data-type="reference">
           <div><div class="skill-name">Lesson 8 Asset Production Workbook</div><div class="skill-desc">Student workbook for Lesson 8 asset production — embeds all 8 prompts for landing page, lead magnet, video assets, scripts, static ads, pillar content, and visual generation.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L8</span><span class="skill-type type-reference">Reference</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L8-lesson-8-asset-production-workbook.md" download title="Download Lesson 8 Asset Production Workbook (lesson 8)">L8<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-reference">Reference</span></div>
         </div>
         <div class="skill-row" data-name="bgs-zenithmind module 1 workbook" data-desc="module 1 workbook for bgs-zenithmind covering psychological business strategy foundations — designed to run sequentially via claude code using zenithmindos outputs as inputs." data-category="Guides &amp; Setup" data-type="reference">
           <div><div class="skill-name">BGS-ZenithMind Module 1 Workbook</div><div class="skill-desc">Module 1 workbook for BGS-ZenithMind covering psychological business strategy foundations — designed to run sequentially via Claude Code using ZenithMindOS outputs as inputs.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L8</span><span class="skill-type type-reference">Reference</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L8-bgs-zenithmind-module-1-workbook.md" download title="Download BGS-ZenithMind Module 1 Workbook (lesson 8)">L8<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-reference">Reference</span></div>
         </div>
         <div class="skill-row" data-name="my skills pack" data-desc="curated personal collection of skills assembled for lesson 23 participants — a bundled starting point for the memory and campaign systems introduced in this lesson." data-category="Guides &amp; Setup" data-type="skill-package">
           <div><div class="skill-name">My Skills Pack</div><div class="skill-desc">Curated personal collection of skills assembled for Lesson 23 participants — a bundled starting point for the memory and campaign systems introduced in this lesson.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L23</span><span class="skill-type type-skill-package">Skill Package</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L23-my-skills-pack.zip" download title="Download My Skills Pack (lesson 23)">L23<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-skill-package">Skill Package</span></div>
         </div>
         <div class="skill-row" data-name="zenithpro skill package 2" data-desc="second installment of bundled zenithpro skills — additional tools released alongside lesson 23 content." data-category="Guides &amp; Setup" data-type="skill-package">
           <div><div class="skill-name">ZenithPro Skill Package 2</div><div class="skill-desc">Second installment of bundled ZenithPro skills — additional tools released alongside Lesson 23 content.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L23</span><span class="skill-type type-skill-package">Skill Package</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L23-zenithpro-skill-package-2.zip" download title="Download ZenithPro Skill Package 2 (lesson 23)">L23<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-skill-package">Skill Package</span></div>
         </div>
       </div>
 
@@ -1546,91 +1723,91 @@ body {
         <div class="cat-intro">Use these when you need source material, worked examples, or supporting theory behind a specific tool or methodology.</div>
         <div class="skill-row" data-name="rich schefren — buying triggers 1" data-desc="transcript of rich schefren&#x27;s first live stream on buying triggers — covers demand creation, disease-naming frameworks, and the crossroads close concept." data-category="Reference Library" data-type="reference">
           <div><div class="skill-name">Rich Schefren — Buying Triggers 1</div><div class="skill-desc">Transcript of Rich Schefren&#x27;s first live stream on buying triggers — covers demand creation, disease-naming frameworks, and the crossroads close concept.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L25</span><span class="skill-type type-reference">Reference</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L25-rich-schefren-buying-triggers-1.md" download title="Download Rich Schefren — Buying Triggers 1 (lesson 25)">L25<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-reference">Reference</span></div>
         </div>
         <div class="skill-row" data-name="rich schefren — buying triggers 2" data-desc="transcript of rich schefren&#x27;s second buying triggers live stream — real-time launch strategy and entering the conversation where the market already is." data-category="Reference Library" data-type="reference">
           <div><div class="skill-name">Rich Schefren — Buying Triggers 2</div><div class="skill-desc">Transcript of Rich Schefren&#x27;s second buying triggers live stream — real-time launch strategy and entering the conversation where the market already is.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L25</span><span class="skill-type type-reference">Reference</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L25-rich-schefren-buying-triggers-2.md" download title="Download Rich Schefren — Buying Triggers 2 (lesson 25)">L25<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-reference">Reference</span></div>
         </div>
         <div class="skill-row" data-name="rich schefren — buying triggers 3" data-desc="transcript of rich schefren&#x27;s third buying triggers live stream — cognitive biases, psychological triggers, and launch tactics." data-category="Reference Library" data-type="reference">
           <div><div class="skill-name">Rich Schefren — Buying Triggers 3</div><div class="skill-desc">Transcript of Rich Schefren&#x27;s third buying triggers live stream — cognitive biases, psychological triggers, and launch tactics.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L25</span><span class="skill-type type-reference">Reference</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L25-rich-schefren-buying-triggers-3.md" download title="Download Rich Schefren — Buying Triggers 3 (lesson 25)">L25<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-reference">Reference</span></div>
         </div>
         <div class="skill-row" data-name="rich schefren — buying triggers 4" data-desc="transcript of rich schefren&#x27;s fourth buying triggers live stream — revelation vs. explanation, buzz creation, social proof mechanics, crossroads close, and audience q&amp;a." data-category="Reference Library" data-type="reference">
           <div><div class="skill-name">Rich Schefren — Buying Triggers 4</div><div class="skill-desc">Transcript of Rich Schefren&#x27;s fourth buying triggers live stream — revelation vs. explanation, buzz creation, social proof mechanics, crossroads close, and audience Q&amp;A.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L25</span><span class="skill-type type-reference">Reference</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L25-rich-schefren-buying-triggers-4.md" download title="Download Rich Schefren — Buying Triggers 4 (lesson 25)">L25<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-reference">Reference</span></div>
         </div>
         <div class="skill-row" data-name="the strategic builder methodology" data-desc="full methodology for building ai-powered business systems — defines an 8-level translation stack with a three questions protocol and rules for moving between levels." data-category="Reference Library" data-type="reference">
           <div><div class="skill-name">The Strategic Builder Methodology</div><div class="skill-desc">Full methodology for building AI-powered business systems — defines an 8-level Translation Stack with a Three Questions Protocol and rules for moving between levels.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L14</span><span class="skill-type type-reference">Reference</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L14-the-strategic-builder-methodology.md" download title="Download The Strategic Builder Methodology (lesson 14)">L14<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-reference">Reference</span></div>
         </div>
         <div class="skill-row" data-name="project operations protocol — the missing layer" data-desc="captures the operational distinctions missing from the strategic builder methodology — specifically how projects enforce protocols across sessions and prevent protocol drift." data-category="Reference Library" data-type="reference">
           <div><div class="skill-name">Project Operations Protocol — The Missing Layer</div><div class="skill-desc">Captures the operational distinctions missing from the Strategic Builder Methodology — specifically how projects enforce protocols across sessions and prevent protocol drift.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L14</span><span class="skill-type type-reference">Reference</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L14-project-operations-protocol-the-missing-layer.md" download title="Download Project Operations Protocol — The Missing Layer (lesson 14)">L14<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-reference">Reference</span></div>
         </div>
         <div class="skill-row" data-name="the runbook evolution — from skills to execution scripts" data-desc="explains the evolution from flexible skills to exact linear runbooks — defining when to use each and what makes a runbook good: no interpretation, no decisions, resumable, explicit failure handling." data-category="Reference Library" data-type="reference">
           <div><div class="skill-name">The Runbook Evolution — From Skills to Execution Scripts</div><div class="skill-desc">Explains the evolution from flexible skills to exact linear runbooks — defining when to use each and what makes a runbook good: no interpretation, no decisions, resumable, explicit failure handling.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L14</span><span class="skill-type type-reference">Reference</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L14-the-runbook-evolution-from-skills-to-execution-scripts.md" download title="Download The Runbook Evolution — From Skills to Execution Scripts (lesson 14)">L14<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-reference">Reference</span></div>
         </div>
         <div class="skill-row" data-name="cognitive architecture breakthrough" data-desc="essay explaining how encoding distinctions, mental models, and sequence into ai agents produced dramatically better output — with a test case achieving a perfect 5/5 result." data-category="Reference Library" data-type="reference">
           <div><div class="skill-name">Cognitive Architecture Breakthrough</div><div class="skill-desc">Essay explaining how encoding Distinctions, Mental Models, and Sequence into AI agents produced dramatically better output — with a test case achieving a perfect 5/5 result.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L15</span><span class="skill-type type-reference">Reference</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L15-cognitive-architecture-breakthrough.md" download title="Download Cognitive Architecture Breakthrough (lesson 15)">L15<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-reference">Reference</span></div>
         </div>
         <div class="skill-row" data-name="stic for team training" data-desc="plain-language breakdown of what teaching the stic framework to a team actually requires — dimension explanations, teachability assessments, and fit analysis for different team members." data-category="Reference Library" data-type="reference">
           <div><div class="skill-name">STIC For Team Training</div><div class="skill-desc">Plain-language breakdown of what teaching the STIC framework to a team actually requires — dimension explanations, teachability assessments, and fit analysis for different team members.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L15</span><span class="skill-type type-reference">Reference</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L15-stic-for-team-training.md" download title="Download STIC For Team Training (lesson 15)">L15<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-reference">Reference</span></div>
         </div>
         <div class="skill-row" data-name="verbalized sampling guide" data-desc="research-based guide on the verbalized sampling technique from northeastern/stanford/wvu — the 8-word prompt addition that increases llm creative output diversity by 1.6-2.1x." data-category="Reference Library" data-type="reference">
           <div><div class="skill-name">Verbalized Sampling Guide</div><div class="skill-desc">Research-based guide on the Verbalized Sampling technique from Northeastern/Stanford/WVU — the 8-word prompt addition that increases LLM creative output diversity by 1.6-2.1x.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L10</span><span class="skill-type type-reference">Reference</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L10-verbalized-sampling-guide.md" download title="Download Verbalized Sampling Guide (lesson 10)">L10<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-reference">Reference</span></div>
         </div>
         <div class="skill-row" data-name="adham khaled article on verbalized sampling" data-desc="saved article covering the stanford/northeastern verbalized sampling research — how a simple prompt addition unlocks 2x creative diversity from ai models." data-category="Reference Library" data-type="reference">
           <div><div class="skill-name">Adham Khaled article on Verbalized Sampling</div><div class="skill-desc">Saved article covering the Stanford/Northeastern Verbalized Sampling research — how a simple prompt addition unlocks 2x creative diversity from AI models.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L10</span><span class="skill-type type-reference">Reference</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L10-adham-khaled-article-on-verbalized-sampling.md" download title="Download Adham Khaled article on Verbalized Sampling (lesson 10)">L10<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-reference">Reference</span></div>
         </div>
         <div class="skill-row" data-name="power words comprehensive" data-desc="vocabulary reference replacing weak verbs with high-cognition alternatives — cognitive depth triggers, pattern recognition amplifiers, strategic thinking enhancers, and transformation catalysts for ai prompt writing." data-category="Reference Library" data-type="reference">
           <div><div class="skill-name">Power Words Comprehensive</div><div class="skill-desc">Vocabulary reference replacing weak verbs with high-cognition alternatives — cognitive depth triggers, pattern recognition amplifiers, strategic thinking enhancers, and transformation catalysts for AI prompt writing.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L2</span><span class="skill-type type-reference">Reference</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L2-power-words-comprehensive.md" download title="Download Power Words Comprehensive (lesson 2)">L2<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-reference">Reference</span></div>
         </div>
         <div class="skill-row" data-name="usp generator comprehensive data file" data-desc="training data for the enhanced usp generator — 959 deduplicated usp examples scored by strength and market sophistication level, sourced from 7 ai-generated databases." data-category="Reference Library" data-type="reference">
           <div><div class="skill-name">USP Generator Comprehensive Data File</div><div class="skill-desc">Training data for the Enhanced USP Generator — 959 deduplicated USP examples scored by strength and market sophistication level, sourced from 7 AI-generated databases.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L2</span><span class="skill-type type-reference">Reference</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L2-usp-generator-comprehensive-data-file.md" download title="Download USP Generator Comprehensive Data File (lesson 2)">L2<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-reference">Reference</span></div>
         </div>
         <div class="skill-row" data-name="karpathy llm wiki system briefing" data-desc="reference briefing on andrej karpathy&#x27;s approach to llm-powered knowledge systems — technical grounding for the memory system introduced in lesson 23." data-category="Reference Library" data-type="reference">
           <div><div class="skill-name">Karpathy LLM Wiki System Briefing</div><div class="skill-desc">Reference briefing on Andrej Karpathy&#x27;s approach to LLM-powered knowledge systems — technical grounding for the memory system introduced in Lesson 23.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L23</span><span class="skill-type type-reference">Reference</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L23-karpathy-llm-wiki-system-briefing.pdf" download title="Download Karpathy LLM Wiki System Briefing (lesson 23)">L23<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-reference">Reference</span></div>
         </div>
         <div class="skill-row" data-name="mental model content" data-desc="reference pdf on mental model content — frameworks and models used for strategic thinking and teaching in the zenithpro context." data-category="Reference Library" data-type="reference">
           <div><div class="skill-name">Mental Model Content</div><div class="skill-desc">Reference PDF on mental model content — frameworks and models used for strategic thinking and teaching in the ZenithPro context.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L14</span><span class="skill-type type-reference">Reference</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L14-mental-model-content.pdf" download title="Download Mental Model Content (lesson 14)">L14<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-reference">Reference</span></div>
         </div>
         <div class="skill-row" data-name="zenithpro march 2026 guide" data-desc="pdf overview of the march 2026 zenithpro skill release — covers all new skill packages, installation instructions, and usage overview for the lesson 18 pack." data-category="Reference Library" data-type="reference">
           <div><div class="skill-name">ZenithPro March 2026 Guide</div><div class="skill-desc">PDF overview of the March 2026 ZenithPro skill release — covers all new skill packages, installation instructions, and usage overview for the Lesson 18 pack.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L18</span><span class="skill-type type-reference">Reference</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L18-zenithpro-march-2026-guide.pdf" download title="Download ZenithPro March 2026 Guide (lesson 18)">L18<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-reference">Reference</span></div>
         </div>
         <div class="skill-row" data-name="autonomous agents templates" data-desc="prd-style ai execution specification templates for human-ai collaboration — generic template plus 7 use-case specs: marketing campaign, course design, coaching client, strategic analysis, content production, third brain synthesis, and partnership development." data-category="Reference Library" data-type="reference">
           <div><div class="skill-name">Autonomous Agents Templates</div><div class="skill-desc">PRD-style AI Execution Specification templates for human-AI collaboration — generic template plus 7 use-case specs: Marketing Campaign, Course Design, Coaching Client, Strategic Analysis, Content Production, Third Brain Synthesis, and Partnership Development.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L10</span><span class="skill-type type-reference">Reference</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L10-autonomous-agents-templates.zip" download title="Download Autonomous Agents Templates (lesson 10)">L10<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-reference">Reference</span></div>
         </div>
         <div class="skill-row" data-name="claude partner architecture instructions" data-desc="instructions for the partner architecture project — transforming claude code into a multi-threaded partner with a background agent layer and shadow teacher agent that auto-creates teaching content." data-category="Reference Library" data-type="reference">
           <div><div class="skill-name">Claude Partner Architecture Instructions</div><div class="skill-desc">Instructions for the Partner Architecture project — transforming Claude Code into a multi-threaded Partner with a background agent layer and Shadow Teacher agent that auto-creates teaching content.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L11</span><span class="skill-type type-reference">Reference</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L11-claude-partner-architecture-instructions.md" download title="Download Claude Partner Architecture Instructions (lesson 11)">L11<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-reference">Reference</span></div>
         </div>
         <div class="skill-row" data-name="consultant core concept articulation example" data-desc="example pdf showing a completed core concept articulation output for a consulting business context — reference for what the core concept articulation optimizer produces." data-category="Reference Library" data-type="reference">
           <div><div class="skill-name">Consultant Core Concept Articulation Example</div><div class="skill-desc">Example PDF showing a completed core concept articulation output for a consulting business context — reference for what the Core Concept Articulation Optimizer produces.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L3</span><span class="skill-type type-reference">Reference</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L3-consultant-core-concept-articulation-example.pdf" download title="Download Consultant Core Concept Articulation Example (lesson 3)">L3<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-reference">Reference</span></div>
         </div>
         <div class="skill-row" data-name="positioning concept variations example" data-desc="example pdf showing a range of positioning concept variations from the articulation optimizer — reference for the scope and style of outputs." data-category="Reference Library" data-type="reference">
           <div><div class="skill-name">Positioning Concept Variations Example</div><div class="skill-desc">Example PDF showing a range of positioning concept variations from the articulation optimizer — reference for the scope and style of outputs.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L3</span><span class="skill-type type-reference">Reference</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L3-positioning-concept-variations-example.pdf" download title="Download Positioning Concept Variations Example (lesson 3)">L3<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-reference">Reference</span></div>
         </div>
         <div class="skill-row" data-name="core concept articulation refining guide" data-desc="visual guide for refining and iterating on core concept articulations after initial generation — the next step after running the optimizer." data-category="Reference Library" data-type="guide">
           <div><div class="skill-name">Core Concept Articulation Refining Guide</div><div class="skill-desc">Visual guide for refining and iterating on core concept articulations after initial generation — the next step after running the optimizer.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L3</span><span class="skill-type type-guide">Guide</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L3-core-concept-articulation-refining-guide.png" download title="Download Core Concept Articulation Refining Guide (lesson 3)">L3<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-guide">Guide</span></div>
         </div>
         <div class="skill-row" data-name="core concept scorecard explanation" data-desc="detailed explanation of the core concept scorecard&#x27;s origin and rationale — covering mark ford&#x27;s articulation principle from jekyll island and the two fatal mistakes the scorecard prevents." data-category="Reference Library" data-type="reference">
           <div><div class="skill-name">Core Concept Scorecard Explanation</div><div class="skill-desc">Detailed explanation of the Core Concept Scorecard&#x27;s origin and rationale — covering Mark Ford&#x27;s articulation principle from Jekyll Island and the two fatal mistakes the scorecard prevents.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L4</span><span class="skill-type type-reference">Reference</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L4-core-concept-scorecard-explanation.md" download title="Download Core Concept Scorecard Explanation (lesson 4)">L4<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-reference">Reference</span></div>
         </div>
       </div>
 
@@ -1639,7 +1816,7 @@ body {
         <div class="cat-intro">Use these when you&#x27;re finding, vetting, or recruiting affiliates and JV partners for a launch.</div>
         <div class="skill-row" data-name="zpro affiliate finder" data-desc="scores and shortlists affiliates and jv partners using your own conversion history instead of follower counts, so launch decisions run on evidence." data-category="Affiliate &amp; JV Recruiting" data-type="skill-package">
           <div><div class="skill-name">ZPro Affiliate Finder</div><div class="skill-desc">Scores and shortlists affiliates and JV partners using your own conversion history instead of follower counts, so launch decisions run on evidence.</div></div>
-          <div class="skill-meta"><span class="skill-lesson">L31</span><span class="skill-type type-skill-package">Skill Package</span></div>
+          <div class="skill-meta"><a class="skill-lesson skill-dl" href="https://sp-jem.github.io/StrategicProfits/zenithpro-library/tools/L33-zpro-affiliate-finder.zip" download title="Download ZPro Affiliate Finder (lesson 33)">L33<span class="skill-dl-icon" aria-hidden="true">&#x2B07;</span><span class="sr-only"> download</span></a><span class="skill-type type-skill-package">Skill Package</span></div>
         </div>
       </div>
 
@@ -1649,6 +1826,40 @@ body {
 </div>
 
 <script>
+function copyInstallPrompt(btn) {
+  var block = btn.closest('.install-prompt');
+  if (!block) return;
+  var pre = block.querySelector('.install-prompt-text');
+  if (!pre) return;
+  var text = pre.textContent;
+  function done() {
+    var original = btn.dataset.label || btn.textContent;
+    btn.dataset.label = original;
+    btn.textContent = 'Copied';
+    btn.classList.add('copied');
+    setTimeout(function() {
+      btn.textContent = btn.dataset.label;
+      btn.classList.remove('copied');
+    }, 1600);
+  }
+  function fallback() {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly', '');
+    ta.style.position = 'fixed';
+    ta.style.top = '-1000px';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); done(); } catch (e) {}
+    document.body.removeChild(ta);
+  }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(done, fallback);
+  } else {
+    fallback();
+  }
+}
+
 document.querySelectorAll('.nav-tab').forEach(function(tab) {
   tab.addEventListener('click', function() {
     document.querySelectorAll('.nav-tab').forEach(function(t) { t.classList.remove('active'); });
